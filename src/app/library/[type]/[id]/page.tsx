@@ -46,12 +46,35 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
         </ul>
       </div>
       <div className='mt-10'>
+        <h2 className='text-2xl mb-2'>👀 Examples</h2>
+        {item.examples?.map((example) => (
+          <p key={example}
+          ><a
+            href={example}
+            className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
+          >
+            {example}
+          </a></p>
+        ))}
+      </div>
+      <div className='mt-10'>
+        <h2 className='text-2xl mb-2'>🌐 Links</h2>
+        {item.links?.map((link) => (
+          <p key={link}><a
+            href={link}
+            className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
+          >
+            {link}
+          </a></p>
+        ))}
+      </div>
+      <div className='mt-10'>
         <h2 className='text-2xl mb-2'>🏢 Compatible Entity Structures</h2>
         {item.entityTypes?.map((option: Item) => (
           <Link
             key={option.name}
             href={`/library/entity-types/${option.id}`}
-            className='rounded-2xl text-center px-4 py-1 mr-3 inline-block entity-type'
+            className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block entity-type'
           >
             {option.name}
           </Link>
@@ -63,7 +86,7 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
           <Link
             key={option.name}
             href={`/library/funding-options/${option.id}`}
-            className='rounded-2xl text-center px-4 py-1 mr-3 inline-block funding-option'
+            className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block funding-option'
           >
             {option.name}
           </Link>
@@ -75,7 +98,7 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
           <Link
             key={model.name}
             href={`/library/business-models/${model.id}`}
-            className='rounded-2xl text-center px-4 py-1 mr-3 inline-block business-model'
+            className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block business-model'
           >
             {model.name}
           </Link>

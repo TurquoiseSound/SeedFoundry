@@ -28,12 +28,12 @@ export const fetchItems = cache(async (type: string): Promise<Item[]> => {
 
   const response = await notion.databases.query({
     database_id: databaseId,
-    sorts: [
-      {
-        "property": "title",
-        "direction": "ascending"
+    filter: {
+      property: "Status",
+      status: {
+        equals: "Done"
       }
-    ]
+    }
   });
 
   const items = Promise.all(response.results.map(async (page) => {
@@ -66,8 +66,8 @@ const convertPagetoItem = async (page: any): Promise<Item> => {
     return { title: parts[0], description: parts[1] }
   }).filter((ad: any) => trim(ad.title) !== '');
 
-  const examples = properties.Examples.rich_text.map((rt: any) => rt.plain_text) || [];
-  const links = properties.Links.rich_text.map((rt: any) => rt.plain_text) || [];
+  const examples = properties.Examples.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((example: any) => trim(example) !== '');
+  const links = properties.Links.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((link: any) => trim(link) !== '');
 
   const entityTypes =  []
   for (const et of properties['Entity Types'].relation) {
