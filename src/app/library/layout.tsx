@@ -16,7 +16,6 @@ export default function LibraryLayout({
 }>) {
   return (
     <div className='wrapper'>
-      <div>Header of Library</div>
       <div>{children}</div>
     </div>
   );

@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 100, 100, 100;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --seed-color: #1489FB;
+  --business-model-color: #d5e4ef;
+  --funding-option-color: #c4e2d3;
+  --entity-type-color: #eaceb1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,14 +21,38 @@
   }
 }
 
+@font-face {
+  font-family: 'Circular-Bold';
+  src: url('/fonts/Circular-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('/fonts/Circular-Regular.ttf');
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background: var(--background-start-rgb);
+  font-family: "Circular", sans-serif;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+
+.entity-type {
+  background-color: var(--entity-type-color);
+}
+
+.business-model {
+  background-color: var(--business-model-color);
+}
+
+.funding-option {
+  background-color: var(--funding-option-color);
 }
 
 @layer utilities {

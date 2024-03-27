@@ -1,22 +1,20 @@
 'use client'
 
 import React from 'react';
-import { EntityType } from '../../types';
-// import EntityList from '../components/EntityList';
-import { useReactTable, getCoreRowModel, ColumnDef } from '@tanstack/react-table'
+import { Item } from '../../types';
+import Link from 'next/link';
 import styles from './LibraryTable.module.scss'
 
 interface LibraryTableProps {
-  items: EntityType[];
+  type: string
+  items: Item[];
 }
 
-const LibraryTable: React.FC<LibraryTableProps> = ({ items }) => {
-  console.log('tablexxx', items)
-
+const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
   const [globalFilter, setGlobalFilter] = React.useState('')
 
-  const filteredEntityTypes = React.useMemo(() => items.filter((entityType) => {
-    return entityType.name?.toLowerCase().includes(globalFilter.toLowerCase())
+  const filteredItems = React.useMemo(() => items.filter((item) => {
+    return item.name?.toLowerCase().includes(globalFilter.toLowerCase())
   }), [items, globalFilter]);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,29 +23,55 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ items }) => {
 
   return (
     <div>
-      <div className='mb-8'>Filter: <input name='globalFilter' value={globalFilter} onChange={handleFilterChange} /> </div>
+      <div className='mb-0'>Filter: <input name='globalFilter' value={globalFilter} onChange={handleFilterChange} /> </div>
       <table className={styles.libraryTable}>
         <thead>
           <tr>
             <th>Name</th>
-            <th>Business Models</th>
-            <th>Funding Options</th>
+            <th>Compatible Entity Structures</th>
+            <th>Compatible Business Models</th>
+            <th>Compatible Funding Options</th>
           </tr>
         </thead>
         <tbody>
-          {filteredEntityTypes.map((entityType) => (
-            <tr key={entityType.name} className='bg-slate-50 mb-2'>
+          {filteredItems.map((item) => (
+            <tr key={item.name} className='bg-slate-50 mb-2'>
               <td className='text-center'>
-                <h3 className='text-2xl font-bold'>{entityType.name}</h3>
+                <Link href={`/library/${type}/${item.id}`}>
+                  <h3 className='text-xl font-bold'>{item.name}</h3>
+                </Link>
               </td>
               <td>
-                {entityType.businessModels.map(model => (
-                  <span key={model.name}>{model.name}, </span>
+                {item.entityTypes?.map(entity => (
+                  <Link
+                    href={`/library/entity-types/${entity.id}`}
+                    className='rounded-2xl text-center px-4 py-1 mr-3 my-1 inline-block entity-type'
+                    key={entity.name}
+                  >
+                    {entity.name}
+                  </Link>
                 ))}
               </td>
               <td>
-                {entityType.fundingOptions.map(option => (
-                  <span key={option.name}>{option.name}, </span>
+                {item.businessModels?.map(model => (
+                  <Link
+                    href={`/library/business-models/${model.id}`}
+                    className='rounded-2xl text-center px-4 py-1 mr-3 my-1 inline-block business-model'
+                    key={model.name}
+                  >
+                    {model.name}
+                  </Link>
+                ))}
+              </td>
+              <td>
+                {item.fundingOptions?.map(option => (
+                  <Link
+                    href={`/library/funding-options/${option.id}`}
+                    className='rounded-2xl text-center px-4 py-1 mr-3 my-1 inline-block funding-option'
+                    key={option.name}
+                  >
+                    {option.name}
+                  </Link>
                 ))}
               </td>
             </tr>

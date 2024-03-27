@@ -1,6 +1,11 @@
 .libraryTable {
   border-collapse:separate;
-  border-spacing: 0 1em;
+  border-spacing: 0em 1em;
+  border-color: #f7f9fb;
+
+  th, td {
+    padding: 0 1em;
+  }
 
   td:first-child,
   th:first-child {
