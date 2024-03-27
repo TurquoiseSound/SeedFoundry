@@ -22,7 +22,7 @@ const ViewItemPage: NextPage<{ params: { id: string, type: string } }> = ({ para
   </>);
 };
 
-export const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
+const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
   const item = await fetchItem(props.id)
 
   const typeName = startCase(props.type)
@@ -47,7 +47,7 @@ export const ItemDetails: React.FC<{ id: string, type: string }> = async (props)
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>🏢 Compatible Entity Structures</h2>
-        {item.items?.map((option: Item) => (
+        {item.entityTypes?.map((option: Item) => (
           <Link
             key={option.name}
             href={`/library/entity-types/${option.id}`}

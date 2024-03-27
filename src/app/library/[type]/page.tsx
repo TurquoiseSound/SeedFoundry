@@ -7,7 +7,7 @@ import GoalsSelect from '../../../components/GoalsSelect';
 import { fetchItems } from '../../api/fetchItems';
 import styles from './Library.module.scss'
 
-export const EntityList: React.FC<{ type: string }> = async ({ type }) => {
+const EntityList: React.FC<{ type: string }> = async ({ type }) => {
   const items = await fetchItems(type)
 
   return (

@@ -8,7 +8,7 @@ import styles from './GoalsSelect.module.scss';
 const Option = (props: OptionProps<Goal>) => {
   const { isSelected, isMulti, data } = props;
 
-  const onClickMultiOption = (e) => {
+  const onClickMultiOption = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     props.selectOption({...data});
     e.stopPropagation();
     e.preventDefault();
