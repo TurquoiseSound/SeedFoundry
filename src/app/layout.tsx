@@ -7,6 +7,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
+import GoalsProvider from './GoalsProvider'
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -34,7 +36,11 @@ export default function RootLayout({
             <h1 className='text-2xl inline ml-2 align-middle' style={{ color:'#1489FB' }}>SEED Founding</h1>
           </Link>
         </header>
-        <div className='px-10 pt-10'>{children}</div>
+        <div className='px-10 pt-10'>
+          <GoalsProvider>
+            {children}
+          </GoalsProvider>
+          </div>
       </body>
     </html>
   );

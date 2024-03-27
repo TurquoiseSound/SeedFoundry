@@ -1,9 +1,10 @@
 'use client'
 
-import React from 'react';
-import Select, { components, OptionProps, ClearIndicatorProps, MultiValueGenericProps, PlaceholderProps } from 'react-select';
+import React, { useContext } from 'react';
+import Select, { ActionMeta, components, MultiValue, OptionProps, ClearIndicatorProps } from 'react-select';
 import { type Goal } from '../../app/api/fetchGoals';
 import styles from './GoalsSelect.module.scss';
+import { GoalsContext } from '@/app/GoalsProvider';
 
 const Option = (props: OptionProps<Goal>) => {
   const { isSelected, isMulti, data } = props;
@@ -43,6 +44,19 @@ const ClearIndicator = (props: ClearIndicatorProps<Goal, true>) => {
 };
 
 export default function GoalsSelect({ goals } : { goals: Goal[] }) {
+  let { selectedGoals, setSelectedGoals }  = useContext(GoalsContext);
+
+  const handleChangeSelect = (newValue: MultiValue<Goal>, action: ActionMeta<Goal>) => {
+    const option = action.option
+    if (!option) return;
+    if (action.action === 'deselect-option') {
+      setSelectedGoals(selectedGoals.filter(goal => goal.value !== option.value));
+    } else if (action.action === 'select-option') {
+      console.log("adding new goal")
+      setSelectedGoals([...selectedGoals, option]);
+    }
+  }
+
   return (
     <Select
       className={styles.goalsSelect}
@@ -53,10 +67,12 @@ export default function GoalsSelect({ goals } : { goals: Goal[] }) {
       closeMenuOnSelect={false}
       components={{ ClearIndicator, Option }}
       controlShouldRenderValue={false}
+      defaultValue={selectedGoals}
       hideSelectedOptions={false}
       instanceId="goals-select"
       isMulti
       name="goals"
+      onChange={handleChangeSelect}
       options={goals}
       placeholder="What are your goals?"
     />
