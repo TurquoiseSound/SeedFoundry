@@ -2,11 +2,6 @@ import { isEmpty } from 'lodash';
 import { Client } from '@notionhq/client';
 import { cache } from 'react'
 
-export type Goal = {
-  value: string
-  label: string
-}
-
 // Initialize Notion client
 const notion = new Client({
   auth: process.env.NOTION_SECRET,
@@ -44,5 +39,5 @@ const convertPagetoItem = (page: any): Goal => {
   const nameKey = Object.keys(properties).find(key => properties[key].id === 'title') || 'title'
   const name = properties[nameKey].title[0]?.plain_text;
 
-  return { value: page.id, label: name };
+  return { id: page.id, value: page.id, label: name };
 }

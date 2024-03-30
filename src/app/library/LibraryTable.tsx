@@ -1,25 +1,44 @@
 'use client'
 
 import React from 'react';
-import { Item } from '../../types';
 import Link from 'next/link';
-import styles from './LibraryTable.module.scss'
+import { isEmpty } from 'lodash';
+import { GoalsContext } from '@/app/GoalsProvider';
+import { Item } from '../../types';
+
+import styles from './LibraryTable.module.scss';
 
 interface LibraryTableProps {
-  type: string
+  type: string;
   items: Item[];
 }
 
 const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
   const [globalFilter, setGlobalFilter] = React.useState('')
+  const { selectedGoals }  = React.useContext(GoalsContext);
 
-  const filteredItems = React.useMemo(() => items.filter((item) => {
-    return item.name?.toLowerCase().includes(globalFilter.toLowerCase())
-  }), [items, globalFilter]);
+  const filteredItems = React.useMemo<Item[]>(() => {
+    let newItems = items.filter((item) => {
+      return item.name?.toLowerCase().includes(globalFilter.toLowerCase())
+    })
 
-  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setGlobalFilter(e.target.value)
-  }
+    if (selectedGoals.length > 0) {
+      newItems = newItems.sort((a, b) => {
+        // compare aggragated scores of related goals to selected goals
+        const aRelatedGoals = a.relatedGoals || {}
+        const bRelatedGoals = b.relatedGoals || {}
+        a.goalScore = isEmpty(aRelatedGoals) ? 0 : Object.keys(aRelatedGoals).filter(rg => selectedGoals.some(sg => sg.id === rg)).reduce((acc, rg) => acc * aRelatedGoals[rg], 1);
+        b.goalScore = isEmpty(bRelatedGoals) ? 0 : Object.keys(bRelatedGoals).filter(rg => selectedGoals.some(sg => sg.id === rg)).reduce((acc, rg) => acc * bRelatedGoals[rg], 1);
+        return b.goalScore - a.goalScore;
+      })
+    }
+
+    return newItems;
+  }, [items, globalFilter, selectedGoals]);
+
+  const handleFilterChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setGlobalFilter(e.target.value);
+  }, [])
 
   return (
     <div>
@@ -31,11 +50,12 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
             <th>Compatible Entity Structures</th>
             <th>Compatible Business Models</th>
             <th>Compatible Funding Options</th>
+            {selectedGoals.length > 0 ? <th>Goal Compatability</th> : null}
           </tr>
         </thead>
         <tbody>
-          {filteredItems.map((item) => (
-            <tr key={item.name} className='bg-slate-50 mb-2'>
+          {filteredItems.map((item : Item) => (
+            <tr key={item.name} className='bg-slate-50 mb-2' style={{ opacity: selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1}}>
               <td className='text-center'>
                 <Link href={`/library/${type}/${item.id}`}>
                   <h3 className='text-xl font-bold'>{item.name}</h3>
@@ -74,6 +94,7 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
                   </Link>
                 ))}
               </td>
+              {selectedGoals.length > 0 ? <td>{Math.round((item.goalScore || 0)  * 100)}</td> : null}
             </tr>
           ))}
         </tbody>
@@ -81,6 +102,5 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
     </div>
   );
 };
-
 
 export default LibraryTable;

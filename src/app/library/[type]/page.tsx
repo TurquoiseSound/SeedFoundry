@@ -36,16 +36,16 @@ const EntityTypesPage: NextPage<{ params: { type: string } }> = ({ params }) => 
             Entity Types
           </Link>
           <Link
-            href='/library/business-models'
-            className={'rounded-2xl p-2 ' + (type === 'business-models' ? styles.selected : 'bg-transparent')}
-          >
-            Business Models
-          </Link>
-          <Link
             href='/library/funding-options'
             className={'rounded-2xl p-2 ' + (type === 'funding-options' ? styles.selected : 'bg-transparent')}
           >
             Funding Options
+          </Link>
+          <Link
+            href='/library/business-models'
+            className={'rounded-2xl p-2 ' + (type === 'business-models' ? styles.selected : 'bg-transparent')}
+          >
+            Business Models
           </Link>
         </div>
       </div>

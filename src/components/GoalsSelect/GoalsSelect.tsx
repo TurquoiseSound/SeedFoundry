@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react';
 import Select, { ActionMeta, components, MultiValue, OptionProps, ClearIndicatorProps } from 'react-select';
-import { type Goal } from '../../app/api/fetchGoals';
+import { type Goal } from '@/types';
 import styles from './GoalsSelect.module.scss';
 import { GoalsContext } from '@/app/GoalsProvider';
 
@@ -48,11 +48,14 @@ export default function GoalsSelect({ goals } : { goals: Goal[] }) {
 
   const handleChangeSelect = (newValue: MultiValue<Goal>, action: ActionMeta<Goal>) => {
     const option = action.option
+    if (action.action === 'clear') {
+      setSelectedGoals([]);
+      return
+    }
     if (!option) return;
     if (action.action === 'deselect-option') {
       setSelectedGoals(selectedGoals.filter(goal => goal.value !== option.value));
     } else if (action.action === 'select-option') {
-      console.log("adding new goal")
       setSelectedGoals([...selectedGoals, option]);
     }
   }

@@ -11,18 +11,23 @@ const notion = new Client({
 const databases: { [key: string]: string | undefined } = {
   'entity-types': process.env.NOTION_ENTITY_DATABASE,
   'business-models': process.env.NOTION_BUSINESS_MODEL_DATABASE,
-  'funding-options': process.env.NOTION_FUNDING_OPTION_DATABASE
+  'funding-options': process.env.NOTION_FUNDING_OPTION_DATABASE,
+  'goals-entity-types': process.env.NOTION_GOALS_ENTITIES_DATABASE,
+  'goals-business-models': process.env.NOTION_GOALS_BUSINESS_MODELS_DATABASE,
+  'goals-funding-options': process.env.NOTION_GOALS_FUNDING_OPTIONS_DATABASE
 };
 
 export const fetchItem = cache(async (page_id: string): Promise<Item> => {
   const response = await notion.pages.retrieve({ page_id });
-  return convertPagetoItem(response);
+  return convertPagetoItem(response, []);
 })
 
 export const fetchItems = cache(async (type: string): Promise<Item[]> => {
   const databaseId = databases[type];
+  const goalsDatabaseId = databases[`goals-${type}`];
+  const typeKey = type.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ').slice(0, -1);
 
-  if (!databaseId) {
+  if (!databaseId || !goalsDatabaseId) {
     throw new Error('Database ID is not set');
   }
 
@@ -36,16 +41,23 @@ export const fetchItems = cache(async (type: string): Promise<Item[]> => {
     }
   });
 
+  const goalsResponse = await notion.databases.query({
+    database_id: goalsDatabaseId
+  });
+
   const items = Promise.all(response.results.map(async (page) => {
-    // Assuming each property is a rich_text or title for simplicity
-    // Adjust according to your actual data structure in Notion
-    return convertPagetoItem(page);
+    const relatedGoals = goalsResponse.results.filter((goal) => {
+      if (!isFullPageOrDatabase(goal)) return false;
+      let properties = goal.properties as any; // Cast to any for simplicity; consider defining a more precise type
+      return properties[typeKey]?.relation[0]?.id === page.id // some((relation: any) => relation.id === page.id);
+    })
+    return convertPagetoItem(page, relatedGoals);
   }));
 
   return items;
 })
 
-const convertPagetoItem = async (page: any): Promise<Item> => {
+const convertPagetoItem = async (page: any, relatedGoals: any[]): Promise<Item> => {
   let properties = page.properties as any; // Cast to any for simplicity; consider defining a more precise type
 
   const nameKey = Object.keys(properties).find(key => properties[key].id === 'title') || 'title'
@@ -90,17 +102,23 @@ const convertPagetoItem = async (page: any): Promise<Item> => {
     fundingOptions.push({ id: fo.id, name: (response.properties as any)[nameKey].title[0]?.plain_text || 'No Name'})
   }
 
+  const relatedGoalsMap: { [id : string] : number } = {}
+  for (const goal of relatedGoals) {
+    relatedGoalsMap[goal.properties['Goal'].relation[0].id] = parseFloat(goal.properties['Rating'].number)
+  }
+
   return {
     id: page.id,
-    name,
-    description,
     advantages,
-    disadvantages,
-    examples,
-    links,
-    entityTypes,
     businessModels,
-    fundingOptions
+    description,
+    disadvantages,
+    entityTypes,
+    examples,
+    fundingOptions,
+    links,
+    name,
+    relatedGoals: relatedGoalsMap
   };
 }
 

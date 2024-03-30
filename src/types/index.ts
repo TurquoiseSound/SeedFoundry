@@ -11,6 +11,8 @@ export type EntityType = {
   entityTypes?: EntityType[];
   businessModels?: BusinessModel[];
   fundingOptions?: FundingOption[];
+  relatedGoals?: RelatedGoalMap;
+  goalScore?: number;
 };
 
 export type BusinessModel = {
@@ -24,6 +26,8 @@ export type BusinessModel = {
   entityTypes?: EntityType[];
   businessModels?: BusinessModel[];
   fundingOptions?: FundingOption[];
+  relatedGoals?: RelatedGoalMap;
+  goalScore?: number;
 };
 
 export type FundingOption = {
@@ -37,9 +41,19 @@ export type FundingOption = {
   businessModels?: BusinessModel[];
   entityTypes?: EntityType[];
   fundingOptions?: FundingOption[];
+  relatedGoals?: RelatedGoalMap;
+  goalScore?: number;
 };
 
 export type Advantage = {
   title: string;
   description?: string;
 }
+
+export type Goal = {
+  id: string
+  value: string
+  label: string
+}
+
+export type RelatedGoalMap = { [id: string] : number }
