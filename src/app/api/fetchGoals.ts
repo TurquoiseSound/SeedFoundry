@@ -1,6 +1,7 @@
 import { isEmpty } from 'lodash';
 import { Client } from '@notionhq/client';
 import { cache } from 'react'
+import { Goal } from '../../types';
 
 // Initialize Notion client
 const notion = new Client({
