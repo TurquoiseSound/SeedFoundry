@@ -82,21 +82,21 @@ const convertPagetoItem = async (page: any, relatedGoals: any[]): Promise<Item> 
   const links = properties.Links.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((link: any) => trim(link) !== '');
 
   const entityTypes =  []
-  for (const et of properties['Entity Types'].relation) {
+  for (const et of properties['Compatible Entity Types'].relation) {
     const response = await notion.pages.retrieve({ page_id: et.id });
     if (!isFullPageOrDatabase(response)) continue;
     entityTypes.push({ id: et.id, name: (response.properties as any)[nameKey].title[0]?.plain_text || 'No Name'})
   }
 
   const businessModels =  []
-  for (const bm of properties['Business Models'].relation) {
+  for (const bm of properties['Compatible Business Models'].relation) {
     const response = await notion.pages.retrieve({ page_id: bm.id });
     if (!isFullPageOrDatabase(response)) continue;
     businessModels.push({ id: bm.id, name: (response.properties as any)[nameKey].title[0]?.plain_text || 'No Name'})
   }
 
   const fundingOptions = []
-  for (const fo of properties['Funding Options'].relation) {
+  for (const fo of properties['Compatible Funding Options'].relation) {
     const response = await notion.pages.retrieve({ page_id: fo.id });
     if (!isFullPageOrDatabase(response)) continue;
     fundingOptions.push({ id: fo.id, name: (response.properties as any)[nameKey].title[0]?.plain_text || 'No Name'})

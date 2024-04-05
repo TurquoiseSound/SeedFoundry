@@ -17,19 +17,14 @@ export const fetchGoals = cache(async (): Promise<Goal[]> => {
 
   const response = await notion.databases.query({
     database_id: databaseId,
-    sorts: [
-      {
-        "property": "title",
-        "direction": "ascending"
-      }
-    ]
   });
 
+  // Note for some reason reverse is needed to get the items in the same order as they are in the database
   const items = response.results.map(page => {
     // Assuming each property is a rich_text or title for simplicity
     // Adjust according to your actual data structure in Notion
     return convertPagetoItem(page);
-  }).filter(item => !isEmpty(item));
+  }).filter(item => !isEmpty(item)).reverse();
 
   return Promise.resolve(items);
 });
