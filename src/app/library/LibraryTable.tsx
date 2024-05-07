@@ -42,7 +42,7 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
 
   return (
     <div>
-      <div className='mb-0'>Filter: <input name='globalFilter' value={globalFilter} onChange={handleFilterChange} /> </div>
+      <div className='mb-4 md:mb-0'>Filter: <input name='globalFilter' value={globalFilter} onChange={handleFilterChange} /> </div>
       <table className={styles.libraryTable}>
         <thead>
           <tr>
@@ -55,13 +55,16 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
         </thead>
         <tbody>
           {filteredItems.map((item : Item) => (
-            <tr key={item.name} className='bg-slate-50 mb-2' style={{ opacity: selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1}}>
-              <td className='text-center'>
+            <tr key={item.name} className='bg-transparent mb-2' style={{ opacity: selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1}}>
+              {/* data-label used to transform table into list on mobile */}
+
+              <td className='text-center' data-label="">
                 <Link href={`/library/${type}/${item.id}`}>
                   <h3 className='text-xl font-bold'>{item.name}</h3>
                 </Link>
               </td>
-              <td>
+
+              <td data-label="Compatible Entity Structures: ">
                 {item.entityTypes?.map(entity => (
                   <Link
                     href={`/library/entity-types/${entity.id}`}
@@ -72,7 +75,8 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
                   </Link>
                 ))}
               </td>
-              <td>
+
+              <td data-label="Compatible Business Models">
                 {item.businessModels?.map(model => (
                   <Link
                     href={`/library/business-models/${model.id}`}
@@ -83,7 +87,8 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
                   </Link>
                 ))}
               </td>
-              <td>
+
+              <td data-label="Compatible Funding Options">
                 {item.fundingOptions?.map(option => (
                   <Link
                     href={`/library/funding-options/${option.id}`}
@@ -94,7 +99,8 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
                   </Link>
                 ))}
               </td>
-              {selectedGoals.length > 0 ? <td>{Math.round((item.goalScore || 0)  * 100)}</td> : null}
+
+              {selectedGoals.length > 0 ? <td data-label="Goal Compatibility"><span className='pl-5'>{Math.round((item.goalScore || 0)  * 100)}</span></td> : null}
             </tr>
           ))}
         </tbody>

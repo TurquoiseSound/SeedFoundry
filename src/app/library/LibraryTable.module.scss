@@ -5,6 +5,7 @@
 
   th, td {
     padding: 0 1em;
+    background-color: theme('colors.slate.50');
   }
 
   td:first-child,
@@ -15,5 +16,53 @@
   td:last-child,
   th:last-child {
     border-radius: 0 10px 10px 0;
+  }
+}
+
+/* Hide table headers on mobile */
+@media (max-width: 600px) {
+  .libraryTable {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+
+    thead {
+      display: none;
+    }
+
+    tbody, tr, td {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    td {
+      position: relative;
+      // padding-left: 50%;
+      // text-align: right;
+      border-bottom: 1px dotted #ccc;
+      padding: 0.5em 1em;
+    }
+
+    td:first-child,
+    th:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+
+    td:last-child,
+    th:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+
+    td::before {
+      content: attr(data-label);
+      // position: absolute;
+      // left: 0;
+      // width: 50%;
+      // padding-left: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
   }
 }

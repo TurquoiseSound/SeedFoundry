@@ -24,26 +24,28 @@ const EntityTypesPage: NextPage<{ params: { type: string } }> = ({ params }) => 
   return (
     <div>
       {/* <h1 className='text-3xl font-bold mb-3'>{name}</h1> */}
-      <div className='flex flex-row content-center align-center justify-between'>
-        <Suspense fallback={<div>Loading...</div>}>
-          <GoalsSelect />
-        </Suspense>
-        <div className='bg-slate-300 rounded-3xl p-3 mb-5 inline-block'>
+      <div className='flex flex-col md:flex-row content-center align-center justify-between md:items-center'>
+        <div className='mb-5'>
+          <Suspense fallback={<div>Loading...</div>}>
+            <GoalsSelect />
+          </Suspense>
+        </div>
+        <div className='bg-slate-300 rounded-3xl p-2 inline-block mb-5 flex text-sm sm:text-base'>
           <Link
             href='/library/entity-types'
-            className={'rounded-2xl p-2 ' + (type === 'entity-types' ? styles.selected : 'bg-transparent')}
+            className={'flex-1 text-nowrap text-center rounded-2xl px-2 py-1 ' + (type === 'entity-types' ? styles.selected : 'bg-transparent')}
           >
             Entity Types
           </Link>
           <Link
             href='/library/funding-options'
-            className={'rounded-2xl p-2 ' + (type === 'funding-options' ? styles.selected : 'bg-transparent')}
+            className={'flex-1 text-nowrap text-center rounded-2xl px-2 py-1 ' + (type === 'funding-options' ? styles.selected : 'bg-transparent')}
           >
             Funding Options
           </Link>
           <Link
             href='/library/business-models'
-            className={'rounded-2xl p-2 ' + (type === 'business-models' ? styles.selected : 'bg-transparent')}
+            className={'flex-1 text-nowrap text-center rounded-2xl px-2 py-1 ' + (type === 'business-models' ? styles.selected : 'bg-transparent')}
           >
             Business Models
           </Link>

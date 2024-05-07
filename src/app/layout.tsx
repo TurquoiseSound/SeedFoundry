@@ -36,7 +36,7 @@ export default function RootLayout({
             <h1 className='text-2xl inline ml-2 align-middle' style={{ color:'#1489FB' }}>SEED Founding</h1>
           </Link>
         </header>
-        <div className='px-10 pt-10'>
+        <div className='md:px-10 pt-6'>
           <GoalsProvider>
             {children}
           </GoalsProvider>

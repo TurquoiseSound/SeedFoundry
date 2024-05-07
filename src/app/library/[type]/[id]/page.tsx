@@ -31,8 +31,8 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
     <div>
       <h1 className='text-3xl mb-5'>{typeName.substring(0, typeName.length - 1)}: {item.name}</h1>
       <p>{item.description}</p>
-      <div className='flex mt-10'>
-        <ul className='flex-1 w-full bg-slate-400 p-5 border rounded-lg border-dashed text-center mr-10'>
+      <div className='flex flex-wrap gap-4 mt-10'>
+        <ul className='flex-1 w-full bg-slate-400 p-5 border rounded-lg border-dashed text-center'>
           <h2 className='text-2xl pb-5'>👍 Advantages</h2>
           {item.advantages?.map((advantage: Advantage) => (
             <AdvantageItem key={advantage.title} title={advantage.title} description={advantage.description} />
