@@ -79,27 +79,30 @@ const convertPagetoItem = async (page: any, relatedGoals: any[]): Promise<Item> 
   }).filter((ad: any) => trim(ad.title) !== '');
 
   const examples = properties.Examples.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((example: any) => trim(example) !== '');
-  const links = properties.Links.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((link: any) => trim(link) !== '');
+  const links = properties.Resources.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((link: any) => trim(link) !== '');
 
   const entityTypes =  []
+  let i = 0
   for (const et of properties['Compatible Entity Types'].relation) {
-    const response = await notion.pages.retrieve({ page_id: et.id });
-    if (!isFullPageOrDatabase(response)) continue;
-    entityTypes.push({ id: et.id, name: (response.properties as any)[nameKey].title[0]?.plain_text || 'No Name'})
+    // Pull the name from a rollup property
+    entityTypes.push({ id: et.id, name: properties['Compatible Entity Type Names'].rollup.array[i]?.title[0]?.plain_text || 'No Name'})
+    i++
   }
 
   const businessModels =  []
+  i = 0
   for (const bm of properties['Compatible Business Models'].relation) {
-    const response = await notion.pages.retrieve({ page_id: bm.id });
-    if (!isFullPageOrDatabase(response)) continue;
-    businessModels.push({ id: bm.id, name: (response.properties as any)[nameKey].title[0]?.plain_text || 'No Name'})
+    // Pull the name from a rollup property
+    businessModels.push({ id: bm.id, name: properties['Compatible Business Model Names'].rollup.array[i]?.title[0]?.plain_text || 'No Name'})
+    i++
   }
 
   const fundingOptions = []
+  i = 0
   for (const fo of properties['Compatible Funding Options'].relation) {
-    const response = await notion.pages.retrieve({ page_id: fo.id });
-    if (!isFullPageOrDatabase(response)) continue;
-    fundingOptions.push({ id: fo.id, name: (response.properties as any)[nameKey].title[0]?.plain_text || 'No Name'})
+    // Pull the name from a rollup property
+    fundingOptions.push({ id: fo.id, name: properties['Compatible Funding Option Names'].rollup.array[i]?.title[0]?.plain_text || 'No Name'})
+    i++
   }
 
   const relatedGoalsMap: { [id : string] : number } = {}

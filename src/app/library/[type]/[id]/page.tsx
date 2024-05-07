@@ -58,7 +58,7 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
         ))}
       </div>
       <div className='mt-10'>
-        <h2 className='text-2xl mb-2'>🌐 Links</h2>
+        <h2 className='text-2xl mb-2'>🌐 Resources</h2>
         {item.links?.map((link) => (
           <p key={link}><a
             href={link}
