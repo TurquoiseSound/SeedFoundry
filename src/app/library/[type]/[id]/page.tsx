@@ -1,6 +1,6 @@
 import { startCase } from 'lodash';
 import React, { Suspense } from 'react';
-import { Advantage, Item } from '../../../../types';
+import { Advantage, Item, Resource } from '../../../../types';
 import { NextPage } from 'next';
 import AdvantageItem from '../../AdvantageItem';
 import { fetchItem } from '../../../api/fetchItems';
@@ -34,45 +34,50 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
       <div className='flex flex-wrap gap-4 mt-10'>
         <ul className='flex-1 w-full bg-slate-400 p-5 border rounded-lg border-dashed text-center'>
           <h2 className='text-2xl pb-5'>👍 Advantages</h2>
-          {item.advantages?.map((advantage: Advantage) => (
-            <AdvantageItem key={advantage.title} title={advantage.title} description={advantage.description} />
+          {item.advantages?.map((advantage: Advantage, i) => (
+            <AdvantageItem key={i} title={advantage.title} description={advantage.description} />
           ))}
         </ul>
         <ul className='flex-1 w-full bg-slate-400 p-5 border rounded-lg border-dashed text-center'>
           <h2 className='text-2xl pb-5'>👎 Disadvantages</h2>
-          {item.disadvantages?.map((advantage: Advantage) => (
-            <AdvantageItem key={advantage.title} title={advantage.title} description={advantage.description} />
+          {item.disadvantages?.map((advantage: Advantage, i) => (
+            <AdvantageItem key={i} title={advantage.title} description={advantage.description} />
           ))}
         </ul>
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>👀 Examples</h2>
-        {item.examples?.map((example) => (
-          <p key={example}
-          ><a
-            href={example}
-            className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
-          >
-            {example}
-          </a></p>
+        {item.examples?.map((example: Resource, i) => (
+          <p key={i}>
+            <a
+              href={example.link}
+              className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
+              target='_blank'
+            >
+              {example.content}
+            </a>
+          </p>
         ))}
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>🌐 Resources</h2>
-        {item.links?.map((link) => (
-          <p key={link}><a
-            href={link}
-            className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
-          >
-            {link}
-          </a></p>
+        {item.links?.map((link: Resource, i) => (
+          <p key={i}>
+              <a
+              href={link.link}
+              className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
+              target='_blank'
+            >
+              {link.content}
+            </a>
+          </p>
         ))}
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>🏢 Compatible Entity Structures</h2>
-        {item.entityTypes?.map((option: Item) => (
+        {item.entityTypes?.map((option: Item, i) => (
           <Link
-            key={option.name}
+            key={i}
             href={`/library/entity-types/${option.id}`}
             className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block entity-type'
           >
@@ -82,9 +87,9 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>💰 Compatible Funding Options</h2>
-        {item.fundingOptions?.map((option: Item) => (
+        {item.fundingOptions?.map((option: Item, i) => (
           <Link
-            key={option.name}
+            key={i}
             href={`/library/funding-options/${option.id}`}
             className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block funding-option'
           >
@@ -94,9 +99,9 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>🤝 Compatible Business Models</h2>
-        {item.businessModels?.map((model: Item)  => (
+        {item.businessModels?.map((model: Item, i)  => (
           <Link
-            key={model.name}
+            key={i}
             href={`/library/business-models/${model.id}`}
             className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block business-model'
           >

@@ -78,8 +78,8 @@ const convertPagetoItem = async (page: any, relatedGoals: any[]): Promise<Item> 
     return { title: parts[0], description: parts[1] }
   }).filter((ad: any) => trim(ad.title) !== '');
 
-  const examples = properties.Examples.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((example: any) => trim(example) !== '');
-  const links = properties.Resources.rich_text.reduce((final: string[], rt: any) => [...final, ...rt.plain_text.split(/[\s,]+/)], []).filter((link: any) => trim(link) !== '');
+  const examples = properties.Examples.rich_text.map((rt: any) => ({ content: trim(rt.plain_text), link: rt.href })).filter((example: any) => example.content !== '' && example.content !== '•');
+  const links = properties.Resources.rich_text.map((rt: any) => ({ content: trim(rt.plain_text), link: rt.href })).filter((link: any) => link.content !== ''  && link.content !== '•');
 
   const entityTypes =  []
   let i = 0
