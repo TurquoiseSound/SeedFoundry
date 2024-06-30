@@ -9,8 +9,8 @@ const AdvantageItem = ({ title, description }: { title: string, description?: st
   return (
     <li className='rounded-xl bg-slate-100 mb-2 p-2 relative text-left'>
       <h3 className='font-bold'>{title}</h3>
-      {description && <button className='absolute top-2 right-2' onClick={() => setShowDescription(!showDescription)}>{<FontAwesomeIcon icon={showDescription ? faChevronDown : faChevronRight}></FontAwesomeIcon>}</button>}
-      {description && <p className={showDescription ? '' : 'hidden'}>{description}</p>}
+      {description && description.length > 0 && <button className='absolute top-2 right-2' onClick={() => setShowDescription(!showDescription)}>{<FontAwesomeIcon icon={showDescription ? faChevronDown : faChevronRight}></FontAwesomeIcon>}</button>}
+      {description && description.length > 0 && <p className={showDescription ? '' : 'hidden'}>{description}</p>}
     </li>
   )
 }

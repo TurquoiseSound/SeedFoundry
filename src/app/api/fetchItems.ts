@@ -68,15 +68,15 @@ const convertPagetoItem = async (page: any, relatedGoals: any[]): Promise<Item> 
     return full_text + rt.plain_text
   }, '').split(/\r?\n/).map((ad: string) => {
     const parts = splitOnFirstCharacter(ad, ':');
-    return { title: parts[0], description: parts[1] }
-  }).filter((ad: any) => trim(ad.title) !== '');
+    return { title: trim(parts[0]), description: trim(parts[1]) }
+  }).filter((ad: any) => ad.title !== '');
 
   const disadvantages = (properties.Disadvantages.rich_text as Array<any>).reduce<string>((full_text: string, rt: any) => {
     return full_text + rt.plain_text
   }, '').split(/\r?\n/).map((ad: string) => {
     const parts = splitOnFirstCharacter(ad, ':');
-    return { title: parts[0], description: parts[1] }
-  }).filter((ad: any) => trim(ad.title) !== '');
+    return { title: trim(parts[0]), description: trim(parts[1]) }
+  }).filter((ad: any) => ad.title !== '');
 
   const examples = properties.Examples.rich_text.map((rt: any) => ({ content: trim(rt.plain_text), link: rt.href })).filter((example: any) => example.content !== '' && example.content !== '•');
   const links = properties.Resources.rich_text.map((rt: any) => ({ content: trim(rt.plain_text), link: rt.href })).filter((link: any) => link.content !== ''  && link.content !== '•');
