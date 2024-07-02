@@ -1,6 +1,6 @@
 import { startCase } from 'lodash';
 import React, { Suspense } from 'react';
-import { Advantage, Item, Resource } from '../../../../types';
+import { Advantage, Item } from '../../../../types';
 import { NextPage } from 'next';
 import AdvantageItem from '../../AdvantageItem';
 import { fetchItem } from '../../../api/fetchItems';
@@ -12,7 +12,7 @@ const ViewItemPage: NextPage<{ params: { id: string, type: string } }> = ({ para
   return (<>
     <div className='fixed top-0 bottom-0 right-0 left-0 bg-slate-500 p-20 opacity-50'></div>
     <div className='bg-slate-200 rounded-xl p-10 z-10 mt-5 relative'>
-      <Link className='absolute top-5 right-5' href={`/library/${params.type}`}>
+      <Link className='absolute top-5 right-5 body-text' href={`/library/${params.type}`}>
         <FontAwesomeIcon icon={faXmark} className='fa-2xl'></FontAwesomeIcon>
       </Link>
       <Suspense fallback={<div>Loading...</div>}>
@@ -47,31 +47,11 @@ const ItemDetails: React.FC<{ id: string, type: string }> = async (props) => {
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>👀 Examples</h2>
-        {item.examples?.map((example: Resource, i) => (
-          <p key={i}>
-            <a
-              href={example.link}
-              className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
-              target='_blank'
-            >
-              {example.content}
-            </a>
-          </p>
-        ))}
+        <span dangerouslySetInnerHTML={{ __html: item.examples || '' }} />
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>🌐 Resources</h2>
-        {item.links?.map((link: Resource, i) => (
-          <p key={i}>
-              <a
-              href={link.link}
-              className='rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block'
-              target='_blank'
-            >
-              {link.content}
-            </a>
-          </p>
-        ))}
+        <span dangerouslySetInnerHTML={{ __html: item.resources || '' }} />
       </div>
       <div className='mt-10'>
         <h2 className='text-2xl mb-2'>🏢 Compatible Entity Structures</h2>

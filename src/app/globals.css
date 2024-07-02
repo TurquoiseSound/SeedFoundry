@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 
   --seed-color: #1489FB;
+  --link-color: #3172af;
   --business-model-color: #d5e4ef;
   --funding-option-color: #c4e2d3;
   --entity-type-color: #eaceb1;
@@ -45,14 +46,25 @@ body {
 
 .entity-type {
   background-color: var(--entity-type-color);
+  color: rgb(var(--foreground-rgb));
 }
 
 .business-model {
   background-color: var(--business-model-color);
+  color: rgb(var(--foreground-rgb));
 }
 
 .funding-option {
   background-color: var(--funding-option-color);
+  color: rgb(var(--foreground-rgb));
+}
+
+a {
+  color: var(--link-color)
+}
+
+.body-text {
+  color: rgb(var(--foreground-rgb))
 }
 
 @layer utilities {

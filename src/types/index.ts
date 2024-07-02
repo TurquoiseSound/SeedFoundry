@@ -6,8 +6,8 @@ export type EntityType = {
   description?: string;
   advantages?: Advantage[];
   disadvantages?: Advantage[];
-  examples?: Resource[];
-  links?: Resource[];
+  examples?: string;
+  resources?: string;
   entityTypes?: EntityType[];
   businessModels?: BusinessModel[];
   fundingOptions?: FundingOption[];
@@ -21,8 +21,8 @@ export type BusinessModel = {
   description?: string;
   advantages?: Advantage[];
   disadvantages?: Advantage[];
-  examples?: Resource[];
-  links?: Resource[];
+  examples?: string;
+  resources?: string;
   entityTypes?: EntityType[];
   businessModels?: BusinessModel[];
   fundingOptions?: FundingOption[];
@@ -36,8 +36,8 @@ export type FundingOption = {
   description?: string;
   advantages?: Advantage[];
   disadvantages?: Advantage[];
-  examples?: Resource[];
-  links?: Resource[];
+  examples?: string;
+  resources?: string;
   businessModels?: BusinessModel[];
   entityTypes?: EntityType[];
   fundingOptions?: FundingOption[];
@@ -48,11 +48,6 @@ export type FundingOption = {
 export type Advantage = {
   title: string;
   description?: string;
-}
-
-export type Resource = {
-  content: string;
-  link?: string;
 }
 
 export type Goal = {

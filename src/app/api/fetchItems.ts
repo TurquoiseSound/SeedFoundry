@@ -78,8 +78,8 @@ const convertPagetoItem = async (page: any, relatedGoals: any[]): Promise<Item> 
     return { title: trim(parts[0]), description: trim(parts[1]) }
   }).filter((ad: any) => ad.title !== '');
 
-  const examples = properties.Examples.rich_text.map((rt: any) => ({ content: trim(rt.plain_text), link: rt.href })).filter((example: any) => example.content !== '' && example.content !== '•');
-  const links = properties.Resources.rich_text.map((rt: any) => ({ content: trim(rt.plain_text), link: rt.href })).filter((link: any) => link.content !== ''  && link.content !== '•');
+  const examples = richTextToHtml(properties.Examples.rich_text)
+  const resources = richTextToHtml(properties.Resources.rich_text)
 
   const entityTypes =  []
   let i = 0
@@ -119,9 +119,9 @@ const convertPagetoItem = async (page: any, relatedGoals: any[]): Promise<Item> 
     entityTypes,
     examples,
     fundingOptions,
-    links,
     name,
-    relatedGoals: relatedGoalsMap
+    relatedGoals: relatedGoalsMap,
+    resources
   };
 }
 
@@ -138,4 +138,36 @@ const splitOnFirstCharacter = (str: string, character: string) => {
 
   // Return the two parts as an array
   return [firstPart, secondPart];
+}
+
+// Function to convert rich text to HTML
+const richTextToHtml = (richText: any[]): string => {
+  let htmlContent = '';
+  richText.forEach(text => {
+    let content = text.text.content.replace(/\n/g, '<br>');
+    const annotations = text.annotations;
+
+    if (annotations.bold) {
+        content = `<b>${content}</b>`;
+    }
+    if (annotations.italic) {
+        content = `<i>${content}</i>`;
+    }
+    if (annotations.strikethrough) {
+        content = `<s>${content}</s>`;
+    }
+    if (annotations.underline) {
+        content = `<u>${content}</u>`;
+    }
+    if (annotations.code) {
+        content = `<code>${content}</code>`;
+    }
+    if (text.text.link) {
+        content = `<a href="${text.text.link.url}" target='__blank'>${content}</a>`;
+    }
+
+    htmlContent += content;
+  });
+
+  return htmlContent;
 }

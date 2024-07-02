@@ -62,7 +62,7 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
                 {/* data-label used to transform table into list on mobile */}
 
                 <td className='text-center' data-label="">
-                  <Link href={`/library/${type}/${item.id}`}>
+                  <Link href={`/library/${type}/${item.id}`} className='body-text'>
                     <h3 className='text-xl font-bold'>{item.name}</h3>
                   </Link>
                 </td>
