@@ -38,7 +38,13 @@ export const fetchItems = cache(async (type: string): Promise<Item[]> => {
       status: {
         equals: "Done"
       }
-    }
+    },
+    sorts: [
+      {
+        "property": "Name",
+        "direction": "ascending"
+      }
+    ]
   });
 
   const goalsResponse = await notion.databases.query({
