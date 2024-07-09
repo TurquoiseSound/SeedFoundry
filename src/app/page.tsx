@@ -9,7 +9,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between mt-10">
       <div className="z-10 max-w-5xl w-full justify-between lg:flex flex-col">
         <h1 className={`block text-6xl mb-10 ${styles.title}`} >Startup Ethical Economic Design</h1>
-        <h3 className='text-2xl mb-10'>Find a structure for your organization that allows you to maximize your impact on the world, without compromising your vision.</h3>
+        <h3 className='text-2xl mb-10'>Find a structure for your prosocial technology project that allows you to maximize your impact on the world, without compromising your vision.</h3>
         <div className='flex flex-row mb-5'>
           <Suspense fallback={<div>Loading...</div>}>
             <GoalsSelect />
