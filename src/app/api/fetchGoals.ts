@@ -1,39 +1,27 @@
 import { isEmpty } from 'lodash';
-import { Client } from '@notionhq/client';
-import { cache } from 'react'
+import { cache } from 'react';
 import { Goal } from '../../types';
-
-// Initialize Notion client
-const notion = new Client({
-  auth: process.env.NOTION_SECRET,
-});
+import { supabase } from '../../lib/supabase';
 
 export const fetchGoals = cache(async (): Promise<Goal[]> => {
-  const databaseId = process.env.NOTION_GOALS_DATABASE;
+  const { data, error } = await supabase
+    .from('goals')
+    .select('id, name')
+    .order('name');
 
-  if (!databaseId) {
-    throw new Error('Database ID is not set');
+  if (error) {
+    throw error;
   }
 
-  const response = await notion.databases.query({
-    database_id: databaseId,
-  });
+  if (!data) {
+    return [];
+  }
 
-  // Note for some reason reverse is needed to get the items in the same order as they are in the database
-  const items = response.results.map(page => {
-    // Assuming each property is a rich_text or title for simplicity
-    // Adjust according to your actual data structure in Notion
-    return convertPagetoItem(page);
-  }).filter(item => !isEmpty(item)).reverse();
+  const items = data.map(goal => ({
+    id: goal.id,
+    value: goal.id,
+    label: goal.name
+  })).filter(item => !isEmpty(item));
 
-  return Promise.resolve(items);
+  return items;
 });
-
-const convertPagetoItem = (page: any): Goal => {
-  let properties = page.properties as any; // Cast to any for simplicity; consider defining a more precise type
-
-  const nameKey = Object.keys(properties).find(key => properties[key].id === 'title') || 'title'
-  const name = properties[nameKey].title[0]?.plain_text;
-
-  return { id: page.id, value: page.id, label: name };
-}
