@@ -1,5 +1,59 @@
 .goalsSelect {
   min-width: 300px;
+  position: relative;
+  
+  :global {
+    .goals__control {
+      @apply bg-white border border-neutral-200 rounded-lg shadow-sm transition-all duration-200;
+      min-height: 48px;
+      
+      &:hover {
+        @apply border-neutral-300;
+      }
+      
+      &--is-focused {
+        @apply border-[--seed-color] shadow-md;
+        box-shadow: 0 0 0 1px var(--seed-color);
+      }
+    }
+    
+    .goals__placeholder {
+      @apply text-neutral-500;
+    }
+    
+    .goals__menu {
+      @apply mt-2 bg-white rounded-lg shadow-lg border border-neutral-200;
+      z-index: 10;
+    }
+    
+    .goals__option {
+      @apply p-3 cursor-pointer transition-all duration-200;
+      
+      &:hover {
+        @apply bg-[--seed-color-light];
+      }
+      
+      &--is-selected {
+        @apply bg-[--seed-color] text-white;
+        
+        &:hover {
+          @apply bg-[--seed-color-dark];
+        }
+      }
+    }
+    
+    .goals__multi-value {
+      @apply bg-[--seed-color-light] rounded-md m-1;
+      
+      &__label {
+        @apply text-[--seed-color-dark] px-2 py-1;
+      }
+      
+      &__remove {
+        @apply text-[--seed-color] hover:text-[--seed-color-dark] hover:bg-transparent;
+      }
+    }
+  }
 }
 
 .goalsMenu {
