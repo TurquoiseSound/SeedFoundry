@@ -21,9 +21,9 @@
   --earth-light: #8A9793;
   
   /* Accent color - vibrant but sophisticated */
-  --accent: #00C2FF;
-  --accent-dark: #0099E6;
-  --accent-light: #66DFFF;
+  --accent-rgb: 0, 194, 255;
+  --accent-dark-rgb: 0, 153, 230;
+  --accent-light-rgb: 102, 223, 255;
   
   /* Neutral colors as RGB values for opacity support */
   --neutral-900-rgb: 26, 28, 30;
@@ -110,8 +110,9 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-  @apply text-white shadow-lg shadow-accent/20;
+  background: linear-gradient(135deg, rgb(var(--accent-rgb)) 0%, rgb(var(--accent-dark-rgb)) 100%);
+  @apply text-white shadow-lg;
+  box-shadow: 0 4px 6px -1px rgba(var(--accent-rgb), 0.2);
 }
 
 .btn-primary:hover {
@@ -187,7 +188,7 @@ p {
 /* Focus styles */
 :focus {
   @apply outline-none;
-  box-shadow: 0 0 0 2px var(--accent);
+  box-shadow: 0 0 0 2px rgb(var(--accent-rgb));
 }
 
 /* Background gradients */

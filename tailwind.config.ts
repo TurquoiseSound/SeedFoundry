@@ -34,9 +34,9 @@ const config: Config = {
           light: 'var(--earth-light)',
         },
         accent: {
-          DEFAULT: 'var(--accent)',
-          dark: 'var(--accent-dark)',
-          light: 'var(--accent-light)',
+          DEFAULT: 'rgb(var(--accent-rgb) / <alpha-value>)',
+          dark: 'rgb(var(--accent-dark-rgb) / <alpha-value>)',
+          light: 'rgb(var(--accent-light-rgb) / <alpha-value>)',
         },
         neutral: {
           900: 'rgb(var(--neutral-900-rgb) / <alpha-value>)',
