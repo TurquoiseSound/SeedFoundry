@@ -19,17 +19,17 @@
   --accent-sage: #7C8C7D;
   --accent-slate: #556270;
   
-  /* Neutral colors - warmer, more refined */
-  --neutral-900: #1A1C1E;
-  --neutral-800: #2D2F31;
-  --neutral-700: #404244;
-  --neutral-600: #535557;
-  --neutral-500: #66686A;
-  --neutral-400: #797B7D;
-  --neutral-300: #8C8E90;
-  --neutral-200: #9FA1A3;
-  --neutral-100: #E6E7E8;
-  --neutral-50: #F5F6F7;
+  /* Neutral colors as RGB values for opacity support */
+  --neutral-900-rgb: 26, 28, 30;
+  --neutral-800-rgb: 45, 47, 49;
+  --neutral-700-rgb: 64, 66, 68;
+  --neutral-600-rgb: 83, 85, 87;
+  --neutral-500-rgb: 102, 104, 106;
+  --neutral-400-rgb: 121, 123, 125;
+  --neutral-300-rgb: 140, 142, 144;
+  --neutral-200-rgb: 159, 161, 163;
+  --neutral-100-rgb: 230, 231, 232;
+  --neutral-50-rgb: 245, 246, 247;
   
   /* Semantic colors */
   --success: #2D5A4A;
@@ -45,7 +45,7 @@
 /* Base styles */
 body {
   @apply bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900;
-  color: var(--neutral-100);
+  color: rgb(var(--neutral-100-rgb));
   font-family: "Circular", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -77,7 +77,8 @@ h3 {
 }
 
 p {
-  @apply text-lg leading-relaxed mb-6 text-neutral-200;
+  @apply text-lg leading-relaxed mb-6;
+  color: rgb(var(--neutral-200-rgb));
   letter-spacing: -0.01em;
 }
 
@@ -103,10 +104,17 @@ p {
 }
 
 .btn-secondary {
-  @apply bg-neutral-800/60 text-neutral-100 backdrop-blur-sm
-         hover:bg-neutral-700/60 
-         active:bg-neutral-600/60;
+  @apply text-neutral-100 backdrop-blur-sm;
+  background-color: rgb(var(--neutral-800-rgb) / 0.6);
   border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(var(--neutral-700-rgb) / 0.6);
+}
+
+.btn-secondary:active {
+  background-color: rgb(var(--neutral-600-rgb) / 0.6);
 }
 
 /* Card styles - elevated sophistication */
@@ -129,7 +137,8 @@ p {
 
 /* Navigation - refined interaction */
 .nav-link {
-  @apply text-neutral-300 hover:text-white transition-all duration-300;
+  color: rgb(var(--neutral-300-rgb));
+  @apply hover:text-white transition-all duration-300;
   position: relative;
 }
 
@@ -158,10 +167,16 @@ p {
 
 /* Form elements - sophisticated inputs */
 input, select, textarea {
-  @apply bg-neutral-800/30 backdrop-blur-sm border border-neutral-700/50 rounded-lg px-6 py-3
-         focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500/50
-         text-neutral-100;
+  background-color: rgb(var(--neutral-800-rgb) / 0.3);
+  @apply backdrop-blur-sm rounded-lg px-6 py-3 text-neutral-100;
+  border: 1px solid rgb(var(--neutral-700-rgb) / 0.5);
   transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  @apply outline-none;
+  border-color: rgb(var(--primary-500-rgb) / 0.5);
+  box-shadow: 0 0 0 2px rgb(var(--primary-500-rgb) / 0.3);
 }
 
 /* Animations - subtle and professional */
@@ -177,7 +192,8 @@ input, select, textarea {
 
 /* Loading states - refined */
 .skeleton {
-  @apply animate-pulse bg-neutral-800/50 rounded;
+  background-color: rgb(var(--neutral-800-rgb) / 0.5);
+  @apply animate-pulse rounded;
 }
 
 /* Mobile optimizations */
@@ -205,16 +221,18 @@ input, select, textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neutral-700/50 rounded-full;
+  background-color: rgb(var(--neutral-700-rgb) / 0.5);
+  @apply rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neutral-600/50;
+  background-color: rgb(var(--neutral-600-rgb) / 0.5);
 }
 
 /* Focus styles - subtle but visible */
 :focus {
-  @apply outline-none ring-2 ring-primary-500/30;
+  @apply outline-none;
+  box-shadow: 0 0 0 2px rgb(var(--primary-500-rgb) / 0.3);
 }
 
 /* Utility classes */
