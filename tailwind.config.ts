@@ -9,7 +9,9 @@ const config: Config = {
   safelist: [
     'bg-green-400',
     'bg-red-400',
-    'bg-yellow-400'
+    'bg-yellow-400',
+    'animate-pulse',
+    'skeleton'
   ],
   theme: {
     extend: {
@@ -20,7 +22,28 @@ const config: Config = {
       },
       spacing: {
         '104': '26rem',
-      }
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in',
+        'slide-up': 'slideUp 0.3s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+    },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
     },
   },
   plugins: [],

@@ -8,67 +8,212 @@
   --background-end-rgb: 255, 255, 255;
 
   --seed-color: #1489FB;
+  --seed-color-dark: #0d6ecd;
+  --seed-color-light: #e6f2ff;
   --link-color: #3172af;
   --business-model-color: #d5e4ef;
   --funding-option-color: #c4e2d3;
   --entity-type-color: #eaceb1;
+  
+  /* New color variables */
+  --success-color: #10B981;
+  --warning-color: #F59E0B;
+  --error-color: #EF4444;
+  --neutral-50: #F8FAFC;
+  --neutral-100: #F1F5F9;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-500: #64748B;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-900: #0F172A;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  } */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
 
 @font-face {
   font-family: 'Circular-Bold';
   src: url('/fonts/Circular-Bold.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Circular';
   src: url('/fonts/Circular-Regular.ttf');
+  font-display: swap;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--background-start-rgb);
+  background: var(--neutral-50);
   font-family: "Circular", sans-serif;
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Enhanced tag styles */
 .entity-type {
   background-color: var(--entity-type-color);
-  color: rgb(var(--foreground-rgb));
+  color: var(--neutral-800);
+  transition: transform 0.2s;
+}
+
+.entity-type:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .business-model {
   background-color: var(--business-model-color);
-  color: rgb(var(--foreground-rgb));
+  color: var(--neutral-800);
+  transition: transform 0.2s;
+}
+
+.business-model:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .funding-option {
   background-color: var(--funding-option-color);
-  color: rgb(var(--foreground-rgb));
+  color: var(--neutral-800);
+  transition: transform 0.2s;
 }
 
+.funding-option:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Enhanced link styles */
 a {
-  color: var(--link-color)
+  color: var(--link-color);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--seed-color);
 }
 
 .body-text {
-  color: rgb(var(--foreground-rgb))
+  color: var(--neutral-700);
+  line-height: 1.6;
+}
+
+/* Mobile-first responsive typography */
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Enhanced button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-[--seed-color] text-white hover:bg-[--seed-color-dark];
+}
+
+.btn-secondary {
+  @apply bg-[--neutral-100] text-[--neutral-700] hover:bg-[--neutral-200];
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-sm p-6 transition-all duration-200;
+}
+
+.card:hover {
+  @apply shadow-md;
+}
+
+/* Loading skeleton animation */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.skeleton {
+  @apply bg-[--neutral-200] animate-[pulse_1.5s_ease-in-out_infinite];
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--seed-color);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-400);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .card {
+    @apply p-4;
+  }
+  
+  .btn {
+    @apply w-full mb-2;
   }
 }
