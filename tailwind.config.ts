@@ -15,17 +15,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      spacing: {
-        '104': '26rem',
+      colors: {
+        primary: {
+          900: 'var(--primary-900)',
+          800: 'var(--primary-800)',
+          700: 'var(--primary-700)',
+          600: 'var(--primary-600)',
+          500: 'var(--primary-500)',
+          400: 'var(--primary-400)',
+          300: 'var(--primary-300)',
+          200: 'var(--primary-200)',
+          100: 'var(--primary-100)',
+        },
+        neutral: {
+          900: 'var(--neutral-900)',
+          800: 'var(--neutral-800)',
+          700: 'var(--neutral-700)',
+          600: 'var(--neutral-600)',
+          500: 'var(--neutral-500)',
+          400: 'var(--neutral-400)',
+          300: 'var(--neutral-300)',
+          200: 'var(--neutral-200)',
+          100: 'var(--neutral-100)',
+          50: 'var(--neutral-50)',
+        }
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',
         'slide-up': 'slideUp 0.3s ease-out',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -36,16 +54,17 @@ const config: Config = {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
-    },
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+      backdropBlur: {
+        xs: '2px',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
