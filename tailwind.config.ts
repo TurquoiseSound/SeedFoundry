@@ -27,6 +27,17 @@ const config: Config = {
           200: 'var(--primary-200)',
           100: 'var(--primary-100)',
         },
+        earth: {
+          deep: 'var(--earth-deep)',
+          rich: 'var(--earth-rich)',
+          medium: 'var(--earth-medium)',
+          light: 'var(--earth-light)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          dark: 'var(--accent-dark)',
+          light: 'var(--accent-light)',
+        },
         neutral: {
           900: 'rgb(var(--neutral-900-rgb) / <alpha-value>)',
           800: 'rgb(var(--neutral-800-rgb) / <alpha-value>)',
@@ -43,7 +54,7 @@ const config: Config = {
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',
         'slide-up': 'slideUp 0.3s ease-out',
-        'float': 'float 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {

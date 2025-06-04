@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from 'next/link';
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+config.autoAddCss = false;
 
 import GoalsProvider from './GoalsProvider'
 
@@ -23,24 +23,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-200 p-3`}>
-        <header className='align-middle'>
-          <Link href='/'>
+      <body>
+        <div className="fixed inset-0 bg-gradient-radial from-primary-800/30 via-primary-900/50 to-primary-900 -z-10"></div>
+        <header className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6 flex items-center'>
+          <Link href='/' className="flex items-center group">
             <Image
               src="/seed_logo.png"
               alt="SEED Logo"
-              width='40'
-              height='40'
-              className='inline'
+              width={48}
+              height={48}
+              className='transition-transform duration-300 group-hover:scale-110'
             />
-            <h1 className='text-2xl inline ml-2 align-middle' style={{ color:'#1489FB' }}>SEED Founding</h1>
+            <h2 className='text-2xl ml-4 text-gradient font-bold'>SEED Founding</h2>
           </Link>
         </header>
-        <div className='md:px-10 pt-6'>
+        <div className='relative'>
           <GoalsProvider>
             {children}
           </GoalsProvider>
-          </div>
+        </div>
       </body>
     </html>
   );
