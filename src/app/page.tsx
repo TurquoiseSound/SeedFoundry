@@ -23,8 +23,8 @@ export default function Home() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-8">
-            Strategic Foundation for
-            <span className="text-gradient block mt-2">Ethical Technology</span>
+            Startup Ethical
+            <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             Design your organization's architecture to maximize impact while preserving your core mission and values.
