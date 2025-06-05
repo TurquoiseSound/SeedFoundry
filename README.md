@@ -1,4 +1,4 @@
-# SEED Founding
+# Institute of Wise Innovation: SEED Foundry
 
 ## Development
 
