@@ -1,23 +1,9 @@
-'use client';
+import React, { Suspense } from 'react';
 
-import React from 'react';
-
-import { type Goal } from '@/types';
-
+import { fetchGoals } from '../../app/api/fetchGoals';
 import { default as GoalsSelectInternal } from './GoalsSelect';
 
-export default function GoalsSelect() {
-  const [goals, setGoals] = React.useState<Goal[]>([]);
-
-  React.useEffect(() => {
-    const fetchGoalsData = async () => {
-      const response = await fetch('/api/fetchGoals');
-      const data = await response.json();
-      setGoals(data);
-    };
-    
-    fetchGoalsData();
-  }, []);
-
+export default async function GoalsSelect() {
+  const goals = await fetchGoals();
   return <GoalsSelectInternal goals={goals} />;
 }
