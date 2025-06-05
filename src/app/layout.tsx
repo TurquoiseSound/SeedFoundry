@@ -8,10 +8,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css';
 
-import Header from '@/components/Header';
-import GoalsProvider from './GoalsProvider';
-
 config.autoAddCss = false;
+
+import GoalsProvider from './GoalsProvider';
+import HeaderScroll from './HeaderScroll';
 
 export const metadata: Metadata = {
   title: 'The Institute of Wise Innovation | SEED Foundry',
@@ -27,10 +27,32 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <div className="top-fade"></div>
-        <Header />
-        <main className="flex-grow pt-24 md:pt-32">
+        <header className="header-container">
+          <div className="max-w-7xl mx-auto pl-[35px] pr-4 sm:pr-6 lg:pr-8 py-1 relative flex justify-between items-start">
+            <Link href="/" className="flex flex-col">
+              <h2 className="text-[1.89rem] font-bold text-white mb-0 leading-tight">
+                The Institute of Wise Innovation
+              </h2>
+              <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
+            </Link>
+            <div className="flex flex-col items-end">
+              <Image
+                src="/seed_logo copy.png"
+                alt="Institute of Wise Innovation Logo"
+                width={36}
+                height={36}
+                className="transition-transform duration-300 hover:scale-110 mt-1"
+                priority
+              />
+              <span className="text-white text-xs mt-1">Peer</span>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider"></div>
+          </div>
+        </header>
+        <div className="relative pt-20 flex-grow">
           <GoalsProvider>{children}</GoalsProvider>
-        </main>
+        </div>
+        <HeaderScroll />
         <div className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="flex justify-center space-x-8">
@@ -114,6 +136,16 @@ export default function RootLayout({
                     >
                       Business Models
                     </Link>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/wiseinnovation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faGithub} /> GitHub
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -212,7 +244,70 @@ export default function RootLayout({
                   height={20}
                 />
                 <small className="text-white/40 text-sm">
-                  Incubated at{' '}
+                  Team:{' '}
+                  <a
+                    href="https://xplusx.co"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LX
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/daywaterbury"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Day Waterbury
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/michaelgrossman"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Michael Grossman
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://tibetsprague.com"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Tibet Sprague
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/aaronbrodeur"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Aaron Brodeur
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/samuelliebeskind"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Sam Liebeskind
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://byrongo.com/"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Byron Go
+                  </a>{' '}
+                  | Incubated at{' '}
                   <a
                     href="https://www.collaborative.tech/"
                     className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
