@@ -6,6 +6,16 @@ export const mockGoals: Goal[] = [
   { id: '3', value: '3', label: 'Community Ownership' },
   { id: '4', value: '4', label: 'Environmental Sustainability' },
   { id: '5', value: '5', label: 'Innovation Leadership' },
+  { id: '6', value: '6', label: 'Decentralized Governance' },
+  { id: '7', value: '7', label: 'Worker Empowerment' },
+  { id: '8', value: '8', label: 'Open Source Development' },
+  { id: '9', value: '9', label: 'Data Sovereignty' },
+  { id: '10', value: '10', label: 'Regenerative Economics' },
+  { id: '11', value: '11', label: 'Ethical AI Development' },
+  { id: '12', value: '12', label: 'Platform Cooperativism' },
+  { id: '13', value: '13', label: 'Indigenous Wisdom Integration' },
+  { id: '14', value: '14', label: 'Intergenerational Equity' },
+  { id: '15', value: '15', label: 'Bioregional Resilience' }
 ];
 
 export const mockItems: Item[] = [
@@ -46,6 +56,9 @@ export const mockItems: Item[] = [
       '1': 0.9,
       '2': 0.7,
       '3': 0.8,
+      '4': 0.85,
+      '10': 0.75,
+      '14': 0.8
     },
   },
   {
@@ -78,6 +91,9 @@ export const mockItems: Item[] = [
       '2': 0.8,
       '3': 0.95,
       '4': 0.7,
+      '6': 0.9,
+      '7': 0.95,
+      '12': 0.85
     },
   },
 ];
