@@ -30,20 +30,20 @@
       @apply p-3 cursor-pointer transition-all duration-200 text-white;
       
       &:hover {
-        @apply bg-white/10;
+        @apply bg-emerald-500/10;
       }
       
       &--is-selected {
-        @apply bg-black text-white;
+        @apply bg-emerald-500/20 text-white;
         
         &:hover {
-          @apply bg-black/80;
+          @apply bg-emerald-500/30;
         }
       }
     }
     
     .goals__multi-value {
-      @apply bg-white/10 rounded-md m-1;
+      @apply bg-emerald-500/20 rounded-md m-1;
       
       &__label {
         @apply text-white px-2 py-1;
