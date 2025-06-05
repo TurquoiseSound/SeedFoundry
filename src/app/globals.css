@@ -45,7 +45,7 @@
 
 /* Base styles */
 body {
-  @apply bg-primary-900 text-neutral-100;
+  @apply bg-gradient-to-br from-primary-800 via-primary-900 to-earth-deep text-neutral-100;
   font-family: "Circular", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -58,6 +58,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Circular-Bold", system-ui, sans-serif;
   letter-spacing: -0.03em;
   line-height: 1.2;
+  @apply text-white;
 }
 
 h1 {
@@ -194,4 +195,31 @@ p {
 /* Background gradients */
 .bg-gradient-radial {
   background: radial-gradient(circle at center, var(--args));
+}
+
+/* Goals Select Styles */
+.goals__control {
+  @apply bg-white/10 border-white/20 text-white !important;
+}
+
+.goals__placeholder {
+  @apply text-white/70 !important;
+}
+
+.goals__menu {
+  @apply bg-white/10 backdrop-blur-xl border border-white/20 !important;
+  z-index: 50 !important;
+}
+
+.goals__option {
+  @apply text-white hover:bg-white/20 !important;
+}
+
+.goals__option--is-selected {
+  @apply bg-white/30 !important;
+}
+
+/* Entity Types and Library Styles */
+.entity-type, .business-model, .funding-option {
+  @apply bg-white/10 text-white hover:bg-white/20 transition-colors;
 }

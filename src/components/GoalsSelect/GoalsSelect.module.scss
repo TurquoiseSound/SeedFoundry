@@ -4,53 +4,53 @@
   
   :global {
     .goals__control {
-      @apply bg-white border border-neutral-200 rounded-lg shadow-sm transition-all duration-200;
+      @apply bg-white/10 border-white/20 rounded-lg shadow-sm transition-all duration-200;
       min-height: 48px;
       
       &:hover {
-        @apply border-neutral-300;
+        @apply border-white/30;
       }
       
       &--is-focused {
-        @apply border-[--seed-color] shadow-md;
-        box-shadow: 0 0 0 1px var(--seed-color);
+        @apply border-white/40 shadow-md;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
       }
     }
     
     .goals__placeholder {
-      @apply text-neutral-500;
+      @apply text-white/70;
     }
     
     .goals__menu {
-      @apply mt-2 bg-white rounded-lg shadow-lg border border-neutral-200;
-      z-index: 10;
+      @apply mt-2 bg-white/10 backdrop-blur-xl rounded-lg shadow-lg border border-white/20;
+      z-index: 50;
     }
     
     .goals__option {
-      @apply p-3 cursor-pointer transition-all duration-200;
+      @apply p-3 cursor-pointer transition-all duration-200 text-white;
       
       &:hover {
-        @apply bg-[--seed-color-light];
+        @apply bg-white/20;
       }
       
       &--is-selected {
-        @apply bg-[--seed-color] text-white;
+        @apply bg-white/30 text-white;
         
         &:hover {
-          @apply bg-[--seed-color-dark];
+          @apply bg-white/40;
         }
       }
     }
     
     .goals__multi-value {
-      @apply bg-[--seed-color-light] rounded-md m-1;
+      @apply bg-white/20 rounded-md m-1;
       
       &__label {
-        @apply text-[--seed-color-dark] px-2 py-1;
+        @apply text-white px-2 py-1;
       }
       
       &__remove {
-        @apply text-[--seed-color] hover:text-[--seed-color-dark] hover:bg-transparent;
+        @apply text-white/70 hover:text-white hover:bg-transparent;
       }
     }
   }
