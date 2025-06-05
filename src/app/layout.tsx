@@ -9,7 +9,7 @@ config.autoAddCss = false;
 import GoalsProvider from './GoalsProvider'
 
 export const metadata: Metadata = {
-  title: "SEED Founding",
+  title: "Institue of Wise Innovation | SEED Founding",
   description: "How do you want to plant and grow your ethical tech business",
 };
 
