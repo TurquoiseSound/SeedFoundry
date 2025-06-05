@@ -4,7 +4,7 @@
   
   :global {
     .goals__control {
-      @apply bg-white/5 border-white/10 rounded-lg shadow-sm transition-all duration-200;
+      @apply bg-black/5 border-white/10 rounded-lg shadow-sm transition-all duration-200;
       min-height: 48px;
       
       &:hover {
