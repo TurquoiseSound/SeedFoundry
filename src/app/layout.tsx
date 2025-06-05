@@ -27,12 +27,12 @@ export default function RootLayout({
             <Link href='/' className="flex items-center group">
               <Image
                 src="/seed_logo.png"
-                alt="SEED Logo"
+                alt="Institute of Wise Innovation | SEED Logo"
                 width={36}
                 height={36}
                 className='transition-transform duration-300 group-hover:scale-110'
               />
-              <h2 className='text-xl ml-3 text-gradient font-bold'>SEED Founding</h2>
+              <h2 className='text-xl ml-3 text-gradient font-bold'>Institue of Wise Innovation | SEED Founding SEED Founding</h2>
             </Link>
           </div>
         </header>
