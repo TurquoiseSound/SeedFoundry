@@ -26,7 +26,7 @@ export default function RootLayout({
           <div className='max-w-7xl mx-auto pl-[50px] pr-4 sm:pr-6 lg:pr-8 py-1 relative flex justify-between items-start'>
             <Link href='/' className="flex flex-col">
               <h2 className='text-[2.1rem] font-bold text-white mb-0 leading-tight'>The Institute of Wise Innovation</h2>
-              <h3 className='text-[1.584rem] font-bold text-gradient leading-tight'>SEED FOUNDRY</h3>
+              <h3 className='text-[2.25rem] font-bold text-gradient leading-tight'>SEED FOUNDRY</h3>
             </Link>
             <Image
               src="/seed_logo.png"
