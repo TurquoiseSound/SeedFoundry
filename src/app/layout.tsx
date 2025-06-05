@@ -32,7 +32,7 @@ export default function RootLayout({
                 height={36}
                 className='transition-transform duration-300 group-hover:scale-110'
               />
-              <h2 className='text-xl ml-3 text-gradient font-bold'>Institue of Wise Innovation | SEED Foundry</h2>
+              <h2 className='text-xl ml-3 text-gradient font-bold'>The Institue of Wise Innovation | SEED FOUNDRY</h2>
             </Link>
           </div>
         </header>
