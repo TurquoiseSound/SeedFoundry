@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Select, {
   ActionMeta,
   components,
@@ -53,6 +53,11 @@ const ClearIndicator = (props: ClearIndicatorProps<Goal, true>) => {
 
 export default function GoalsSelect({ goals }: { goals: Goal[] }) {
   let { selectedGoals, setSelectedGoals } = useContext(GoalsContext);
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setPortalTarget(document.body);
+  }, []);
 
   const handleChangeSelect = (newValue: MultiValue<Goal>, action: ActionMeta<Goal>) => {
     const option = action.option;
@@ -82,7 +87,7 @@ export default function GoalsSelect({ goals }: { goals: Goal[] }) {
       hideSelectedOptions={false}
       instanceId="goals-select"
       isMulti
-      menuPortalTarget={document.body}
+      menuPortalTarget={portalTarget}
       name="goals"
       onChange={handleChangeSelect}
       options={goals}
