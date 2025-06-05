@@ -32,7 +32,7 @@ export default function RootLayout({
               <div className="flex flex-col">
                 <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
                 <small className="text-emerald-200 text-sm mt-1">
-                 <br>Research Incubated at{' '}</br>
+                  Research Incubated at{' '} \n
                   <a
                     href="https://www.collaborative.tech/"
                     className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
