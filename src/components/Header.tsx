@@ -26,7 +26,15 @@ export default function Header() {
             </div>
           )}
         </Link>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
+          <Image
+            src="/cta_logo_300.png"
+            alt="Collaborative Technology Alliance"
+            width={isMobile ? 32 : 40}
+            height={isMobile ? 32 : 40}
+            className="transition-transform duration-300 hover:scale-110"
+            priority
+          />
           <Image
             src="/seed_logo copy.png"
             alt="Institute of Wise Innovation Logo"
@@ -35,7 +43,6 @@ export default function Header() {
             className="transition-transform duration-300 hover:scale-110"
             priority
           />
-          <span className="text-white/60 text-xs">Peer</span>
         </div>
       </div>
     </header>
