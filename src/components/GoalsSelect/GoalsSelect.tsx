@@ -38,7 +38,6 @@ const Option = (props: OptionProps<Goal>) => {
 
 const ClearIndicator = (props: ClearIndicatorProps<Goal, true>) => {
   const {
-    getStyles,
     innerProps: { ref, ...restInnerProps },
     selectProps,
   } = props;
@@ -84,7 +83,7 @@ export default function GoalsSelect({ goals }: { goals: Goal[] }) {
       className={styles.goalsSelect}
       classNamePrefix="goals"
       classNames={{
-        menu: (state) => styles.goalsMenu,
+        menu: () => styles.goalsMenu,
       }}
       closeMenuOnSelect={false}
       components={{ ClearIndicator, Option }}

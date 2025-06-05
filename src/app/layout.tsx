@@ -1,9 +1,10 @@
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
+
 config.autoAddCss = false;
 
 import GoalsProvider from './GoalsProvider';
@@ -35,8 +36,8 @@ export default function RootLayout({
               <Image
                 src="/seed_logo copy.png"
                 alt="Institute of Wise Innovation Logo"
-                width={72}
-                height={72}
+                width={36}
+                height={36}
                 className="transition-transform duration-300 hover:scale-110 mt-1"
                 priority
               />

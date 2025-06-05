@@ -21,7 +21,6 @@ const nextConfig = {
   // Add experimental configuration for improved WebSocket handling
   experimental: {
     esmExternals: true,
-    serverComponents: true,
   },
 };
 

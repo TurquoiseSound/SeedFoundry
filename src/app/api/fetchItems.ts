@@ -9,6 +9,6 @@ export const fetchItem = async (id: string): Promise<Item> => {
   return item;
 };
 
-export const fetchItems = async (type: string): Promise<Item[]> => {
+export const fetchItems = async (): Promise<Item[]> => {
   return mockItems;
 };

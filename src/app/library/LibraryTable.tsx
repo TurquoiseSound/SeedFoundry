@@ -9,10 +9,9 @@ import { GoalsContext } from '@/app/GoalsProvider';
 import { Item } from '../../types';
 
 const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }) => {
-  const [globalFilter, setGlobalFilter] = React.useState('');
-  const { selectedGoals } = React.useContext(GoalsContext);
   const [isLoading, setIsLoading] = React.useState(true);
   const [isClient, setIsClient] = React.useState(false);
+  const { selectedGoals } = React.useContext(GoalsContext);
 
   React.useEffect(() => {
     setIsClient(true);
@@ -23,9 +22,7 @@ const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }
   const filteredItems = React.useMemo<Item[]>(() => {
     if (!isClient) return items;
 
-    let newItems = items.filter((item) => {
-      return item.name?.toLowerCase().includes(globalFilter.toLowerCase());
-    });
+    let newItems = items;
 
     if (selectedGoals.length > 0) {
       newItems = newItems.sort((a, b) => {
@@ -46,7 +43,7 @@ const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }
     }
 
     return newItems;
-  }, [items, globalFilter, selectedGoals, isClient]);
+  }, [items, selectedGoals, isClient]);
 
   if (isLoading) {
     return <LoadingSkeleton />;

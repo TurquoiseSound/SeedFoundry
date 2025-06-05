@@ -7,7 +7,7 @@ import { fetchItems } from '../../api/fetchItems';
 import LibraryTable from '../LibraryTable';
 
 const EntityList: React.FC<{ type: string }> = async ({ type }) => {
-  const items = await fetchItems(type);
+  const items = await fetchItems();
 
   return (
     <div>
@@ -18,7 +18,6 @@ const EntityList: React.FC<{ type: string }> = async ({ type }) => {
 
 const EntityTypesPage = ({ params }: { params: { type: string } }) => {
   const type = params.type;
-  const name = startCase(params.type);
 
   return (
     <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-16">
