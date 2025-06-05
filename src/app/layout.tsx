@@ -23,7 +23,7 @@ export default function RootLayout({
       <body>
         <div className="top-fade"></div>
         <header className='header-container'>
-          <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 flex items-center'>
+          <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4'>
             <Link href='/' className="flex items-start group">
               <Image
                 src="/seed_logo.png"
@@ -33,7 +33,7 @@ export default function RootLayout({
                 className='transition-transform duration-300 group-hover:scale-110'
               />
               <div className="ml-4">
-                <h2 className='text-sm font-medium text-neutral-400'>The Institute of Wise Innovation</h2>
+                <h2 className='text-2xl font-bold text-white mb-0'>The Institute of Wise Innovation</h2>
                 <h3 className='text-xl font-bold text-gradient'>SEED FOUNDRY</h3>
               </div>
             </Link>
