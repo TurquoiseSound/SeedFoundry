@@ -28,10 +28,18 @@ export default function RootLayout({
               <h2 className="text-[1.89rem] font-bold text-white mb-0 leading-tight">
                 The Institute of Wise Innovation
               </h2>
-              <div className="flex items-baseline gap-3">
+              <div className="flex items-center gap-2">
                 <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
                 <small className="text-emerald-200 text-sm">
-                  Incubated at <a href="https://www.collaborative.tech/" className="hover:text-emerald-100 transition-colors duration-300">The Collaborative Technology Alliance</a>
+                  Incubated at{' '}
+                  <a
+                    href="https://www.collaborative.tech/"
+                    className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Collaborative Technology Alliance
+                  </a>
                 </small>
               </div>
             </Link>
@@ -48,23 +56,6 @@ export default function RootLayout({
         <div className="relative pt-20">
           <GoalsProvider>{children}</GoalsProvider>
         </div>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.addEventListener('scroll', () => {
-              const header = document.querySelector('.header-container');
-              const divider = document.querySelector('.header-divider');
-              if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-                divider.classList.add('opacity-0');
-              } else {
-                header.classList.remove('scrolled');
-                divider.classList.remove('opacity-0');
-              }
-            });
-          `,
-          }}
-        />
       </body>
     </html>
   );
