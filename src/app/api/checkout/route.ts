@@ -3,13 +3,6 @@ import { stripe } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
-  if (!supabase) {
-    return NextResponse.json(
-      { error: 'Database client not initialized' },
-      { status: 500 }
-    );
-  }
-
   try {
     const { priceId, userId } = await request.json();
 
@@ -21,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     // Verify user exists and get their email
-    const { data: user, error: userError } = await supabase!
+    const { data: user, error: userError } = await supabase
       .from('users')
       .select('email')
       .eq('id', userId)

@@ -8,13 +8,6 @@ export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-  if (!supabase) {
-    return NextResponse.json(
-      { error: 'Database client not initialized' },
-      { status: 500 }
-    );
-  }
-
   const body = await request.text();
   const signature = headers().get('stripe-signature');
 
@@ -36,7 +29,7 @@ export async function POST(request: Request) {
 
         // Update user's subscription status in Supabase
         if (userId) {
-          const { error } = await supabase!
+          const { error } = await supabase
             .from('users')
             .update({
               stripe_customer_id: session.customer as string,
@@ -57,7 +50,7 @@ export async function POST(request: Request) {
         const subscription = event.data.object;
         
         // Update subscription status in Supabase
-        const { error } = await supabase!
+        const { error } = await supabase
           .from('users')
           .update({
             subscription_status: subscription.status,
