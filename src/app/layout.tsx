@@ -28,7 +28,12 @@ export default function RootLayout({
               <h2 className="text-[1.89rem] font-bold text-white mb-0 leading-tight">
                 The Institute of Wise Innovation
               </h2>
-              <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
+              <div className="flex items-baseline gap-3">
+                <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
+                <small className="text-emerald-200 text-sm">
+                  Incubated at <a href="https://www.collaborative.tech/" className="hover:text-emerald-100 transition-colors duration-300">The Collaborative Technology Alliance</a>
+                </small>
+              </div>
             </Link>
             <Image
               src="/seed_logo.png"
