@@ -163,7 +163,11 @@ p {
 /* Header styles */
 .header-container {
   @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
-  height: 80px; /* Reduced from 120px */
+  height: 80px;
+  
+  @media (max-width: 768px) {
+    height: 60px;
+  }
 }
 
 .header-container.scrolled {
@@ -174,8 +178,8 @@ p {
 /* Compatibility indicator */
 .compatibility-indicator {
   @apply rounded-full;
-  width: 32px; /* Reduced from 48px */
-  height: 32px; /* Reduced from 48px */
+  width: 32px;
+  height: 32px;
 }
 
 /* Top opacity bar */
