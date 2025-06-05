@@ -148,6 +148,7 @@ p {
 
 .goals__option {
   @apply text-white hover:bg-white/10 !important;
+  padding: 8px 12px !important;
 }
 
 .goals__option--is-selected {
@@ -162,11 +163,19 @@ p {
 /* Header styles */
 .header-container {
   @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+  height: 80px; /* Reduced from 120px */
 }
 
 .header-container.scrolled {
   @apply backdrop-blur-xl bg-black/30;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Compatibility indicator */
+.compatibility-indicator {
+  @apply rounded-full;
+  width: 32px; /* Reduced from 48px */
+  height: 32px; /* Reduced from 48px */
 }
 
 /* Top opacity bar */

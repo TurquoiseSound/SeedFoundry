@@ -75,7 +75,7 @@ const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }
               {selectedGoals.length > 0 && (
                 <div className="flex items-center justify-center">
                   <div
-                    className={`w-12 h-12 rounded-full ${compatabilityColor}`}
+                    className={`compatibility-indicator ${compatabilityColor}`}
                     title={`Compatibility Score: ${Math.round((item.goalScore || 0) * 100)}%`}
                   />
                 </div>
