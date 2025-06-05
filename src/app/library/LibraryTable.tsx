@@ -8,20 +8,12 @@ import { GoalsContext } from '@/app/GoalsProvider';
 
 import { Item } from '../../types';
 
-import styles from './LibraryTable.module.scss';
-
-interface LibraryTableProps {
-  type: string;
-  items: Item[];
-}
-
-const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
+const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }) => {
   const [globalFilter, setGlobalFilter] = React.useState('');
   const { selectedGoals } = React.useContext(GoalsContext);
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // Simulate loading state
     const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -57,97 +49,98 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
   }
 
   return (
-    <table className={styles.libraryTable}>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Compatible Entity Structures</th>
-          <th>Compatible Business Models</th>
-          <th>Compatible Funding Options</th>
-          {selectedGoals.length > 0 ? <th>Goal Compatibility</th> : null}
-        </tr>
-      </thead>
-      <tbody>
-        {filteredItems.map((item: Item) => {
-          const compatabilityColor = item.goalScore
-            ? `bg-${item.goalScore >= 0.8 ? 'green' : item.goalScore >= 0.5 ? 'yellow' : 'red'}-400`
-            : 'bg-gray-200';
+    <div className="space-y-6">
+      {filteredItems.map((item: Item) => {
+        const compatabilityColor = item.goalScore
+          ? `bg-${item.goalScore >= 0.8 ? 'green' : item.goalScore >= 0.5 ? 'yellow' : 'red'}-400`
+          : 'bg-gray-200';
 
-          return (
-            <tr
-              key={item.name}
-              className="animate-fade-in"
-              style={{ opacity: selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1 }}
-            >
-              <td data-label="">
-                <Link href={`/library/${type}/${item.id}`} className={styles.itemName}>
+        return (
+          <div
+            key={item.name}
+            className="glass p-8 rounded-2xl animate-fade-in"
+            style={{ opacity: selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1 }}
+          >
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="flex-1">
+                <Link
+                  href={`/library/${type}/${item.id}`}
+                  className="text-2xl font-bold text-white hover:text-emerald-200 transition-colors duration-300"
+                >
                   {item.name}
                 </Link>
-                {item.description && <p className="text-neutral-600 mt-2">{item.description}</p>}
-              </td>
+                {item.description && (
+                  <p className="text-emerald-200 mt-4">{item.description}</p>
+                )}
+              </div>
 
-              <td data-label="Compatible Entity Structures">
-                <div className={styles.tagContainer}>
+              {selectedGoals.length > 0 && (
+                <div className="flex items-center justify-center">
+                  <div
+                    className={`w-12 h-12 rounded-full ${compatabilityColor}`}
+                    title={`Compatibility Score: ${Math.round((item.goalScore || 0) * 100)}%`}
+                  />
+                </div>
+              )}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div>
+                <h3 className="text-white/70 text-sm mb-3">Compatible Entity Structures</h3>
+                <div className="flex flex-wrap gap-2">
                   {item.entityTypes?.map((entity) => (
                     <Link
+                      key={entity.id}
                       href={`/library/entity-types/${entity.id}`}
-                      className="rounded-2xl text-center px-4 py-1 entity-type"
-                      key={entity.name}
+                      className="px-4 py-2 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-all duration-300 text-sm"
                     >
                       {entity.name}
                     </Link>
                   ))}
                 </div>
-              </td>
+              </div>
 
-              <td data-label="Compatible Business Models">
-                <div className={styles.tagContainer}>
+              <div>
+                <h3 className="text-white/70 text-sm mb-3">Compatible Business Models</h3>
+                <div className="flex flex-wrap gap-2">
                   {item.businessModels?.map((model) => (
                     <Link
+                      key={model.id}
                       href={`/library/business-models/${model.id}`}
-                      className="rounded-2xl text-center px-4 py-1 business-model"
-                      key={model.name}
+                      className="px-4 py-2 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-all duration-300 text-sm"
                     >
                       {model.name}
                     </Link>
                   ))}
                 </div>
-              </td>
+              </div>
 
-              <td data-label="Compatible Funding Options">
-                <div className={styles.tagContainer}>
+              <div>
+                <h3 className="text-white/70 text-sm mb-3">Compatible Funding Options</h3>
+                <div className="flex flex-wrap gap-2">
                   {item.fundingOptions?.map((option) => (
                     <Link
+                      key={option.id}
                       href={`/library/funding-options/${option.id}`}
-                      className="rounded-2xl text-center px-4 py-1 funding-option"
-                      key={option.name}
+                      className="px-4 py-2 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-all duration-300 text-sm"
                     >
                       {option.name}
                     </Link>
                   ))}
                 </div>
-              </td>
-
-              {selectedGoals.length > 0 ? (
-                <td data-label="Goal Compatibility" className="text-center">
-                  <span
-                    className={`pl-5 rounded-2xl w-8 h-8 shadow-md ${compatabilityColor}`}
-                    title={`Compatibility Score: ${Math.round((item.goalScore || 0) * 100)}%`}
-                  />
-                </td>
-              ) : null}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
 const LoadingSkeleton = () => (
-  <div className="space-y-4">
+  <div className="space-y-6">
     {[1, 2, 3].map((i) => (
-      <div key={i} className={`${styles.skeleton} ${styles.row}`} />
+      <div key={i} className="glass h-64 rounded-2xl animate-pulse" />
     ))}
   </div>
 );
