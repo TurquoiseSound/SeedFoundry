@@ -23,16 +23,16 @@ export default function RootLayout({
       <body>
         <div className="top-fade"></div>
         <header className='header-container'>
-          <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4'>
-            <Link href='/' className="flex items-start group">
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
+            <Link href='/' className="flex items-center group">
               <Image
                 src="/seed_logo.png"
                 alt="Institute of Wise Innovation Logo"
-                width={48}
-                height={48}
+                width={32}
+                height={32}
                 className='transition-transform duration-300 group-hover:scale-110'
               />
-              <div className="ml-4">
+              <div className="ml-3">
                 <h2 className='text-2xl font-bold text-white mb-0'>The Institute of Wise Innovation</h2>
                 <h3 className='text-xl font-bold text-gradient'>SEED FOUNDRY</h3>
               </div>
