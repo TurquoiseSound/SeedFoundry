@@ -35,8 +35,8 @@ export default function RootLayout({
               <Image
                 src="/seed_logo.png"
                 alt="Institute of Wise Innovation Logo"
-                width={144}
-                height={144}
+                width={72}
+                height={72}
                 className="transition-transform duration-300 hover:scale-110 mt-1"
                 priority
               />
