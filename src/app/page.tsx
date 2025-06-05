@@ -14,14 +14,14 @@ const fadeIn = {
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 pb-16">
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Startup Ethical
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
@@ -36,8 +36,8 @@ export default function Home() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="glass p-10 rounded-2xl backdrop-blur-xl">
-            <h2 className="text-2xl font-bold mb-8 text-center">Define Your Strategic Objectives</h2>
+          <div className="glass p-8 rounded-2xl backdrop-blur-xl">
+            <h2 className="text-2xl font-bold mb-6 text-center">Define Your Strategic Objectives</h2>
             <Suspense fallback={
               <div className="h-14 skeleton rounded-lg"></div>
             }>

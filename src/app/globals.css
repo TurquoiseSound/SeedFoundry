@@ -2,29 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@fontsource/playfair-display/400.css';
-@import '@fontsource/playfair-display/700.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
 
 :root {
   /* Core brand colors - refined for executive presence */
-  --primary-900: #0A1F35;
-  --primary-800: #142C44;
-  --primary-700: #1E3953;
-  --primary-600: #284662;
-  --primary-500: #325371;
-  --primary-400: #3C6080;
-  --primary-300: #466D8F;
-  --primary-200: #507A9E;
-  --primary-100: #E8F0F6;
+  --primary-900: #000000;
+  --primary-800: #121212;
+  --primary-700: #1a1a1a;
+  --primary-600: #242424;
+  --primary-500: #2d2d2d;
+  --primary-400: #363636;
+  --primary-300: #404040;
+  --primary-200: #4a4a4a;
+  --primary-100: #E8E8E8;
   
   /* Earth tones */
-  --earth-deep: #2D3B36;
-  --earth-rich: #3E4F4A;
-  --earth-medium: #5C6B67;
-  --earth-light: #8A9793;
+  --earth-deep: #1a1a1a;
+  --earth-rich: #242424;
+  --earth-medium: #2d2d2d;
+  --earth-light: #363636;
   
   /* Accent color - vibrant but sophisticated */
   --accent-rgb: 0, 194, 255;
@@ -51,9 +50,9 @@
 
 /* Base styles */
 body {
-  background: linear-gradient(135deg, #142C44 0%, #0A1F35 50%, #2D3B36 100%);
+  background: linear-gradient(135deg, #000 0%, #121212 100%);
   @apply text-neutral-100;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -62,22 +61,22 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  @apply text-white;
+  @apply font-bold text-white;
 }
 
 h1 {
-  @apply text-4xl md:text-6xl font-bold mb-8;
+  @apply text-4xl md:text-6xl font-bold mb-6;
 }
 
 h2 {
-  @apply text-3xl md:text-4xl font-bold mb-6;
+  @apply text-3xl md:text-4xl font-bold mb-4;
 }
 
 h3 {
-  @apply text-2xl md:text-3xl font-bold mb-4;
+  @apply text-2xl md:text-3xl font-bold mb-3;
 }
 
 p {
@@ -199,14 +198,9 @@ p {
   box-shadow: 0 0 0 2px rgb(var(--accent-rgb));
 }
 
-/* Background gradients */
-.bg-gradient-radial {
-  background: radial-gradient(circle at center, var(--args));
-}
-
 /* Goals Select Styles */
 .goals__control {
-  @apply bg-white/10 border-white/20 text-white !important;
+  @apply bg-white/5 border-white/10 text-white !important;
 }
 
 .goals__placeholder {
@@ -214,24 +208,33 @@ p {
 }
 
 .goals__menu {
-  @apply bg-white/10 backdrop-blur-xl border border-white/20 !important;
+  @apply bg-black/90 backdrop-blur-xl border border-white/10 !important;
   z-index: 50 !important;
 }
 
 .goals__option {
-  @apply text-white hover:bg-white/20 !important;
+  @apply text-white hover:bg-white/10 !important;
 }
 
 .goals__option--is-selected {
-  @apply bg-white/30 !important;
+  @apply bg-white/20 !important;
 }
 
 /* Entity Types and Library Styles */
 .entity-type, .business-model, .funding-option {
-  @apply bg-white/10 text-white hover:bg-white/20 transition-colors;
+  @apply bg-white/5 text-white hover:bg-white/10 transition-colors;
+}
+
+/* Header styles */
+.header-container {
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+}
+
+.header-container.scrolled {
+  @apply backdrop-blur-md bg-black/30;
 }
 
 /* Top opacity bar */
 .top-fade {
-  @apply fixed top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/20 to-transparent pointer-events-none z-10;
+  @apply fixed top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none z-10;
 }
