@@ -44,7 +44,7 @@ const ItemDetails: React.FC<{ id: string; type: string }> = async (props) => {
         {typeName.substring(0, typeName.length - 1)}: {item.name}
       </h1>
       <p className="text-emerald-200 text-lg mb-10">{item.description}</p>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div className="glass p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-6">👍 Advantages</h2>
@@ -54,7 +54,7 @@ const ItemDetails: React.FC<{ id: string; type: string }> = async (props) => {
             ))}
           </div>
         </div>
-        
+
         <div className="glass p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-6">👎 Disadvantages</h2>
           <div className="space-y-4">
@@ -67,12 +67,18 @@ const ItemDetails: React.FC<{ id: string; type: string }> = async (props) => {
 
       <div className="glass p-8 rounded-2xl mb-8">
         <h2 className="text-2xl font-bold mb-4">👀 Examples</h2>
-        <div className="text-emerald-200" dangerouslySetInnerHTML={{ __html: item.examples || '' }} />
+        <div
+          className="text-emerald-200"
+          dangerouslySetInnerHTML={{ __html: item.examples || '' }}
+        />
       </div>
 
       <div className="glass p-8 rounded-2xl mb-8">
         <h2 className="text-2xl font-bold mb-4">🌐 Resources</h2>
-        <div className="text-emerald-200" dangerouslySetInnerHTML={{ __html: item.resources || '' }} />
+        <div
+          className="text-emerald-200"
+          dangerouslySetInnerHTML={{ __html: item.resources || '' }}
+        />
       </div>
 
       <div className="glass p-8 rounded-2xl mb-8">

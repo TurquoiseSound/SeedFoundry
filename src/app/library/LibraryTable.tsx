@@ -69,9 +69,7 @@ const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }
                 >
                   {item.name}
                 </Link>
-                {item.description && (
-                  <p className="text-emerald-200 mt-4">{item.description}</p>
-                )}
+                {item.description && <p className="text-emerald-200 mt-4">{item.description}</p>}
               </div>
 
               {selectedGoals.length > 0 && (
