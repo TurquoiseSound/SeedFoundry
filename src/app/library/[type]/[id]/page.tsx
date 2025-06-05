@@ -18,12 +18,15 @@ interface PageProps {
 const ViewItemPage = ({ params }: PageProps) => {
   return (
     <>
-      <div className="fixed top-0 bottom-0 right-0 left-0 bg-slate-500 p-20 opacity-50"></div>
-      <div className="bg-slate-200 rounded-xl p-10 z-10 mt-5 relative">
-        <Link className="absolute top-5 right-5 body-text" href={`/library/${params.type}`}>
-          <FontAwesomeIcon icon={faXmark} className="fa-2xl"></FontAwesomeIcon>
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm"></div>
+      <div className="glass rounded-2xl p-10 z-10 mt-5 relative max-w-7xl mx-auto">
+        <Link
+          className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors duration-300"
+          href={`/library/${params.type}`}
+        >
+          <FontAwesomeIcon icon={faXmark} className="fa-2xl" />
         </Link>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className="skeleton h-96 rounded-xl"></div>}>
           <ItemDetails id={params.id} type={params.type} />
         </Suspense>
       </div>
@@ -33,72 +36,88 @@ const ViewItemPage = ({ params }: PageProps) => {
 
 const ItemDetails: React.FC<{ id: string; type: string }> = async (props) => {
   const item = await fetchItem(props.id);
-
   const typeName = startCase(props.type);
 
   return (
-    <div>
-      <h1 className="text-3xl mb-5">
+    <div className="text-white">
+      <h1 className="text-4xl font-bold mb-8">
         {typeName.substring(0, typeName.length - 1)}: {item.name}
       </h1>
-      <p>{item.description}</p>
-      <div className="flex flex-wrap gap-4 mt-10">
-        <ul className="flex-1 w-full bg-slate-400 p-5 border rounded-lg border-dashed text-center">
-          <h2 className="text-2xl pb-5">👍 Advantages</h2>
-          {item.advantages?.map((advantage: Advantage, i) => (
-            <AdvantageItem key={i} title={advantage.title} description={advantage.description} />
+      <p className="text-emerald-200 text-lg mb-10">{item.description}</p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div className="glass p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold mb-6">👍 Advantages</h2>
+          <div className="space-y-4">
+            {item.advantages?.map((advantage: Advantage, i) => (
+              <AdvantageItem key={i} title={advantage.title} description={advantage.description} />
+            ))}
+          </div>
+        </div>
+        
+        <div className="glass p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold mb-6">👎 Disadvantages</h2>
+          <div className="space-y-4">
+            {item.disadvantages?.map((advantage: Advantage, i) => (
+              <AdvantageItem key={i} title={advantage.title} description={advantage.description} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="glass p-8 rounded-2xl mb-8">
+        <h2 className="text-2xl font-bold mb-4">👀 Examples</h2>
+        <div className="text-emerald-200" dangerouslySetInnerHTML={{ __html: item.examples || '' }} />
+      </div>
+
+      <div className="glass p-8 rounded-2xl mb-8">
+        <h2 className="text-2xl font-bold mb-4">🌐 Resources</h2>
+        <div className="text-emerald-200" dangerouslySetInnerHTML={{ __html: item.resources || '' }} />
+      </div>
+
+      <div className="glass p-8 rounded-2xl mb-8">
+        <h2 className="text-2xl font-bold mb-4">🏢 Compatible Entity Structures</h2>
+        <div className="flex flex-wrap gap-3">
+          {item.entityTypes?.map((option: Item) => (
+            <Link
+              key={option.id}
+              href={`/library/entity-types/${option.id}`}
+              className="px-6 py-3 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-all duration-300"
+            >
+              {option.name}
+            </Link>
           ))}
-        </ul>
-        <ul className="flex-1 w-full bg-slate-400 p-5 border rounded-lg border-dashed text-center">
-          <h2 className="text-2xl pb-5">👎 Disadvantages</h2>
-          {item.disadvantages?.map((advantage: Advantage, i) => (
-            <AdvantageItem key={i} title={advantage.title} description={advantage.description} />
+        </div>
+      </div>
+
+      <div className="glass p-8 rounded-2xl mb-8">
+        <h2 className="text-2xl font-bold mb-4">💰 Compatible Funding Options</h2>
+        <div className="flex flex-wrap gap-3">
+          {item.fundingOptions?.map((option: Item) => (
+            <Link
+              key={option.id}
+              href={`/library/funding-options/${option.id}`}
+              className="px-6 py-3 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-all duration-300"
+            >
+              {option.name}
+            </Link>
           ))}
-        </ul>
+        </div>
       </div>
-      <div className="mt-10">
-        <h2 className="text-2xl mb-2">👀 Examples</h2>
-        <span dangerouslySetInnerHTML={{ __html: item.examples || '' }} />
-      </div>
-      <div className="mt-10">
-        <h2 className="text-2xl mb-2">🌐 Resources</h2>
-        <span dangerouslySetInnerHTML={{ __html: item.resources || '' }} />
-      </div>
-      <div className="mt-10">
-        <h2 className="text-2xl mb-2">🏢 Compatible Entity Structures</h2>
-        {item.entityTypes?.map((option: Item, i) => (
-          <Link
-            key={i}
-            href={`/library/entity-types/${option.id}`}
-            className="rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block entity-type"
-          >
-            {option.name}
-          </Link>
-        ))}
-      </div>
-      <div className="mt-10">
-        <h2 className="text-2xl mb-2">💰 Compatible Funding Options</h2>
-        {item.fundingOptions?.map((option: Item, i) => (
-          <Link
-            key={i}
-            href={`/library/funding-options/${option.id}`}
-            className="rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block funding-option"
-          >
-            {option.name}
-          </Link>
-        ))}
-      </div>
-      <div className="mt-10">
-        <h2 className="text-2xl mb-2">🤝 Compatible Business Models</h2>
-        {item.businessModels?.map((model: Item, i) => (
-          <Link
-            key={i}
-            href={`/library/business-models/${model.id}`}
-            className="rounded-2xl text-center px-4 py-1 mr-3 mb-2 inline-block business-model"
-          >
-            {model.name}
-          </Link>
-        ))}
+
+      <div className="glass p-8 rounded-2xl">
+        <h2 className="text-2xl font-bold mb-4">🤝 Compatible Business Models</h2>
+        <div className="flex flex-wrap gap-3">
+          {item.businessModels?.map((model: Item) => (
+            <Link
+              key={model.id}
+              href={`/library/business-models/${model.id}`}
+              className="px-6 py-3 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-all duration-300"
+            >
+              {model.name}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

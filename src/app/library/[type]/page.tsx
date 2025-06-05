@@ -6,14 +6,6 @@ import GoalsSelect from '../../../components/GoalsSelect';
 import { fetchItems } from '../../api/fetchItems';
 import LibraryTable from '../LibraryTable';
 
-import styles from './Library.module.scss';
-
-interface PageProps {
-  params: {
-    type: string;
-  };
-}
-
 const EntityList: React.FC<{ type: string }> = async ({ type }) => {
   const items = await fetchItems(type);
 
@@ -24,43 +16,46 @@ const EntityList: React.FC<{ type: string }> = async ({ type }) => {
   );
 };
 
-const EntityTypesPage = ({ params }: PageProps) => {
+const EntityTypesPage = ({ params }: { params: { type: string } }) => {
   const type = params.type;
   const name = startCase(params.type);
 
   return (
-    <div>
-      <div className="flex flex-col md:flex-row content-center align-center justify-between md:items-center">
-        <div className="mb-5">
-          <Suspense fallback={<div>Loading...</div>}>
+    <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-16">
+      <div className="flex flex-col md:flex-row content-center align-center justify-between md:items-center mb-8">
+        <div className="mb-5 md:mb-0">
+          <Suspense fallback={<div className="h-14 skeleton rounded-lg w-[300px]"></div>}>
             <GoalsSelect />
           </Suspense>
         </div>
-        <div className="bg-slate-300 rounded-3xl p-2 inline-block mb-5 flex text-sm sm:text-base">
+        <div className="glass rounded-2xl p-2 inline-flex text-sm sm:text-base gap-2">
           <Link
             href="/library/entity-types"
-            className={
-              'flex-1 text-nowrap text-center rounded-2xl px-2 py-1 ' +
-              (type === 'entity-types' ? styles.selected : 'bg-transparent')
-            }
+            className={`px-6 py-3 rounded-xl transition-all duration-300 ${
+              type === 'entity-types'
+                ? 'bg-white/10 text-white shadow-lg'
+                : 'text-white/70 hover:text-white hover:bg-white/5'
+            }`}
           >
             Entity Types
           </Link>
           <Link
             href="/library/funding-options"
-            className={
-              'flex-1 text-nowrap text-center rounded-2xl px-2 py-1 ' +
-              (type === 'funding-options' ? styles.selected : 'bg-transparent')
-            }
+            className={`px-6 py-3 rounded-xl transition-all duration-300 ${
+              type === 'funding-options'
+                ? 'bg-white/10 text-white shadow-lg'
+                : 'text-white/70 hover:text-white hover:bg-white/5'
+            }`}
           >
             Funding Options
           </Link>
           <Link
             href="/library/business-models"
-            className={
-              'flex-1 text-nowrap text-center rounded-2xl px-2 py-1 ' +
-              (type === 'business-models' ? styles.selected : 'bg-transparent')
-            }
+            className={`px-6 py-3 rounded-xl transition-all duration-300 ${
+              type === 'business-models'
+                ? 'bg-white/10 text-white shadow-lg'
+                : 'text-white/70 hover:text-white hover:bg-white/5'
+            }`}
           >
             Business Models
           </Link>
