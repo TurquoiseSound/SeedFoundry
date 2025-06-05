@@ -23,20 +23,19 @@ export default function RootLayout({
       <body>
         <div className="top-fade"></div>
         <header className='header-container'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
-            <Link href='/' className="flex items-center group">
-              <Image
-                src="/seed_logo.png"
-                alt="Institute of Wise Innovation Logo"
-                width={32}
-                height={32}
-                className='transition-transform duration-300 group-hover:scale-110'
-              />
-              <div className="ml-3">
-                <h2 className='text-2xl font-bold text-white mb-0'>The Institute of Wise Innovation</h2>
-                <h3 className='text-xl font-bold text-gradient'>SEED FOUNDRY</h3>
-              </div>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative flex justify-between items-center'>
+            <Link href='/' className="flex flex-col">
+              <h2 className='text-2xl font-bold text-white mb-0'>The Institute of Wise Innovation</h2>
+              <h3 className='text-xl font-bold text-gradient'>SEED FOUNDRY</h3>
             </Link>
+            <Image
+              src="/seed_logo.png"
+              alt="Institute of Wise Innovation Logo"
+              width={40}
+              height={40}
+              className='transition-transform duration-300 hover:scale-110'
+            />
+            <div className='absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent transform transition-opacity duration-300 header-divider'></div>
           </div>
         </header>
         <div className='relative pt-24'>
@@ -48,10 +47,13 @@ export default function RootLayout({
           __html: `
             window.addEventListener('scroll', () => {
               const header = document.querySelector('.header-container');
+              const divider = document.querySelector('.header-divider');
               if (window.scrollY > 20) {
                 header.classList.add('scrolled');
+                divider.classList.add('opacity-0');
               } else {
                 header.classList.remove('scrolled');
+                divider.classList.remove('opacity-0');
               }
             });
           `
