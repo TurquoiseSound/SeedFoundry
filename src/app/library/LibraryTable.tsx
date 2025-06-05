@@ -52,16 +52,18 @@ const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }
   return (
     <div className="space-y-6">
       {filteredItems.map((item: Item) => {
-        const compatabilityColor = isClient && item.goalScore
-          ? `bg-${item.goalScore >= 0.8 ? 'green' : item.goalScore >= 0.5 ? 'yellow' : 'red'}-400`
-          : 'bg-gray-200';
+        const compatabilityColor =
+          isClient && item.goalScore
+            ? `bg-${item.goalScore >= 0.8 ? 'green' : item.goalScore >= 0.5 ? 'yellow' : 'red'}-400`
+            : 'bg-gray-200';
 
         return (
           <div
             key={item.name}
             className="glass p-8 rounded-2xl animate-fade-in"
-            style={{ 
-              opacity: isClient && selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1 
+            style={{
+              opacity:
+                isClient && selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1,
             }}
           >
             <div className="flex flex-col md:flex-row gap-8">

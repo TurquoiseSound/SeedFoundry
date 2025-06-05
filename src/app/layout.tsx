@@ -1,12 +1,7 @@
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import { faGithub, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faRss, faPodcast } from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-  faLinkedin,
-  faXTwitter,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -118,32 +113,77 @@ export default function RootLayout({
               <div>
                 <h4 className="text-white font-semibold mb-4">Product</h4>
                 <ul className="space-y-2">
-                  <li><Link href="/library/entity-types" className="text-white/60 hover:text-white transition-colors">Entity Types</Link></li>
-                  <li><Link href="/library/funding-options" className="text-white/60 hover:text-white transition-colors">Funding Options</Link></li>
-                  <li><Link href="/library/business-models" className="text-white/60 hover:text-white transition-colors">Business Models</Link></li>
+                  <li>
+                    <Link
+                      href="/library/entity-types"
+                      className="text-white/60 hover:text-white transition-colors"
+                    >
+                      Entity Types
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/library/funding-options"
+                      className="text-white/60 hover:text-white transition-colors"
+                    >
+                      Funding Options
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/library/business-models"
+                      className="text-white/60 hover:text-white transition-colors"
+                    >
+                      Business Models
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-4">Resources</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-white/60 hover:text-white transition-colors">Documentation</a></li>
-                  <li><a href="#" className="text-white/60 hover:text-white transition-colors">Guides</a></li>
-                  <li><a href="#" className="text-white/60 hover:text-white transition-colors">Case Studies</a></li>
+                  <li>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Documentation
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Guides
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Case Studies
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-4">Company</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-white/60 hover:text-white transition-colors">About</a></li>
-                  <li><a href="#" className="text-white/60 hover:text-white transition-colors">Blog</a></li>
-                  <li><a href="#" className="text-white/60 hover:text-white transition-colors">Careers</a></li>
+                  <li>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Careers
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-4">Connect</h4>
                 <ul className="space-y-2">
                   <li>
-                    <a 
+                    <a
                       href="https://github.com/wiseinnovation"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -153,7 +193,7 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <a 
+                    <a
                       href="https://x.com/wiserinnovation"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -163,7 +203,7 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <a 
+                    <a
                       href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -173,7 +213,7 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <a 
+                    <a
                       href="https://wiseinnovation.podbean.com"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -183,7 +223,7 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <a 
+                    <a
                       href="https://www.linkedin.com/company/instituteofwiseinnovation"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -204,7 +244,9 @@ export default function RootLayout({
                   height={24}
                   className="opacity-50"
                 />
-                <span className="text-white/40 text-sm">© 2025 Institute of Wise Innovation. All rights reserved.</span>
+                <span className="text-white/40 text-sm">
+                  © 2025 Institute of Wise Innovation. All rights reserved.
+                </span>
               </div>
               <div className="flex items-center">
                 <small className="text-white/40 text-sm">
