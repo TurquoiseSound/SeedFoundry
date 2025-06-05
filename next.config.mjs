@@ -18,13 +18,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.collaborative.tech',
+        hostname: 'images.squarespace-cdn.com',
         port: '',
-        pathname: '/images/**',
-      }
+        pathname: '/**',
+      },
     ],
   },
-  // Add experimental configuration for improved WebSocket handling
   experimental: {
     esmExternals: true,
     serverComponents: true,
