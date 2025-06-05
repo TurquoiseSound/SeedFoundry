@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/700.css';
 
 :root {
   /* Core brand colors - refined for executive presence */
@@ -19,28 +19,9 @@
   --primary-200: #4a4a4a;
   --primary-100: #E8E8E8;
   
-  /* Earth tones */
-  --earth-deep: #1a1a1a;
-  --earth-rich: #242424;
-  --earth-medium: #2d2d2d;
-  --earth-light: #363636;
-  
-  /* Accent color - vibrant but sophisticated */
-  --accent-rgb: 0, 194, 255;
-  --accent-dark-rgb: 0, 153, 230;
-  --accent-light-rgb: 102, 223, 255;
-  
-  /* Neutral colors as RGB values for opacity support */
-  --neutral-900-rgb: 26, 28, 30;
-  --neutral-800-rgb: 45, 47, 49;
-  --neutral-700-rgb: 64, 66, 68;
-  --neutral-600-rgb: 83, 85, 87;
-  --neutral-500-rgb: 102, 104, 106;
-  --neutral-400-rgb: 121, 123, 125;
-  --neutral-300-rgb: 140, 142, 144;
-  --neutral-200-rgb: 159, 161, 163;
-  --neutral-100-rgb: 230, 231, 232;
-  --neutral-50-rgb: 245, 246, 247;
+  /* Accent colors */
+  --accent-purple: #9333ea;
+  --accent-magenta: #e879f9;
   
   /* Glass effect variables */
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -50,9 +31,9 @@
 
 /* Base styles */
 body {
-  background: linear-gradient(135deg, #000 0%, #121212 100%);
+  background: linear-gradient(135deg, #000 0%, #121212 50%, #000 100%);
   @apply text-neutral-100;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -61,14 +42,17 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Playfair Display", serif;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  @apply font-bold text-white;
+  @apply font-bold;
 }
 
 h1 {
   @apply text-4xl md:text-6xl font-bold mb-6;
+  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -111,91 +95,11 @@ p {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* Button styles */
-.btn {
-  @apply px-8 py-4 rounded-lg font-medium transition-all duration-300;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, rgb(var(--accent-rgb)) 0%, rgb(var(--accent-dark-rgb)) 100%);
-  @apply text-white shadow-lg;
-  box-shadow: 0 4px 6px -1px rgba(var(--accent-rgb), 0.2);
-}
-
-.btn-primary:hover {
-  filter: brightness(110%) saturate(110%);
-  transform: translateY(-1px);
-}
-
-.btn-secondary {
-  @apply bg-neutral-800/60 text-neutral-100 backdrop-blur-sm
-         hover:bg-neutral-700/60 
-         active:bg-neutral-600/60;
-}
-
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, 
-    rgba(255,255,255,1) 0%, 
-    rgba(255,255,255,0.8) 100%
-  );
+  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-magenta) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Loading skeleton */
-.skeleton {
-  @apply animate-pulse rounded;
-  background-color: rgb(var(--neutral-800-rgb) / 0.5);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .container {
-    @apply px-6;
-  }
-  
-  .card {
-    @apply p-6;
-  }
-  
-  .btn {
-    @apply w-full mb-3;
-  }
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply rounded-full;
-  background-color: rgb(var(--neutral-700-rgb) / 0.5);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(var(--neutral-600-rgb) / 0.5);
-}
-
-/* Focus styles */
-:focus {
-  @apply outline-none;
-  box-shadow: 0 0 0 2px rgb(var(--accent-rgb));
 }
 
 /* Goals Select Styles */
@@ -213,16 +117,16 @@ p {
 }
 
 .goals__option {
-  @apply text-white hover:bg-white/10 !important;
+  @apply text-white hover:bg-purple-500/20 !important;
 }
 
 .goals__option--is-selected {
-  @apply bg-white/20 !important;
+  @apply bg-purple-500/30 !important;
 }
 
 /* Entity Types and Library Styles */
 .entity-type, .business-model, .funding-option {
-  @apply bg-white/5 text-white hover:bg-white/10 transition-colors;
+  @apply bg-white/5 text-white hover:bg-purple-500/20 transition-colors;
 }
 
 /* Header styles */
@@ -237,4 +141,22 @@ p {
 /* Top opacity bar */
 .top-fade {
   @apply fixed top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none z-10;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full;
+  background: linear-gradient(to bottom, var(--accent-purple), var(--accent-magenta));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--accent-magenta), var(--accent-purple));
 }

@@ -9,7 +9,7 @@ config.autoAddCss = false;
 import GoalsProvider from './GoalsProvider'
 
 export const metadata: Metadata = {
-  title: "Institue of Wise Innovation | SEED Founding",
+  title: "Institute of Wise Innovation | SEED Founding",
   description: "How do you want to plant and grow your ethical tech business",
 };
 
@@ -23,16 +23,12 @@ export default function RootLayout({
       <body>
         <div className="top-fade"></div>
         <header className='header-container'>
-          <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 flex items-center'>
-            <Link href='/' className="flex items-center group">
-              <Image
-                src="/seed_logo.png"
-                alt="Institute of Wise Innovation | SEED Logo"
-                width={36}
-                height={36}
-                className='transition-transform duration-300 group-hover:scale-110'
-              />
-              <h2 className='text-xl ml-3 text-gradient font-bold'>The Institue of Wise Innovation | SEED FOUNDRY</h2>
+          <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4'>
+            <Link href='/' className="flex flex-col group">
+              <h2 className='text-xl text-gradient font-bold leading-tight'>
+                The Institute of Wise Innovation
+                <span className="block mt-1">SEED FOUNDRY</span>
+              </h2>
             </Link>
           </div>
         </header>
