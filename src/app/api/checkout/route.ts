@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     }
 
     // Verify user exists and get their email
-    const { data: user, error: userError } = await supabase
+    const { data: user, error: userError } = await supabase!
       .from('users')
       .select('email')
       .eq('id', userId)
