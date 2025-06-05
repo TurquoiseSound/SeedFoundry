@@ -40,87 +40,98 @@ export default function RootLayout({
                 className="transition-transform duration-300 hover:scale-110 mt-1"
                 priority
               />
-              <small className="text-emerald-200 text-sm mt-2">
-                Incubated at{' '}
-                <a
-                  href="https://www.collaborative.tech/"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  The Collaborative Technology Alliance
-                </a>{' '}
-                |{' '}
-                Team:{' '}
-                <a
-                  href="https://xplusx.co"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LX
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/daywaterbury"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Day Waterbury
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/michaelgrossman"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Michael Grossman
-                </a>
-                ,{' '}
-                <a
-                  href="https://tibetsprague.com"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tibet Sprague
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/aaronbrodeur"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Aaron Brodeur
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/samuelliebeskind"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Sam Liebeskind
-                </a>
-                ,{' '}
-                <a
-                  href="https://byrongo.com/"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Byron Go
-                </a>
-              </small>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider"></div>
           </div>
         </header>
         <div className="relative pt-20">
           <GoalsProvider>{children}</GoalsProvider>
+        </div>
+        <div className="text-center mt-8 mb-4">
+          <small className="text-emerald-200 text-sm">
+            Incubated at{' '}
+            <a
+              href="https://www.collaborative.tech/"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Collaborative Technology Alliance
+            </a>{' '}
+            |{' '}
+            Team:{' '}
+            <a
+              href="https://turquoisesound.com"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Turquoise Sound
+            </a>
+            ,{' '}
+            <a
+              href="https://xplusx.co"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LX
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/daywaterbury"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Day Waterbury
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/michaelgrossman"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Michael Grossman
+            </a>
+            ,{' '}
+            <a
+              href="https://tibetsprague.com"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tibet Sprague
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/aaronbrodeur"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aaron Brodeur
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/samuelliebeskind"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sam Liebeskind
+            </a>
+            ,{' '}
+            <a
+              href="https://byrongo.com/"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Byron Go
+            </a>
+          </small>
         </div>
         <HeaderScroll />
       </body>
