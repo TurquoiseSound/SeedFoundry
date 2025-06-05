@@ -33,7 +33,7 @@ export default function RootLayout({
             </Link>
             <div className="flex flex-col items-end">
               <Image
-                src="/backup_seed_logo.png"
+                src="/seed_logo copy.png"
                 alt="Institute of Wise Innovation Logo"
                 width={72}
                 height={72}
