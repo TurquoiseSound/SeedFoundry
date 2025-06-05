@@ -21,8 +21,8 @@ export default function Home() {
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
           <p className="text-xl md:text-2xl text-emerald-200 max-w-3xl mx-auto leading-relaxed">
-            Design your organization&#39;s architecture to maximize impact while preserving your
-            core mission and values.
+            Design your organization&#39;s architecture to maximize impact while preserving your core
+            mission and values.
           </p>
         </motion.div>
 
@@ -33,9 +33,7 @@ export default function Home() {
           transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="glass p-8 rounded-2xl backdrop-blur-xl">
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Define Your Strategic Objectives
-            </h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Define Your Strategic Objectives</h2>
             <Suspense fallback={<div className="h-14 skeleton rounded-lg"></div>}>
               <GoalsSelect />
             </Suspense>
@@ -49,7 +47,7 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <Link href="/library/entity-types" className="card group">
-            <h3 className="text-2xl font-bold mb-4">Entity Architecture</h3>
+            <h3 className="text-2xl font-bold mb-4">Legal Entity</h3>
             <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Design the optimal legal framework to support your mission and growth trajectory.
             </p>

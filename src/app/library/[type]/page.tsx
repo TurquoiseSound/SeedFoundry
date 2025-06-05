@@ -35,7 +35,7 @@ const EntityTypesPage = ({ params }: { params: { type: string } }) => {
                 : 'text-white/70 hover:text-white hover:bg-white/5'
             }`}
           >
-            Entity Types
+            Legal Entity
           </Link>
           <Link
             href="/library/funding-options"

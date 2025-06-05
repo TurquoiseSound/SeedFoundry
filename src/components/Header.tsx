@@ -24,8 +24,8 @@ export default function Header() {
             </div>
           ) : (
             <div className="flex items-center gap-4">
-              <h2 className="text-2xl font-bold text-white">The Institute of Wise Innovation</h2>
-              <span className="text-gradient text-xl font-bold">SEED FOUNDRY</span>
+              <span className="text-2xl font-bold text-white">The Institute of Wise Innovation</span>
+              <span className="text-gradient text-2xl font-bold">SEED FOUNDRY</span>
             </div>
           )}
         </Link>
