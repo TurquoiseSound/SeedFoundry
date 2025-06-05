@@ -29,10 +29,10 @@ export default function RootLayout({
               <h3 className='text-[1.69rem] font-bold text-gradient leading-tight'>SEED FOUNDRY</h3>
             </Link>
             <Image
-              src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=144&h=144&dpr=2"
+              src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=72&h=72&dpr=2"
               alt="Institute of Wise Innovation Logo"
-              width={144}
-              height={144}
+              width={72}
+              height={72}
               className='transition-transform duration-300 hover:scale-110 mt-1'
             />
             <div className='absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider'></div>
