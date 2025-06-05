@@ -26,7 +26,7 @@ export default function Home() {
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
           <p className="text-xl md:text-2xl text-emerald-200 max-w-3xl mx-auto leading-relaxed">
-            Design your organization&apos;s architecture to maximize impact while preserving your core mission and values.
+            Design your organization&#39;s architecture to maximize impact while preserving your core mission and values.
           </p>
         </motion.div>
 

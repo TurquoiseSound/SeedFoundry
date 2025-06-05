@@ -74,6 +74,7 @@ export default function GoalsSelect({ goals } : { goals: Goal[] }) {
       hideSelectedOptions={false}
       instanceId="goals-select"
       isMulti
+      menuPortalTarget={document.body}
       name="goals"
       onChange={handleChangeSelect}
       options={goals}
