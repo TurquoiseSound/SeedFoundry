@@ -23,22 +23,22 @@ export default function RootLayout({
       <body>
         <div className="top-fade"></div>
         <header className='header-container'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative flex justify-between items-center'>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 relative flex justify-between items-start'>
             <Link href='/' className="flex flex-col">
-              <h2 className='text-2xl font-bold text-white mb-0'>The Institute of Wise Innovation</h2>
-              <h3 className='text-xl font-bold text-gradient'>SEED FOUNDRY</h3>
+              <h2 className='text-2xl font-bold text-white mb-0 leading-tight'>The Institute of Wise Innovation</h2>
+              <h3 className='text-xl font-bold text-gradient leading-tight'>SEED FOUNDRY</h3>
             </Link>
             <Image
               src="/seed_logo.png"
               alt="Institute of Wise Innovation Logo"
-              width={40}
-              height={40}
-              className='transition-transform duration-300 hover:scale-110'
+              width={36}
+              height={36}
+              className='transition-transform duration-300 hover:scale-110 mt-1'
             />
-            <div className='absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent transform transition-opacity duration-300 header-divider'></div>
+            <div className='absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider'></div>
           </div>
         </header>
-        <div className='relative pt-24'>
+        <div className='relative pt-20'>
           <GoalsProvider>
             {children}
           </GoalsProvider>
