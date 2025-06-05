@@ -7,10 +7,7 @@ export async function POST(request: Request) {
     const { priceId, userId } = await request.json();
 
     if (!priceId) {
-      return NextResponse.json(
-        { error: 'Price ID is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Price ID is required' }, { status: 400 });
     }
 
     // Verify user exists and get their email
@@ -21,10 +18,7 @@ export async function POST(request: Request) {
       .single();
 
     if (userError || !user) {
-      return NextResponse.json(
-        { error: 'User not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: 'User not found' }, { status: 404 });
     }
 
     // Create Stripe checkout session
@@ -48,9 +42,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ sessionId: session.id });
   } catch (error) {
     console.error('Checkout error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

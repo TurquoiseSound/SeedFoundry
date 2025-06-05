@@ -16,13 +16,18 @@ interface CheckoutButtonProps {
   children: React.ReactNode;
 }
 
-export default function CheckoutButton({ priceId, userId, className, children }: CheckoutButtonProps) {
+export default function CheckoutButton({
+  priceId,
+  userId,
+  className,
+  children,
+}: CheckoutButtonProps) {
   const [loading, setLoading] = useState(false);
 
   const handleCheckout = async () => {
     try {
       setLoading(true);
-      
+
       const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: {
@@ -55,11 +60,7 @@ export default function CheckoutButton({ priceId, userId, className, children }:
   };
 
   return (
-    <button
-      onClick={handleCheckout}
-      disabled={loading}
-      className={className}
-    >
+    <button onClick={handleCheckout} disabled={loading} className={className}>
       {loading ? 'Processing...' : children}
     </button>
   );

@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Library | SEED Founding",
-  description: "How do you want to plant and grow your ethical tech business",
+  title: 'Library | SEED Founding',
+  description: 'How do you want to plant and grow your ethical tech business',
 };
 
 export default function LibraryLayout({
@@ -15,7 +15,7 @@ export default function LibraryLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <div>{children}</div>
     </div>
   );

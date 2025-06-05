@@ -5,7 +5,5 @@ import { fetchGoals } from '../../app/api/fetchGoals';
 export default async function GoalsSelect() {
   const goals = await fetchGoals();
 
-  return (
-    <GoalsSelectInternal goals={goals} />
-  );
+  return <GoalsSelectInternal goals={goals} />;
 }

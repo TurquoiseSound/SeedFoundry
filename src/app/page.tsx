@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from "react";
+import { Suspense } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import GoalsSelect from '../components/GoalsSelect';
@@ -8,14 +8,14 @@ import GoalsSelect from '../components/GoalsSelect';
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
 };
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 pb-16">
-        <motion.div 
+        <motion.div
           className="text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,27 +26,28 @@ export default function Home() {
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
           <p className="text-xl md:text-2xl text-emerald-200 max-w-3xl mx-auto leading-relaxed">
-            Design your organization&#39;s architecture to maximize impact while preserving your core mission and values.
+            Design your organization&#39;s architecture to maximize impact while preserving your
+            core mission and values.
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="glass p-8 rounded-2xl backdrop-blur-xl">
-            <h2 className="text-2xl font-bold mb-6 text-center">Define Your Strategic Objectives</h2>
-            <Suspense fallback={
-              <div className="h-14 skeleton rounded-lg"></div>
-            }>
+            <h2 className="text-2xl font-bold mb-6 text-center">
+              Define Your Strategic Objectives
+            </h2>
+            <Suspense fallback={<div className="h-14 skeleton rounded-lg"></div>}>
               <GoalsSelect />
             </Suspense>
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -13,8 +13,8 @@ interface LibraryTableProps {
 }
 
 const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
-  const [globalFilter, setGlobalFilter] = React.useState('')
-  const { selectedGoals }  = React.useContext(GoalsContext);
+  const [globalFilter, setGlobalFilter] = React.useState('');
+  const { selectedGoals } = React.useContext(GoalsContext);
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -25,17 +25,25 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
 
   const filteredItems = React.useMemo<Item[]>(() => {
     let newItems = items.filter((item) => {
-      return item.name?.toLowerCase().includes(globalFilter.toLowerCase())
-    })
+      return item.name?.toLowerCase().includes(globalFilter.toLowerCase());
+    });
 
     if (selectedGoals.length > 0) {
       newItems = newItems.sort((a, b) => {
-        const aRelatedGoals = a.relatedGoals || {}
-        const bRelatedGoals = b.relatedGoals || {}
-        a.goalScore = isEmpty(aRelatedGoals) ? 0 : Object.keys(aRelatedGoals).filter(rg => selectedGoals.some(sg => sg.id === rg)).reduce((acc, rg) => acc * aRelatedGoals[rg], 1);
-        b.goalScore = isEmpty(bRelatedGoals) ? 0 : Object.keys(bRelatedGoals).filter(rg => selectedGoals.some(sg => sg.id === rg)).reduce((acc, rg) => acc * bRelatedGoals[rg], 1);
+        const aRelatedGoals = a.relatedGoals || {};
+        const bRelatedGoals = b.relatedGoals || {};
+        a.goalScore = isEmpty(aRelatedGoals)
+          ? 0
+          : Object.keys(aRelatedGoals)
+              .filter((rg) => selectedGoals.some((sg) => sg.id === rg))
+              .reduce((acc, rg) => acc * aRelatedGoals[rg], 1);
+        b.goalScore = isEmpty(bRelatedGoals)
+          ? 0
+          : Object.keys(bRelatedGoals)
+              .filter((rg) => selectedGoals.some((sg) => sg.id === rg))
+              .reduce((acc, rg) => acc * bRelatedGoals[rg], 1);
         return b.goalScore - a.goalScore;
-      })
+      });
     }
 
     return newItems;
@@ -58,29 +66,29 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
       </thead>
       <tbody>
         {filteredItems.map((item: Item) => {
-          const compatabilityColor = item.goalScore ? `bg-${item.goalScore >= 0.8 ? 'green' : item.goalScore >= 0.5 ? 'yellow' : 'red'}-400` : 'bg-gray-200';
+          const compatabilityColor = item.goalScore
+            ? `bg-${item.goalScore >= 0.8 ? 'green' : item.goalScore >= 0.5 ? 'yellow' : 'red'}-400`
+            : 'bg-gray-200';
 
           return (
-            <tr 
-              key={item.name} 
+            <tr
+              key={item.name}
               className="animate-fade-in"
-              style={{ opacity: selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1}}
+              style={{ opacity: selectedGoals.length > 0 ? Math.max(item.goalScore || 0, 0.3) : 1 }}
             >
               <td data-label="">
                 <Link href={`/library/${type}/${item.id}`} className={styles.itemName}>
                   {item.name}
                 </Link>
-                {item.description && (
-                  <p className="text-neutral-600 mt-2">{item.description}</p>
-                )}
+                {item.description && <p className="text-neutral-600 mt-2">{item.description}</p>}
               </td>
 
               <td data-label="Compatible Entity Structures">
                 <div className={styles.tagContainer}>
-                  {item.entityTypes?.map(entity => (
+                  {item.entityTypes?.map((entity) => (
                     <Link
                       href={`/library/entity-types/${entity.id}`}
-                      className='rounded-2xl text-center px-4 py-1 entity-type'
+                      className="rounded-2xl text-center px-4 py-1 entity-type"
                       key={entity.name}
                     >
                       {entity.name}
@@ -91,10 +99,10 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
 
               <td data-label="Compatible Business Models">
                 <div className={styles.tagContainer}>
-                  {item.businessModels?.map(model => (
+                  {item.businessModels?.map((model) => (
                     <Link
                       href={`/library/business-models/${model.id}`}
-                      className='rounded-2xl text-center px-4 py-1 business-model'
+                      className="rounded-2xl text-center px-4 py-1 business-model"
                       key={model.name}
                     >
                       {model.name}
@@ -105,10 +113,10 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
 
               <td data-label="Compatible Funding Options">
                 <div className={styles.tagContainer}>
-                  {item.fundingOptions?.map(option => (
+                  {item.fundingOptions?.map((option) => (
                     <Link
                       href={`/library/funding-options/${option.id}`}
-                      className='rounded-2xl text-center px-4 py-1 funding-option'
+                      className="rounded-2xl text-center px-4 py-1 funding-option"
                       key={option.name}
                     >
                       {option.name}
@@ -118,15 +126,15 @@ const LibraryTable: React.FC<LibraryTableProps> = ({ type, items }) => {
               </td>
 
               {selectedGoals.length > 0 ? (
-                <td data-label="Goal Compatibility" className='text-center'>
-                  <span 
-                    className={`pl-5 rounded-2xl w-8 h-8 shadow-md ${compatabilityColor}`} 
+                <td data-label="Goal Compatibility" className="text-center">
+                  <span
+                    className={`pl-5 rounded-2xl w-8 h-8 shadow-md ${compatabilityColor}`}
                     title={`Compatibility Score: ${Math.round((item.goalScore || 0) * 100)}%`}
                   />
                 </td>
               ) : null}
             </tr>
-          )
+          );
         })}
       </tbody>
     </table>

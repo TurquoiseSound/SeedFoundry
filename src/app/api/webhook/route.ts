@@ -34,7 +34,7 @@ export async function POST(request: Request) {
             .update({
               stripe_customer_id: session.customer as string,
               subscription_status: 'active',
-              subscription_plan: session.metadata?.plan || 'default'
+              subscription_plan: session.metadata?.plan || 'default',
             })
             .eq('id', userId);
 
@@ -48,13 +48,13 @@ export async function POST(request: Request) {
       case 'customer.subscription.deleted':
       case 'customer.subscription.updated': {
         const subscription = event.data.object;
-        
+
         // Update subscription status in Supabase
         const { error } = await supabase!
           .from('users')
           .update({
             subscription_status: subscription.status,
-            subscription_plan: subscription.metadata?.plan || 'default'
+            subscription_plan: subscription.metadata?.plan || 'default',
           })
           .eq('stripe_customer_id', subscription.customer as string);
 
@@ -68,9 +68,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ received: true });
   } catch (error) {
     console.error('Webhook error:', error);
-    return NextResponse.json(
-      { error: 'Webhook handler failed' },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: 'Webhook handler failed' }, { status: 400 });
   }
 }

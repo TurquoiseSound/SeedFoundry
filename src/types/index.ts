@@ -48,12 +48,12 @@ export type FundingOption = {
 export type Advantage = {
   title: string;
   description?: string;
-}
+};
 
 export type Goal = {
-  id: string
-  value: string
-  label: string
-}
+  id: string;
+  value: string;
+  label: string;
+};
 
-export type RelatedGoalMap = { [id: string] : number }
+export type RelatedGoalMap = { [id: string]: number };
