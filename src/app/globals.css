@@ -134,7 +134,7 @@ p {
 
 /* Goals Select Styles */
 .goals__control {
-  @apply bg-white/5 border-white/10 text-white !important;
+  @apply bg-black/30 border-white/10 text-white !important;
 }
 
 .goals__placeholder {
