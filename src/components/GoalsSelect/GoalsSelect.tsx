@@ -53,9 +53,11 @@ const ClearIndicator = (props: ClearIndicatorProps<Goal, true>) => {
 
 export default function GoalsSelect({ goals }: { goals: Goal[] }) {
   let { selectedGoals, setSelectedGoals } = useContext(GoalsContext);
+  const [mounted, setMounted] = useState(false);
   const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
+    setMounted(true);
     setPortalTarget(document.body);
   }, []);
 
@@ -72,6 +74,10 @@ export default function GoalsSelect({ goals }: { goals: Goal[] }) {
       setSelectedGoals([...selectedGoals, option]);
     }
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Select
