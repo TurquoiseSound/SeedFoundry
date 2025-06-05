@@ -1,5 +1,13 @@
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import { faRss } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faOpenCollective,
+  faSubstack,
+  faXTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -50,7 +58,53 @@ export default function RootLayout({
           <GoalsProvider>{children}</GoalsProvider>
         </div>
         <HeaderScroll />
-        <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl mt-20">
+        <div className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
+          <div className="max-w-7xl mx-auto px-6 py-8">
+            <div className="flex justify-center space-x-8">
+              <a
+                href="https://wiseinnovation.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faSubstack} size="lg" />
+              </a>
+              <a
+                href="https://opencollective.com/wise-innovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faOpenCollective} size="lg" />
+              </a>
+              <a
+                href="https://github.com/wise-innovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faGithub} size="lg" />
+              </a>
+              <a
+                href="https://twitter.com/wiseinnovation_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faXTwitter} size="lg" />
+              </a>
+              <a
+                href="/rss"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faRss} size="lg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               <div>
