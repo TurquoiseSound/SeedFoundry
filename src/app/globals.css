@@ -143,7 +143,7 @@ p {
 
 .goals__menu {
   @apply bg-black/90 backdrop-blur-xl border border-white/10 !important;
-  z-index: 50 !important;
+  z-index: 100 !important;
 }
 
 .goals__option {
@@ -151,7 +151,7 @@ p {
 }
 
 .goals__option--is-selected {
-  @apply bg-white/20 !important;
+  @apply bg-black text-white !important;
 }
 
 /* Entity Types and Library Styles */

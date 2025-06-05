@@ -23,7 +23,7 @@
     
     .goals__menu {
       @apply mt-2 bg-black/90 backdrop-blur-xl rounded-lg shadow-lg border border-white/10;
-      z-index: 50;
+      z-index: 100;
     }
     
     .goals__option {
@@ -34,10 +34,10 @@
       }
       
       &--is-selected {
-        @apply bg-white/20 text-white;
+        @apply bg-black text-white;
         
         &:hover {
-          @apply bg-white/30;
+          @apply bg-black/80;
         }
       }
     }
