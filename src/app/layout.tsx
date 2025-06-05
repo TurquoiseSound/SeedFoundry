@@ -7,6 +7,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 
 import GoalsProvider from './GoalsProvider';
+import HeaderScroll from './HeaderScroll';
 
 export const metadata: Metadata = {
   title: 'The Institute of Wise Innovation | SEED Foundry',
@@ -28,9 +29,9 @@ export default function RootLayout({
               <h2 className="text-[1.89rem] font-bold text-white mb-0 leading-tight">
                 The Institute of Wise Innovation
               </h2>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col">
                 <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
-                <small className="text-emerald-200 text-sm">
+                <small className="text-emerald-200 text-sm mt-1">
                   Incubated at{' '}
                   <a
                     href="https://www.collaborative.tech/"
@@ -44,11 +45,12 @@ export default function RootLayout({
               </div>
             </Link>
             <Image
-              src="/seed_logo.png"
+              src="/backup_seed_logo.png"
               alt="Institute of Wise Innovation Logo"
               width={144}
               height={144}
               className="transition-transform duration-300 hover:scale-110 mt-1"
+              priority
             />
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider"></div>
           </div>
@@ -56,6 +58,7 @@ export default function RootLayout({
         <div className="relative pt-20">
           <GoalsProvider>{children}</GoalsProvider>
         </div>
+        <HeaderScroll />
       </body>
     </html>
   );
