@@ -8,9 +8,11 @@ import Select, {
   OptionProps,
   ClearIndicatorProps,
 } from 'react-select';
-import { type Goal } from '@/types';
-import styles from './GoalsSelect.module.scss';
+
 import { GoalsContext } from '@/app/GoalsProvider';
+import { type Goal } from '@/types';
+
+import styles from './GoalsSelect.module.scss';
 
 const Option = (props: OptionProps<Goal>) => {
   const { isSelected, isMulti, data } = props;

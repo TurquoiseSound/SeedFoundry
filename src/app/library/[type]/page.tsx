@@ -1,9 +1,11 @@
 import { startCase } from 'lodash';
-import React, { Suspense } from 'react';
 import Link from 'next/link';
-import LibraryTable from '../LibraryTable';
+import React, { Suspense } from 'react';
+
 import GoalsSelect from '../../../components/GoalsSelect';
 import { fetchItems } from '../../api/fetchItems';
+import LibraryTable from '../LibraryTable';
+
 import styles from './Library.module.scss';
 
 interface PageProps {

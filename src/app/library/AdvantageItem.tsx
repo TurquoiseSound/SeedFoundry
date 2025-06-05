@@ -1,7 +1,7 @@
 'use client';
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the FontAwesomeIcon component
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // import the icons you need
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the FontAwesomeIcon component
+import React from 'react';
 
 const AdvantageItem = ({ title, description }: { title: string; description?: string }) => {
   const [showDescription, setShowDescription] = React.useState(false);

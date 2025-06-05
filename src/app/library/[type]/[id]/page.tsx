@@ -1,11 +1,12 @@
-import { startCase } from 'lodash';
-import React, { Suspense } from 'react';
-import { Advantage, Item } from '../../../../types';
-import AdvantageItem from '../../AdvantageItem';
-import { fetchItem } from '../../../api/fetchItems';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { startCase } from 'lodash';
+import Link from 'next/link';
+import React, { Suspense } from 'react';
+
+import { Advantage, Item } from '../../../../types';
+import { fetchItem } from '../../../api/fetchItems';
+import AdvantageItem from '../../AdvantageItem';
 
 interface PageProps {
   params: {

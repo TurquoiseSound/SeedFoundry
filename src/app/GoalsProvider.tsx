@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useState } from 'react';
+
 import { type Goal } from '@/types';
 
 export const GoalsContext = createContext<{ selectedGoals: Goal[]; setSelectedGoals: Function }>({
