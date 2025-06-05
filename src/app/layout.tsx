@@ -244,7 +244,70 @@ export default function RootLayout({
                   height={20}
                 />
                 <small className="text-white/40 text-sm">
-                  Incubated at{' '}
+                  Team:{' '}
+                  <a
+                    href="https://xplusx.co"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LX
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/daywaterbury"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Day Waterbury
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/michaelgrossman"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Michael Grossman
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://tibetsprague.com"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Tibet Sprague
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/aaronbrodeur"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Aaron Brodeur
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/samuelliebeskind"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Sam Liebeskind
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://byrongo.com/"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Byron Go
+                  </a>{' '}
+                  | Incubated at{' '}
                   <a
                     href="https://www.collaborative.tech/"
                     className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
