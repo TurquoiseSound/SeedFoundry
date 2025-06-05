@@ -41,17 +41,7 @@ export default function RootLayout({
                 className="transition-transform duration-300 hover:scale-110 mt-1"
                 priority
               />
-              <small className="text-emerald-200 text-sm mt-2">
-                Incubated at{' '}
-                <a
-                  href="https://www.collaborative.tech/"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  The Collaborative Technology Alliance
-                </a>
-              </small>
+              <span className="text-white text-xs mt-1">Peer</span>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider"></div>
           </div>
@@ -60,6 +50,19 @@ export default function RootLayout({
           <GoalsProvider>{children}</GoalsProvider>
         </div>
         <HeaderScroll />
+        <footer className="text-center py-8">
+          <small className="text-emerald-200 text-sm">
+            Incubated at{' '}
+            <a
+              href="https://www.collaborative.tech/"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Collaborative Technology Alliance
+            </a>
+          </small>
+        </footer>
       </body>
     </html>
   );
