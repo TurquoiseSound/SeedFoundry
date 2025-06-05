@@ -21,11 +21,13 @@ const nextConfig = {
         hostname: 'www.collaborative.tech',
         port: '',
         pathname: '/images/**',
-      },
+      }
     ],
   },
+  // Add experimental configuration for improved WebSocket handling
   experimental: {
     esmExternals: true,
+    serverComponents: true,
   },
 };
 
