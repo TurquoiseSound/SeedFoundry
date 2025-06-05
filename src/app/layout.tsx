@@ -236,17 +236,25 @@ export default function RootLayout({
               </div>
             </div>
             <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
-              <small className="text-white/40 text-sm">
-                Incubated at{' '}
-                <a
-                  href="https://www.collaborative.tech/"
-                  className="text-fuchsia-500 hover:text-fuchsia-400 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  The Collaborative Technology Alliance
-                </a>
-              </small>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="https://www.collaborative.tech/images/cta-logo.png"
+                  alt="Collaborative Technology Alliance"
+                  width={20}
+                  height={20}
+                />
+                <small className="text-white/40 text-sm">
+                  Incubated at{' '}
+                  <a
+                    href="https://www.collaborative.tech/"
+                    className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Collaborative Technology Alliance
+                  </a>
+                </small>
+              </div>
               <div className="flex items-center gap-6">
                 <Image
                   src="/seed_logo copy.png"
