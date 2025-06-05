@@ -1,36 +1,144 @@
 # Institute of Wise Innovation: SEED Foundry
 
-## Development
+A sophisticated decision matrix tool for structuring mission-driven startups, built with Next.js, Supabase, and TypeScript.
 
-First, run the development server:
+## Tech Stack
+
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, SCSS Modules
+- **State Management**: React Context, Zustand
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth
+- **Deployment**: Vercel
+- **Payment Processing**: Stripe
+
+## Prerequisites
+
+- Node.js 18.17 or later
+- npm 9.x or later
+- Git
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
 
 ```bash
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+
+# Stripe (Optional - for payments)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+
+# Base URL
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+## Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/seed-foundry.git
+cd seed-foundry
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up Supabase:
+   - Create a new project at [supabase.com](https://supabase.com)
+   - Click "Connect to Supabase" in the top right of the project
+   - Follow the setup instructions to initialize your database
+   - Copy the environment variables to `.env.local`
+
+4. Run the development server:
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Database Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The project uses Supabase as the database with the following features:
+- Row Level Security (RLS) for data protection
+- Real-time subscriptions
+- Built-in authentication
+- TypeScript type generation
 
-## Learn More
+Database migrations are located in `/supabase/migrations/`. When connecting to Supabase, these migrations will automatically set up:
+- User authentication tables
+- Entity types, business models, and funding options tables
+- Goals and relationships tables
+- Subscription management tables
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Run development server
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Run linting
+npm run lint
 
-## Deploy on Vercel
+# Run linting with auto-fix
+npm run lint:fix
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Format code
+npm run format
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Update browserslist database
+npm run update-browserslist
+```
+
+## Deployment
+
+### Vercel Deployment
+
+1. Push your code to GitHub
+2. Import your repository to [Vercel](https://vercel.com)
+3. Add your environment variables in the Vercel dashboard
+4. Deploy!
+
+### Supabase Deployment
+
+1. Install Supabase CLI (if needed)
+2. Link your project:
+```bash
+supabase link --project-ref your-project-ref
+```
+3. Deploy database changes:
+```bash
+supabase db push
+```
+
+## Features
+
+- 🏢 Entity Type Library
+- 💰 Funding Options Explorer
+- 💼 Business Model Catalog
+- 🎯 Goal-based Recommendations
+- 🔒 Secure Authentication
+- 💳 Stripe Integration
+- 📱 Responsive Design
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is proprietary software. All rights reserved.
+
+## Support
+
+For support, email support@wiseinnovation.org or join our community Discord server.
