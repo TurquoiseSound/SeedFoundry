@@ -111,7 +111,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               <div>
-                <h4 className="text-white font-semibold mb-4">Product</h4>
+                <h4 className="text-white font-semibold mb-4">Seed Foundry</h4>
                 <ul className="space-y-2">
                   <li>
                     <Link
@@ -137,6 +137,16 @@ export default function RootLayout({
                       Business Models
                     </Link>
                   </li>
+                  <li>
+                    <a
+                      href="https://github.com/wiseinnovation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faGithub} /> GitHub
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
@@ -160,7 +170,7 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-4">Company</h4>
+                <h4 className="text-white font-semibold mb-4">Philosophy</h4>
                 <ul className="space-y-2">
                   <li>
                     <a href="#" className="text-white/60 hover:text-white transition-colors">
@@ -174,7 +184,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a href="#" className="text-white/60 hover:text-white transition-colors">
-                      Careers
+                      Community
                     </a>
                   </li>
                 </ul>
@@ -184,22 +194,12 @@ export default function RootLayout({
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="https://github.com/wiseinnovation"
+                      href="https://wiseinnovation.podbean.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
-                      <FontAwesomeIcon icon={faGithub} /> GitHub
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://x.com/wiserinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
+                      <FontAwesomeIcon icon={faPodcast} /> Podbean
                     </a>
                   </li>
                   <li>
@@ -214,12 +214,12 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a
-                      href="https://wiseinnovation.podbean.com"
+                      href="https://x.com/wiserinnovation"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
-                      <FontAwesomeIcon icon={faPodcast} /> Podbean
+                      <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
                     </a>
                   </li>
                   <li>
@@ -235,7 +235,18 @@ export default function RootLayout({
                 </ul>
               </div>
             </div>
-            <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
+              <small className="text-white/40 text-sm">
+                Incubated at{' '}
+                <a
+                  href="https://www.collaborative.tech/"
+                  className="text-fuchsia-500 hover:text-fuchsia-400 transition-colors duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Collaborative Technology Alliance
+                </a>
+              </small>
               <div className="flex items-center gap-6">
                 <Image
                   src="/seed_logo copy.png"
@@ -247,19 +258,6 @@ export default function RootLayout({
                 <span className="text-white/40 text-sm">
                   © 2025 Institute of Wise Innovation. All rights reserved.
                 </span>
-              </div>
-              <div className="flex items-center">
-                <small className="text-white/40 text-sm">
-                  Incubated at{' '}
-                  <a
-                    href="https://www.collaborative.tech/"
-                    className="text-white/40 hover:text-white transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    The Collaborative Technology Alliance
-                  </a>
-                </small>
               </div>
             </div>
           </div>
