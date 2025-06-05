@@ -26,10 +26,10 @@
   --earth-medium: #2d2d2d;
   --earth-light: #363636;
   
-  /* Accent color - vibrant but sophisticated */
-  --accent-rgb: 46, 213, 115;
-  --accent-dark-rgb: 39, 174, 96;
-  --accent-light-rgb: 46, 213, 115;
+  /* Accent color - vibrant magenta */
+  --accent-rgb: 236, 72, 153;
+  --accent-dark-rgb: 219, 39, 119;
+  --accent-light-rgb: 244, 114, 182;
   
   /* Glass effect variables */
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -69,7 +69,7 @@ h3 {
 }
 
 p {
-  @apply text-lg leading-relaxed mb-6 text-emerald-200;
+  @apply text-lg leading-relaxed mb-6 text-pink-200;
 }
 
 /* Glass morphism */
@@ -163,7 +163,7 @@ p {
 /* Header styles */
 .header-container {
   @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
-  height: 80px; /* Reduced from 120px */
+  height: 80px;
 }
 
 .header-container.scrolled {
@@ -174,8 +174,8 @@ p {
 /* Compatibility indicator */
 .compatibility-indicator {
   @apply rounded-full;
-  width: 32px; /* Reduced from 48px */
-  height: 32px; /* Reduced from 48px */
+  width: 32px;
+  height: 32px;
 }
 
 /* Top opacity bar */
