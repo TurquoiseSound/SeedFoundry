@@ -164,6 +164,7 @@ p {
 .header-container {
   @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
   height: 80px;
+  border-bottom: 1px solid transparent;
   
   @media (max-width: 768px) {
     height: 60px;
@@ -172,7 +173,7 @@ p {
 
 .header-container.scrolled {
   @apply backdrop-blur-xl bg-black/30;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Compatibility indicator */

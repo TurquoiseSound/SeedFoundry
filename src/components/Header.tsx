@@ -45,7 +45,6 @@ export default function Header() {
           />
           <span className="text-white text-xs mt-1">Peer</span>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider"></div>
       </div>
     </header>
   );
