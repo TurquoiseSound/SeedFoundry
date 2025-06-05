@@ -9,7 +9,7 @@ config.autoAddCss = false;
 import GoalsProvider from './GoalsProvider'
 
 export const metadata: Metadata = {
-  title: "Institue of Wise Innovation | SEED Founding",
+  title: "The Institute of Wise Innovation | SEED Foundry",
   description: "How do you want to plant and grow your ethical tech business",
 };
 
@@ -24,23 +24,38 @@ export default function RootLayout({
         <div className="top-fade"></div>
         <header className='header-container'>
           <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 flex items-center'>
-            <Link href='/' className="flex items-center group">
+            <Link href='/' className="flex items-start group">
               <Image
                 src="/seed_logo.png"
-                alt="Institute of Wise Innovation | SEED Logo"
-                width={36}
-                height={36}
+                alt="Institute of Wise Innovation Logo"
+                width={48}
+                height={48}
                 className='transition-transform duration-300 group-hover:scale-110'
               />
-              <h2 className='text-xl ml-3 text-gradient font-bold'>The Institue of Wise Innovation | SEED FOUNDRY</h2>
+              <div className="ml-4">
+                <h2 className='text-sm font-medium text-neutral-400'>The Institute of Wise Innovation</h2>
+                <h3 className='text-xl font-bold text-gradient'>SEED FOUNDRY</h3>
+              </div>
             </Link>
           </div>
         </header>
-        <div className='relative pt-16'>
+        <div className='relative pt-24'>
           <GoalsProvider>
             {children}
           </GoalsProvider>
         </div>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener('scroll', () => {
+              const header = document.querySelector('.header-container');
+              if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+              } else {
+                header.classList.remove('scrolled');
+              }
+            });
+          `
+        }} />
       </body>
     </html>
   );
