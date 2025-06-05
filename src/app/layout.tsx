@@ -29,10 +29,8 @@ export default function RootLayout({
               <h2 className="text-[1.89rem] font-bold text-white mb-0 leading-tight">
                 The Institute of Wise Innovation
               </h2>
-              <div className="flex flex-col">
-                <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
-                <small className="text-emerald-200 text-sm mt-1">
-                  Research Incubated at{' '} \n
+<small className="text-emerald-200 text-sm mt-1">
+                  Incubated at{' '}
                   <a
                     href="https://www.collaborative.tech/"
                     className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
@@ -42,6 +40,11 @@ export default function RootLayout({
                     The Collaborative Technology Alliance
                   </a>
                 </small>
+
+              
+              <div className="flex flex-col">
+                <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
+                
               </div>
             </Link>
             <Image
