@@ -3,6 +3,13 @@ import { stripe } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
+  if (!supabase) {
+    return NextResponse.json(
+      { error: 'Database client not initialized' },
+      { status: 500 }
+    );
+  }
+
   try {
     const { priceId, userId } = await request.json();
 

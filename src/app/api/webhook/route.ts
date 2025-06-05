@@ -8,6 +8,13 @@ export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
+  if (!supabase) {
+    return NextResponse.json(
+      { error: 'Database client not initialized' },
+      { status: 500 }
+    );
+  }
+
   const body = await request.text();
   const signature = headers().get('stripe-signature');
 

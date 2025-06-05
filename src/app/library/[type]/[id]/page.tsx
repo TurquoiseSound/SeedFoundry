@@ -1,14 +1,20 @@
 import { startCase } from 'lodash';
 import React, { Suspense } from 'react';
 import { Advantage, Item } from '../../../../types';
-import { NextPage } from 'next';
 import AdvantageItem from '../../AdvantageItem';
 import { fetchItem } from '../../../api/fetchItems';
 import Link from 'next/link';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import { faXmark } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const ViewItemPage: NextPage<{ params: { id: string, type: string } }> = ({ params }) => {
+interface PageProps {
+  params: {
+    id: string;
+    type: string;
+  };
+}
+
+const ViewItemPage = ({ params }: PageProps) => {
   return (<>
     <div className='fixed top-0 bottom-0 right-0 left-0 bg-slate-500 p-20 opacity-50'></div>
     <div className='bg-slate-200 rounded-xl p-10 z-10 mt-5 relative'>

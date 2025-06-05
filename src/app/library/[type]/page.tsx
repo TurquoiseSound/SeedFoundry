@@ -1,11 +1,16 @@
 import { startCase } from 'lodash';
 import React, { Suspense } from 'react';
-import { NextPage } from 'next';
 import Link from "next/link";
 import LibraryTable from '../LibraryTable';
 import GoalsSelect from '../../../components/GoalsSelect';
 import { fetchItems } from '../../api/fetchItems';
 import styles from './Library.module.scss'
+
+interface PageProps {
+  params: {
+    type: string;
+  };
+}
 
 const EntityList: React.FC<{ type: string }> = async ({ type }) => {
   const items = await fetchItems(type)
@@ -17,13 +22,12 @@ const EntityList: React.FC<{ type: string }> = async ({ type }) => {
   );
 };
 
-const EntityTypesPage: NextPage<{ params: { type: string } }> = ({ params }) => {
+const EntityTypesPage = ({ params }: PageProps) => {
   const type = params.type
   const name = startCase(params.type)
 
   return (
     <div>
-      {/* <h1 className='text-3xl font-bold mb-3'>{name}</h1> */}
       <div className='flex flex-col md:flex-row content-center align-center justify-between md:items-center'>
         <div className='mb-5'>
           <Suspense fallback={<div>Loading...</div>}>
