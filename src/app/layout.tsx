@@ -4,8 +4,10 @@ import { faRss } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
   faOpenCollective,
+  faPodcast,
   faSubstack,
   faXTwitter,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Metadata } from 'next';
@@ -92,6 +94,22 @@ export default function RootLayout({
                 className="text-white/60 hover:text-white transition-colors"
               >
                 <FontAwesomeIcon icon={faXTwitter} size="lg" />
+              </a>
+              <a
+                href="https://www.youtube.com/@wiseinnovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faYoutube} size="lg" />
+              </a>
+              <a
+                href="https://wiseinnovation.podbean.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faPodcast} size="lg" />
               </a>
               <a
                 href="/rss"
