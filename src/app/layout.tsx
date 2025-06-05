@@ -31,7 +31,7 @@ export default function RootLayout({
               <h3 className="text-[1.69rem] font-bold text-gradient leading-tight">SEED FOUNDRY</h3>
             </Link>
             <Image
-              src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=72&h=72&dpr=2"
+              src="/seed_logo.png"
               alt="Institute of Wise Innovation Logo"
               width={72}
               height={72}
