@@ -28,11 +28,11 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-4">
           {!isMobile && (
-            <div className="flex flex-col space-y-0">
-              <h2 className="text-xl md:text-2xl font-bold text-white leading-none">
+            <div className="flex flex-col">
+              <h2 className="text-xl md:text-2xl font-bold text-white leading-tight">
                 The Institute of Wise Innovation
               </h2>
-              <h3 className="text-lg md:text-xl font-bold text-gradient leading-none">
+              <h3 className="text-lg md:text-xl font-bold text-gradient leading-tight">
                 SEED FOUNDRY
               </h3>
             </div>
@@ -51,6 +51,16 @@ export default function Header() {
             </div>
           )}
         </Link>
+        <div className="flex items-center space-x-4">
+          <Image
+            src="/cta_logo_300.png"
+            alt="Collaborative Technology Alliance"
+            width={32}
+            height={32}
+            className="transition-transform duration-300 hover:scale-110"
+            priority
+          />
+        </div>
       </div>
     </header>
   );

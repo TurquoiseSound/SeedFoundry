@@ -138,36 +138,21 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-4">Team</h4>
+                <h4 className="text-white font-semibold mb-4">Philosophy</h4>
                 <ul className="space-y-2">
                   <li>
-                    <a
-                      href="https://twitter.com/danielkhalils"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Daniel Khalils
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      About
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://twitter.com/jasonjacksondev"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Jason Jackson
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Blog
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://twitter.com/joshspector"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Josh Spector
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Community
                     </a>
                   </li>
                 </ul>
