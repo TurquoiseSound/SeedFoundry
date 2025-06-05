@@ -26,10 +26,10 @@
   --earth-medium: #2d2d2d;
   --earth-light: #363636;
   
-  /* Accent color - vibrant but sophisticated */
-  --accent-rgb: 46, 213, 115;
-  --accent-dark-rgb: 39, 174, 96;
-  --accent-light-rgb: 46, 213, 115;
+  /* Accent color - matching v0.dev emerald */
+  --accent-rgb: 16, 185, 129;
+  --accent-dark-rgb: 4, 120, 87;
+  --accent-light-rgb: 52, 211, 153;
   
   /* Glass effect variables */
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -148,10 +148,11 @@ p {
 
 .goals__option {
   @apply text-white hover:bg-white/10 !important;
+  background-color: transparent !important;
 }
 
 .goals__option--is-selected {
-  @apply bg-black text-white !important;
+  @apply bg-emerald-600 text-white !important;
 }
 
 /* Entity Types and Library Styles */
