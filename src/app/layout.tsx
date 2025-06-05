@@ -1,12 +1,9 @@
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { faRss } from '@fortawesome/free-solid-svg-icons';
+import { faRss, faPodcast } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
   faLinkedin,
-  faOpenCollective,
-  faPodcast,
-  faSubstack,
   faXTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
@@ -64,22 +61,6 @@ export default function RootLayout({
         <div className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="flex justify-center space-x-8">
-              <a
-                href="https://instituteofwiseinnovation.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-colors"
-              >
-                <FontAwesomeIcon icon={faSubstack} size="lg" />
-              </a>
-              <a
-                href="https://opencollective.com/wiseinnovation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-colors"
-              >
-                <FontAwesomeIcon icon={faOpenCollective} size="lg" />
-              </a>
               <a
                 href="https://github.com/wiseinnovation"
                 target="_blank"
@@ -193,32 +174,12 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a 
-                      href="https://instituteofwiseinnovation.substack.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faSubstack} /> Substack
-                    </a>
-                  </li>
-                  <li>
-                    <a 
                       href="https://wiseinnovation.podbean.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
                       <FontAwesomeIcon icon={faPodcast} /> Podbean
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://opencollective.com/wiseinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faOpenCollective} /> Open Collective
                     </a>
                   </li>
                   <li>
