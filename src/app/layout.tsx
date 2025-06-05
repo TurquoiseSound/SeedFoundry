@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css';
@@ -46,160 +44,95 @@ export default function RootLayout({
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-transparent to-white/30 transform transition-opacity duration-300 header-divider"></div>
           </div>
         </header>
-        
         <div className="relative pt-20">
           <GoalsProvider>{children}</GoalsProvider>
         </div>
-
-        <footer className="mt-20">
-          {/* Incubation Section */}
-          <div className="border-t border-white/10 py-12">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <div className="flex items-center justify-center space-x-4">
-                <Image
-                  src="/cta_logo_300.png"
-                  alt="Collaborative Technology Alliance"
-                  width={40}
-                  height={40}
-                  className="opacity-80"
-                />
-                <p className="text-emerald-200 text-sm">
-                  Incubated at{' '}
-                  <a
-                    href="https://www.collaborative.tech/"
-                    className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    The Collaborative Technology Alliance
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Team Section */}
-          <div className="border-t border-white/10 py-12">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <p className="text-emerald-200 text-sm">
-                Team:{' '}
-                <a
-                  href="https://turquoisesound.com"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Turquoise Sound
-                </a>
-                ,{' '}
-                <a
-                  href="https://xplusx.co"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LX
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/daywaterbury"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Day Waterbury
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/michaelgrossman"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Michael Grossman
-                </a>
-                ,{' '}
-                <a
-                  href="https://tibetsprague.com"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tibet Sprague
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/aaronbrodeur"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Aaron Brodeur
-                </a>
-                ,{' '}
-                <a
-                  href="https://www.linkedin.com/in/samuelliebeskind"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Sam Liebeskind
-                </a>
-                ,{' '}
-                <a
-                  href="https://byrongo.com/"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Byron Go
-                </a>
-              </p>
-            </div>
-          </div>
-
-          {/* Social Links Section */}
-          <div className="border-t border-white/10 py-12">
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="flex justify-center space-x-8">
-                <a
-                  href="https://twitter.com/wiseinnovation"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={faTwitter} size="lg" />
-                </a>
-                <a
-                  href="https://github.com/wise-innovation"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={faGithub} size="lg" />
-                </a>
-                <a
-                  href="https://linkedin.com/company/wise-innovation"
-                  className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} size="lg" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright Section */}
-          <div className="border-t border-white/10 py-8">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <p className="text-emerald-200/60 text-sm">
-                © {new Date().getFullYear()} Institute of Wise Innovation. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </footer>
-        
+        <div className="text-center mt-8 mb-4">
+          <small className="text-emerald-200 text-sm">
+            Incubated at{' '}
+            <a
+              href="https://www.collaborative.tech/"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Collaborative Technology Alliance
+            </a>{' '}
+            |{' '}
+            Team:{' '}
+            <a
+              href="https://turquoisesound.com"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Turquoise Sound
+            </a>
+            ,{' '}
+            <a
+              href="https://xplusx.co"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LX
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/daywaterbury"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Day Waterbury
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/michaelgrossman"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Michael Grossman
+            </a>
+            ,{' '}
+            <a
+              href="https://tibetsprague.com"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tibet Sprague
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/aaronbrodeur"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aaron Brodeur
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/samuelliebeskind"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sam Liebeskind
+            </a>
+            ,{' '}
+            <a
+              href="https://byrongo.com/"
+              className="text-emerald-200 hover:text-emerald-100 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Byron Go
+            </a>
+          </small>
+        </div>
         <HeaderScroll />
       </body>
     </html>
