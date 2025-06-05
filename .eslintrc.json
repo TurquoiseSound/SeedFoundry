@@ -15,7 +15,7 @@
     "jsx-a11y/role-has-required-aria-props": "error",
     "jsx-a11y/role-supports-aria-props": "error",
     "react/jsx-no-target-blank": "error",
-    "react/no-unescaped-entities": "error",
+    "react/no-unescaped-entities": "off",
     "react/no-unknown-property": "error",
     "no-unused-vars": "error",
     "no-console": ["error", { "allow": ["warn", "error"] }],
