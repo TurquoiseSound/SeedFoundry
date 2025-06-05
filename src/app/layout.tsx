@@ -54,7 +54,91 @@ export default function RootLayout({
         </div>
         <HeaderScroll />
         <div className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
-          <div className="max-w-7xl mx-auto px-6 py-8">
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <div className="flex justify-center mb-4">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/cta_logo_300.png"
+                  alt="Collaborative Technology Alliance"
+                  width={20}
+                  height={20}
+                />
+                <small className="text-white/40 text-sm">
+                  Incubated at{' '}
+                  <a
+                    href="https://www.collaborative.tech/"
+                    className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Collaborative Technology Alliance
+                  </a>{' '}
+                  | Team:{' '}
+                  <a
+                    href="https://xplusx.co"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LX
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/daywaterbury"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Day Waterbury
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/michaelgrossman"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Michael Grossman
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://tibetsprague.com"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Tibet Sprague
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/aaronbrodeur"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Aaron Brodeur
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/samuelliebeskind"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Sam Liebeskind
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://byrongo.com/"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Byron Go
+                  </a>
+                </small>
+              </div>
+            </div>
             <div className="flex justify-center space-x-8">
               <a
                 href="https://github.com/wiseinnovation"
@@ -236,88 +320,6 @@ export default function RootLayout({
               </div>
             </div>
             <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/cta_logo_300.png"
-                  alt="Collaborative Technology Alliance"
-                  width={20}
-                  height={20}
-                />
-                <small className="text-white/40 text-sm">
-                  Team:{' '}
-                  <a
-                    href="https://xplusx.co"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LX
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/daywaterbury"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Day Waterbury
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/michaelgrossman"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Michael Grossman
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://tibetsprague.com"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Tibet Sprague
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/aaronbrodeur"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Aaron Brodeur
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/samuelliebeskind"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Sam Liebeskind
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://byrongo.com/"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Byron Go
-                  </a>{' '}
-                  | Incubated at{' '}
-                  <a
-                    href="https://www.collaborative.tech/"
-                    className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    The Collaborative Technology Alliance
-                  </a>
-                </small>
-              </div>
               <div className="flex items-center gap-6">
                 <Image
                   src="/seed_logo copy.png"
