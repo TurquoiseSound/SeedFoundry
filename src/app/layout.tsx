@@ -238,7 +238,7 @@ export default function RootLayout({
             <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
               <div className="flex items-center gap-2">
                 <Image
-                  src="https://images.squarespace-cdn.com/content/v1/6230f5e2fd63824950ceb7ed/89e3f30c-a275-4ebd-85be-f03bebf7c679/cta_logo_300.png?format=1500w"
+                  src="/cta_logo_300.png"
                   alt="Collaborative Technology Alliance"
                   width={20}
                   height={20}
