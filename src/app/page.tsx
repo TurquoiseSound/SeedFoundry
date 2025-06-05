@@ -1,7 +1,6 @@
 'use client';
 
 import { Suspense } from "react";
-import Image from "next/image";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import GoalsSelect from '../components/GoalsSelect';
@@ -15,24 +14,24 @@ const fadeIn = {
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Startup Ethical
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-            Design your organization's architecture to maximize impact while preserving your core mission and values.
+            Design your organization&apos;s architecture to maximize impact while preserving your core mission and values.
           </p>
         </motion.div>
 
         <motion.div 
-          className="max-w-2xl mx-auto mb-20"
+          className="max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}

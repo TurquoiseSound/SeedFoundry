@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
 :root {
   /* Core brand colors - refined for executive presence */
   --primary-900: #0A1F35;
@@ -45,8 +51,9 @@
 
 /* Base styles */
 body {
-  @apply bg-gradient-to-br from-primary-800 via-primary-900 to-earth-deep text-neutral-100;
-  font-family: "Circular", system-ui, sans-serif;
+  background: linear-gradient(135deg, #142C44 0%, #0A1F35 50%, #2D3B36 100%);
+  @apply text-neutral-100;
+  font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -55,7 +62,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Circular-Bold", system-ui, sans-serif;
+  font-family: "Playfair Display", serif;
   letter-spacing: -0.03em;
   line-height: 1.2;
   @apply text-white;
@@ -222,4 +229,9 @@ p {
 /* Entity Types and Library Styles */
 .entity-type, .business-model, .funding-option {
   @apply bg-white/10 text-white hover:bg-white/20 transition-colors;
+}
+
+/* Top opacity bar */
+.top-fade {
+  @apply fixed top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/20 to-transparent pointer-events-none z-10;
 }
