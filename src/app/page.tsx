@@ -25,7 +25,7 @@ export default function Home() {
             Startup Ethical
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
-          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-emerald-200 max-w-3xl mx-auto leading-relaxed">
             Design your organization&apos;s architecture to maximize impact while preserving your core mission and values.
           </p>
         </motion.div>
@@ -54,21 +54,21 @@ export default function Home() {
         >
           <Link href="/library/entity-types" className="card group">
             <h3 className="text-2xl font-bold mb-4">Entity Architecture</h3>
-            <p className="text-neutral-300 group-hover:text-neutral-200 transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Design the optimal legal framework to support your mission and growth trajectory.
             </p>
           </Link>
 
           <Link href="/library/funding-options" className="card group">
             <h3 className="text-2xl font-bold mb-4">Capital Strategy</h3>
-            <p className="text-neutral-300 group-hover:text-neutral-200 transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Explore aligned funding pathways that preserve your autonomy and values.
             </p>
           </Link>
 
           <Link href="/library/business-models" className="card group">
             <h3 className="text-2xl font-bold mb-4">Revenue Design</h3>
-            <p className="text-neutral-300 group-hover:text-neutral-200 transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Develop sustainable business models that generate both profit and impact.
             </p>
           </Link>
