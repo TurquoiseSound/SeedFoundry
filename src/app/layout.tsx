@@ -11,10 +11,10 @@ import './globals.css';
 
 config.autoAddCss = false;
 
+import Header from '@/components/Header';
+
 import GoalsProvider from './GoalsProvider';
 import HeaderScroll from './HeaderScroll';
-
-import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'The Institute of Wise Innovation | SEED Foundry',
