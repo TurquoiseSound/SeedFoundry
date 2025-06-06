@@ -37,14 +37,6 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="flex justify-center space-x-8">
               <a
-                href="https://github.com/wiseinnovation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-colors"
-              >
-                <FontAwesomeIcon icon={faGithub} size="lg" />
-              </a>
-              <a
                 href="https://x.com/wiserinnovation"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -117,16 +109,6 @@ export default function RootLayout({
                       Business Models
                     </Link>
                   </li>
-                  <li>
-                    <a
-                      href="https://github.com/wiseinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faGithub} /> GitHub
-                    </a>
-                  </li>
                 </ul>
               </div>
               <div>
@@ -172,6 +154,16 @@ export default function RootLayout({
               <div>
                 <h4 className="text-white font-semibold mb-4">Connect</h4>
                 <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="https://github.com/wiseinnovation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faGithub} /> GitHub
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="https://wiseinnovation.podbean.com"
@@ -262,21 +254,21 @@ export default function RootLayout({
                   </a>
                   ,{' '}
                   <a
-                    href="https://www.linkedin.com/in/michaelgrossman"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Michael Grossman
-                  </a>
-                  ,{' '}
-                  <a
                     href="https://tibetsprague.com"
                     className="text-white/60 hover:text-white transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Tibet Sprague
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.linkedin.com/in/michaelgrossman"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Michael Grossman
                   </a>
                   ,{' '}
                   <a
