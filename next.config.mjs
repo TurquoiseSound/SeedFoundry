@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  swcMinify: false,
   webpack: (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -19,8 +18,8 @@ const nextConfig = {
     ],
   },
   experimental: {
+    // Removed deprecated 'serverComponents' option
     esmExternals: true,
-    serverComponents: true,
   },
 };
 
