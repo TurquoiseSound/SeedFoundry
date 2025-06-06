@@ -61,6 +61,14 @@ export default function RootLayout({
                 <FontAwesomeIcon icon={faPodcast} size="lg" />
               </a>
               <a
+                href="https://github.com/wiseinnovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faGithub} size="lg" />
+              </a>
+              <a
                 href="https://www.linkedin.com/company/instituteofwiseinnovation"
                 target="_blank"
                 rel="noopener noreferrer"
