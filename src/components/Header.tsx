@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 export default function Header() {
@@ -14,15 +15,21 @@ export default function Header() {
         <Link href="/" className="flex items-center">
           {isMobile ? (
             <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold text-white">IWI <span className="text-gradient">SEED FOUNDRY</span></h2>
+              <h2 className="text-lg font-bold text-white">
+                IWI <span className="text-gradient">SEED FOUNDRY</span>
+              </h2>
             </div>
           ) : isTablet ? (
             <div className="flex items-center gap-3">
-              <h2 className="text-xl font-bold text-white">Institute of Wise Innovation <span className="text-gradient">SEED FOUNDRY</span></h2>
+              <h2 className="text-xl font-bold text-white">
+                Institute of Wise Innovation <span className="text-gradient">SEED FOUNDRY</span>
+              </h2>
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <h2 className="text-2xl font-bold text-white">The Institute of Wise Innovation <span className="text-gradient">SEED FOUNDRY</span></h2>
+              <h2 className="text-2xl font-bold text-white">
+                The Institute of Wise Innovation <span className="text-gradient">SEED FOUNDRY</span>
+              </h2>
             </div>
           )}
         </Link>

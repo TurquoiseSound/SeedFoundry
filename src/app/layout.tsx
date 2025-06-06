@@ -6,12 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import './globals.css';
 
 config.autoAddCss = false;
 
 import GoalsProvider from './GoalsProvider';
 import HeaderScroll from './HeaderScroll';
+
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
