@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faXTwitter, faYoutube, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faRss, faPodcast } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Metadata } from 'next';
@@ -93,7 +93,7 @@ export default function RootLayout({
         </div>
         <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
               <div>
                 <h4 className="text-white font-semibold mb-4">Seed Foundry</h4>
                 <ul className="space-y-2">
@@ -169,16 +169,24 @@ export default function RootLayout({
                       Why
                     </a>
                   </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Circles</h4>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faDiscord} /> Wise Innovation Network
+                    </a>
+                  </li>
                   <li>
                     <a href="#" className="text-white/60 hover:text-white transition-colors">
                       Community
                     </a>
                   </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Connect</h4>
-                <ul className="space-y-2">
                   <li>
                     <a
                       href="https://github.com/wiseinnovation"
@@ -189,6 +197,11 @@ export default function RootLayout({
                       <FontAwesomeIcon icon={faGithub} /> GitHub
                     </a>
                   </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Connect</h4>
+                <ul className="space-y-2">
                   <li>
                     <a
                       href="https://wiseinnovation.podbean.com"
