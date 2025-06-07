@@ -37,11 +37,25 @@ export default function AboutModal() {
                 </a>
               </h2>
               
-              <h3 className="text-xl text-emerald-200 mb-6 italic">
+              <h3 className="text-xl text-gradient mb-6 italic">
                 A prayer for the preservation of this invisible realm and those who tend to that which only grows in darkness— quiet cultivators of radiant roots, keepers of the hidden bloom.
               </h3>
               
-              <div className="text-emerald-200 leading-relaxed space-y-4">
+              {/* Spotify Embed */}
+              <div className="mb-6">
+                <iframe 
+                  style={{borderRadius: '12px'}} 
+                  src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator" 
+                  width="100%" 
+                  height="352" 
+                  frameBorder="0" 
+                  allowFullScreen 
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                  loading="lazy"
+                />
+              </div>
+              
+              <div className="text-white leading-relaxed space-y-4">
                 <p>I build—<br />
                 not to master,<br />
                 but to meet.<br />

@@ -22,10 +22,27 @@ export default function Home() {
             Startup Ethical
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
-          <p className="text-xl md:text-2xl text-emerald-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-emerald-200 max-w-3xl mx-auto leading-relaxed mb-8">
             Design your organization&#39;s architecture to maximize impact while preserving your
             core mission and values.
           </p>
+          
+          {/* Spotify Embed */}
+          <div className="max-w-2xl mx-auto mb-8">
+            <h3 className="text-lg text-emerald-200 mb-4 italic">
+              An Invocation to Invisible Architectures
+            </h3>
+            <iframe 
+              style={{borderRadius: '12px'}} 
+              src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator" 
+              width="100%" 
+              height="352" 
+              frameBorder="0" 
+              allowFullScreen 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"
+            />
+          </div>
         </motion.div>
 
         <motion.div
