@@ -36,12 +36,26 @@ export default function AboutModal() {
                   An Invocation to Invisible Architectures:
                 </a>
               </h2>
+
+              {/* Spotify Embed in About Modal */}
+              <div className="mb-6">
+                <iframe 
+                  style={{borderRadius: '12px'}} 
+                  src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator&theme=0" 
+                  width="100%" 
+                  height="232" 
+                  frameBorder="0" 
+                  allowFullScreen 
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                  loading="lazy"
+                />
+              </div>
               
               <h3 className="text-xl text-emerald-200 mb-6 italic">
                 A prayer for the preservation of this invisible realm and those who tend to that which only grows in darkness— quiet cultivators of radiant roots, keepers of the hidden bloom.
               </h3>
               
-              <div className="text-emerald-200 leading-relaxed space-y-4">
+              <div className="text-white leading-relaxed space-y-4">
                 <p>I build—<br />
                 not to master,<br />
                 but to meet.<br />

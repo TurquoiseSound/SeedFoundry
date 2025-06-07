@@ -18,20 +18,6 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Spotify Embed */}
-          <div className="mb-8 max-w-4xl mx-auto">
-            <iframe 
-              style={{borderRadius: '12px'}} 
-              src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator&theme=0" 
-              width="100%" 
-              height="352" 
-              frameBorder="0" 
-              allowFullScreen 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="lazy"
-            />
-          </div>
-          
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Startup Ethical
             <span className="text-gradient block mt-2">Economic Design</span>
@@ -59,7 +45,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -84,6 +70,25 @@ export default function Home() {
               Develop sustainable business models that generate both profit and impact.
             </p>
           </Link>
+        </motion.div>
+
+        {/* Spotify Embed - moved here after the revenue design button */}
+        <motion.div
+          className="mb-16 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <iframe 
+            style={{borderRadius: '12px'}} 
+            src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator&theme=0" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowFullScreen 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"
+          />
         </motion.div>
       </div>
     </main>
