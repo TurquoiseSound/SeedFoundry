@@ -92,7 +92,7 @@ export default function RootLayout({
         </div>
         <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
               <div>
                 <h4 className="text-white font-semibold mb-4">Seed Foundry</h4>
                 <ul className="space-y-2">
@@ -160,6 +160,11 @@ export default function RootLayout({
                       Blog
                     </a>
                   </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Circles</h4>
+                <ul className="space-y-2">
                   <li>
                     <a 
                       href="https://airtable.com/apphcp7BbQzDd7yBd/shr21jvj3lJ6siqmj" 
@@ -170,10 +175,20 @@ export default function RootLayout({
                       Community
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="https://github.com/wiseinnovation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faGithub} /> GitHub
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-4">Connect</h4>
+                <h4 className="text-white font-semibold mb-4">Socials</h4>
                 <ul className="space-y-2">
                   <li>
                     <a
@@ -197,12 +212,12 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a
-                      href="https://github.com/wiseinnovation"
+                      href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
-                      <FontAwesomeIcon icon={faGithub} /> GitHub
+                      <FontAwesomeIcon icon={faYoutube} /> YouTube
                     </a>
                   </li>
                   <li>
