@@ -43,7 +43,7 @@ export default function Header() {
             priority
           />
           <Image
-            src="public/seed_logo copy.png"
+            src="/seed_logo copy.png"
             alt="Institute of Wise Innovation Logo"
             width={isMobile ? 28 : 36}
             height={isMobile ? 28 : 36}
