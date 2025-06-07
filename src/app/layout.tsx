@@ -161,6 +161,11 @@ export default function RootLayout({
                       Why
                     </a>
                   </li>
+                  <li>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      Community
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
@@ -341,7 +346,7 @@ export default function RootLayout({
               </div>
               <div className="flex items-center gap-6">
                 <Image
-                  src="/seed_logo.png"
+                  src="https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop"
                   alt="Institute of Wise Innovation"
                   width={24}
                   height={24}
