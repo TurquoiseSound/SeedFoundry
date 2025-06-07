@@ -152,6 +152,16 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a 
+                      href="https://www.canva.com/design/DAGX5JBLcLE/ILWDFMl1ux9Hm4mrjAumJg/view?utm_content=DAGX5JBLcLE&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors"
+                    >
+                      Why
+                    </a>
+                  </li>
+                  <li>
+                    <a 
                       href="https://instituteofwiseinnovation.substack.com/" 
                       target="_blank"
                       rel="noopener noreferrer"
@@ -160,11 +170,6 @@ export default function RootLayout({
                       Blog
                     </a>
                   </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Circles</h4>
-                <ul className="space-y-2">
                   <li>
                     <a 
                       href="https://airtable.com/apphcp7BbQzDd7yBd/shr21jvj3lJ6siqmj" 
@@ -175,6 +180,11 @@ export default function RootLayout({
                       Community
                     </a>
                   </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Circles</h4>
+                <ul className="space-y-2">
                   <li>
                     <a
                       href="https://github.com/wiseinnovation"
