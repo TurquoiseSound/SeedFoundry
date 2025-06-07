@@ -49,14 +49,6 @@ export default function RootLayout({
                 <FontAwesomeIcon icon={faXTwitter} size="lg" />
               </a>
               <a
-                href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-colors"
-              >
-                <FontAwesomeIcon icon={faYoutube} size="lg" />
-              </a>
-              <a
                 href="https://wiseinnovation.podbean.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,12 +57,12 @@ export default function RootLayout({
                 <FontAwesomeIcon icon={faPodcast} size="lg" />
               </a>
               <a
-                href="https://github.com/wiseinnovation"
+                href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-white transition-colors"
               >
-                <FontAwesomeIcon icon={faGithub} size="lg" />
+                <FontAwesomeIcon icon={faYoutube} size="lg" />
               </a>
               <a
                 href="https://www.linkedin.com/company/instituteofwiseinnovation"
@@ -200,8 +192,18 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-4">Connect</h4>
+                <h4 className="text-white font-semibold mb-4">Socials</h4>
                 <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="https://x.com/wiserinnovation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="https://wiseinnovation.podbean.com"
@@ -209,7 +211,7 @@ export default function RootLayout({
                       rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
-                      <FontAwesomeIcon icon={faPodcast} /> Podbean
+                      <FontAwesomeIcon icon={faPodcast} /> Podcast
                     </a>
                   </li>
                   <li>
@@ -224,22 +226,22 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a
-                      href="https://x.com/wiserinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="https://www.linkedin.com/company/instituteofwiseinnovation"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
                       <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/rss"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faRss} /> RSS
                     </a>
                   </li>
                 </ul>
