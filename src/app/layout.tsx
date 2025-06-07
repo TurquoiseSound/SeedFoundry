@@ -161,7 +161,12 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                    <a 
+                      href="https://airtable.com/apphcp7BbQzDd7yBd/shr21jvj3lJ6siqmj" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors"
+                    >
                       Community
                     </a>
                   </li>
