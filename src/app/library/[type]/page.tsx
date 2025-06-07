@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import React, { Suspense } from 'react';
+
+import Link from 'next/link';
 
 import GoalsSelect from '../../../components/GoalsSelect';
 import { fetchItems } from '../../api/fetchItems';

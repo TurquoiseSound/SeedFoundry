@@ -1,8 +1,10 @@
+import React, { Suspense } from 'react';
+
+import Link from 'next/link';
+
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { startCase } from 'lodash';
-import Link from 'next/link';
-import React, { Suspense } from 'react';
 
 import { Advantage, Item } from '../../../../types';
 import { fetchItem } from '../../../api/fetchItems';

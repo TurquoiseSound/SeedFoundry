@@ -1,8 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { Suspense } from 'react';
+
+import Link from 'next/link';
+
+import { motion } from 'framer-motion';
 
 import GoalsSelect from '../components/GoalsSelect';
 
