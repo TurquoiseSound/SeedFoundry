@@ -1,9 +1,6 @@
-'use client';
-
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
 
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -25,49 +22,6 @@ export const metadata: Metadata = {
   title: 'The Institute of Wise Innovation | SEED Foundry',
   description: 'How do you want to plant and grow your ethical tech business',
 };
-
-function PhilosophyLinks() {
-  const [showAboutModal, setShowAboutModal] = useState(false);
-
-  return (
-    <>
-      <div>
-        <h4 className="text-white font-semibold mb-4">Philosophy</h4>
-        <ul className="space-y-2">
-          <li>
-            <button
-              onClick={() => setShowAboutModal(true)}
-              className="text-white/60 hover:text-white transition-colors text-left"
-            >
-              About
-            </button>
-          </li>
-          <li>
-            <a
-              href="https://instituteofwiseinnovation.substack.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-white transition-colors"
-            >
-              Blog
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.canva.com/design/DAGX5JBLcLE/ILWDFMl1ux9Hm4mrjAumJg/view?utm_content=DAGX5JBLcLE&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-white transition-colors"
-            >
-              Why
-            </a>
-          </li>
-        </ul>
-      </div>
-      <AboutModal isOpen={showAboutModal} onClose={() => setShowAboutModal(false)} />
-    </>
-  );
-}
 
 export default function RootLayout({
   children,
@@ -139,7 +93,7 @@ export default function RootLayout({
         </div>
         <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               <div>
                 <h4 className="text-white font-semibold mb-4">Seed Foundry</h4>
                 <ul className="space-y-2">
@@ -189,48 +143,25 @@ export default function RootLayout({
                   </li>
                 </ul>
               </div>
-              <PhilosophyLinks />
               <div>
-                <h4 className="text-white font-semibold mb-4">Socials</h4>
+                <h4 className="text-white font-semibold mb-4">Philosophy</h4>
                 <ul className="space-y-2">
                   <li>
-                    <a
-                      href="https://www.linkedin.com/company/instituteofwiseinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+                    <AboutModal />
+                  </li>
+                  <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                      Blog
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://wiseinnovation.podbean.com"
+                      href="https://www.canva.com/design/DAGX5JBLcLE/ILWDFMl1ux9Hm4mrjAumJg/view?utm_content=DAGX5JBLcLE&utm_campaign=designshare&utm_medium=link&utm_source=editor"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                      className="text-white/60 hover:text-white transition-colors"
                     >
-                      <FontAwesomeIcon icon={faPodcast} /> Podbean
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faYoutube} /> YouTube
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://x.com/wiserinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
+                      Why
                     </a>
                   </li>
                 </ul>
@@ -239,12 +170,7 @@ export default function RootLayout({
                 <h4 className="text-white font-semibold mb-4">Circles</h4>
                 <ul className="space-y-2">
                   <li>
-                    <a
-                      href="https://airtable.com/apphcp7BbQzDd7yBd/shr21jvj3lJ6siqmj"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
                       Community
                     </a>
                   </li>
