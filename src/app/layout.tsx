@@ -167,14 +167,6 @@ export default function RootLayout({
                 <h4 className="text-white font-semibold mb-4">Circles</h4>
                 <ul className="space-y-2">
                   <li>
-                    <a
-                      href="#"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faDiscord} /> Wise Innovation Network
-                    </a>
-                  </li>
-                  <li>
                     <a href="#" className="text-white/60 hover:text-white transition-colors">
                       Community
                     </a>
@@ -187,6 +179,14 @@ export default function RootLayout({
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
                       <FontAwesomeIcon icon={faGithub} /> GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faDiscord} /> Network
                     </a>
                   </li>
                 </ul>
