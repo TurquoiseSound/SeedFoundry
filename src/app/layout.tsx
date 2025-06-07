@@ -1,3 +1,5 @@
+'use client';
+
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Image from 'next/image';
 import Link from 'next/link';
