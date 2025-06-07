@@ -150,7 +150,12 @@ export default function RootLayout({
                     <AboutModal />
                   </li>
                   <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors"
+                    >
                       Blog
                     </a>
                   </li>
@@ -164,16 +169,16 @@ export default function RootLayout({
                       Why
                     </a>
                   </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Circles</h4>
-                <ul className="space-y-2">
                   <li>
                     <a href="#" className="text-white/60 hover:text-white transition-colors">
                       Community
                     </a>
                   </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-4">Connect</h4>
+                <ul className="space-y-2">
                   <li>
                     <a
                       href="https://github.com/wiseinnovation"
@@ -182,6 +187,46 @@ export default function RootLayout({
                       className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
                     >
                       <FontAwesomeIcon icon={faGithub} /> GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://wiseinnovation.podbean.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faPodcast} /> Podbean
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faYoutube} /> YouTube
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://x.com/wiserinnovation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/instituteofwiseinnovation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
                     </a>
                   </li>
                 </ul>
@@ -288,7 +333,14 @@ export default function RootLayout({
                   className="opacity-50"
                 />
                 <span className="text-white/40 text-sm">
-                  © 2025 Institute of Wise Innovation. All rights reserved.
+                  <a
+                    href="https://wiseinnovation.institute"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white/60 transition-colors"
+                  >
+                    © 2025 The Institute of Wise Innovation. All rights reserved.
+                  </a>
                 </span>
               </div>
             </div>
