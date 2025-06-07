@@ -151,7 +151,12 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                    <a 
+                      href="https://instituteofwiseinnovation.substack.com/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-white transition-colors"
+                    >
                       Blog
                     </a>
                   </li>
