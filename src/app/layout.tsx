@@ -91,276 +91,300 @@ export default function RootLayout({
           </div>
         </div>
         <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl">
-          <div className="max-w-7xl mx-auto px-6 py-12">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-              <div>
-                <h4 className="text-white font-semibold mb-4">Seed Foundry</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      href="/library/entity-types"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Legal Entity
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/library/funding-options"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Funding Options
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/library/business-models"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Business Models
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Resources</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#" className="text-white/60 hover:text-white transition-colors">
-                      Documentation
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-white/60 hover:text-white transition-colors">
-                      Guides
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-white/60 hover:text-white transition-colors">
-                      Case Studies
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Philosophy</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#" className="text-white/60 hover:text-white transition-colors">
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://www.canva.com/design/DAGX5JBLcLE/ILWDFMl1ux9Hm4mrjAumJg/view?utm_content=DAGX5JBLcLE&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Why
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://instituteofwiseinnovation.substack.com/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://airtable.com/apphcp7BbQzDd7yBd/shr21jvj3lJ6siqmj" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors"
-                    >
-                      Community
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Circles</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://github.com/wiseinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faGithub} /> GitHub
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Socials</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://x.com/wiserinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://wiseinnovation.podbean.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faPodcast} /> Podcast
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faYoutube} /> YouTube
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/company/instituteofwiseinnovation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/rss"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
-                    >
-                      <FontAwesomeIcon icon={faRss} /> RSS
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/cta_logo_300.png"
-                  alt="Collaborative Technology Alliance"
-                  width={40}
-                  height={40}
-                />
-                <small className="text-white/40 text-sm">
-                  Incubated at{' '}
-                  <a
-                    href="https://www.collaborative.tech/"
-                    className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    The Collaborative Technology Alliance
-                  </a>{' '}
-                  | Team:{' '}
-                  <a
-                    href="https://linktr.ee/TaoTeTurquoise"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Turquoise Sound
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://xplusx.co"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LX
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/daywaterbury"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Day Waterbury
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://tibetsprague.com"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Tibet Sprague
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/michaelgrossman"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Michael Grossman
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/aaronbrodeur"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Aaron Brodeur
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://www.linkedin.com/in/samuelliebeskind"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Sam Liebeskind
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://byrongo.com/"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Byron Go
-                  </a>
-                </small>
-              </div>
-              <div className="flex items-center gap-6">
-                <Image
-                  src="/seed_logo copy.png"
-                  alt="Institute of Wise Innovation"
-                  width={24}
-                  height={24}
-                  className="opacity-50"
-                />
-                <span className="text-white/40 text-sm">
-                  © 2025 Institute of Wise Innovation. All rights reserved.
-                </span>
-              </div>
-            </div>
-          </div>
+          <FooterContent />
         </footer>
       </body>
     </html>
+  );
+}
+
+function FooterContent() {
+  return (
+    <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div>
+          <h4 className="text-white font-semibold mb-4">Seed Foundry</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link
+                href="/library/entity-types"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                Legal Entity
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/library/funding-options"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                Funding Options
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/library/business-models"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                Business Models
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-white font-semibold mb-4">Resources</h4>
+          <ul className="space-y-2">
+            <li>
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
+                Documentation
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
+                Guides
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
+                Case Studies
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-white font-semibold mb-4">Philosophy</h4>
+          <PhilosophyLinks />
+        </div>
+        <div>
+          <h4 className="text-white font-semibold mb-4">Circles</h4>
+          <ul className="space-y-2">
+            <li>
+              <a 
+                href="https://airtable.com/apphcp7BbQzDd7yBd/shr21jvj3lJ6siqmj" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                Community
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/wiseinnovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faGithub} /> GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-white font-semibold mb-4">Socials</h4>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="https://x.com/wiserinnovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faXTwitter} /> X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wiseinnovation.podbean.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faPodcast} /> Podcast
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UCg-rES2l7ssC2Csbo4zPfpA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faYoutube} /> YouTube
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/instituteofwiseinnovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="/rss"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faRss} /> RSS
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Image
+            src="/cta_logo_300.png"
+            alt="Collaborative Technology Alliance"
+            width={40}
+            height={40}
+          />
+          <small className="text-white/40 text-sm">
+            Incubated at{' '}
+            <a
+              href="https://www.collaborative.tech/"
+              className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Collaborative Technology Alliance
+            </a>{' '}
+            | Team:{' '}
+            <a
+              href="https://linktr.ee/TaoTeTurquoise"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Turquoise Sound
+            </a>
+            ,{' '}
+            <a
+              href="https://xplusx.co"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LX
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/daywaterbury"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Day Waterbury
+            </a>
+            ,{' '}
+            <a
+              href="https://tibetsprague.com"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tibet Sprague
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/michaelgrossman"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Michael Grossman
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/aaronbrodeur"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aaron Brodeur
+            </a>
+            ,{' '}
+            <a
+              href="https://www.linkedin.com/in/samuelliebeskind"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sam Liebeskind
+            </a>
+            ,{' '}
+            <a
+              href="https://byrongo.com/"
+              className="text-white/60 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Byron Go
+            </a>
+          </small>
+        </div>
+        <div className="flex items-center gap-6">
+          <Image
+            src="/seed_logo copy.png"
+            alt="Institute of Wise Innovation"
+            width={24}
+            height={24}
+            className="opacity-50"
+          />
+          <span className="text-white/40 text-sm">
+            © 2025 Institute of Wise Innovation. All rights reserved.
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PhilosophyLinks() {
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
+
+  return (
+    <>
+      <ul className="space-y-2">
+        <li>
+          <button
+            onClick={() => setIsAboutModalOpen(true)}
+            className="text-white/60 hover:text-white transition-colors text-left"
+          >
+            About
+          </button>
+        </li>
+        <li>
+          <a 
+            href="https://www.canva.com/design/DAGX5JBLcLE/ILWDFMl1ux9Hm4mrjAumJg/view?utm_content=DAGX5JBLcLE&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/60 hover:text-white transition-colors"
+          >
+            Why
+          </a>
+        </li>
+        <li>
+          <a 
+            href="https://instituteofwiseinnovation.substack.com/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/60 hover:text-white transition-colors"
+          >
+            Blog
+          </a>
+        </li>
+      </ul>
+      
+      <AboutModal 
+        isOpen={isAboutModalOpen} 
+        onClose={() => setIsAboutModalOpen(false)} 
+      />
+    </>
   );
 }
