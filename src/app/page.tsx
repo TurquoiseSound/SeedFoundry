@@ -18,6 +18,20 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
+          {/* Spotify Embed */}
+          <div className="mb-8 max-w-4xl mx-auto">
+            <iframe 
+              style={{borderRadius: '12px'}} 
+              src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator&theme=0" 
+              width="100%" 
+              height="352" 
+              frameBorder="0" 
+              allowFullScreen 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"
+            />
+          </div>
+          
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Startup Ethical
             <span className="text-gradient block mt-2">Economic Design</span>
