@@ -326,7 +326,7 @@ export default function RootLayout({
               </div>
               <div className="flex items-center gap-6">
                 <Image
-                  src="/seed_logo copy.png"
+                  src="/public/seed_logo copy.png"
                   alt="Institute of Wise Innovation"
                   width={24}
                   height={24}
