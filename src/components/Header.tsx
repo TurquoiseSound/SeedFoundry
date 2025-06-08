@@ -36,7 +36,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
          
           <Image
-            src="/seed_logo.png?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop"
+            src="/seed_logo.png"
             alt="Institute of Wise Innovation Logo"
             width={isMobile ? 28 : 36}
             height={isMobile ? 28 : 36}
