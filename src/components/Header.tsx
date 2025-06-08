@@ -34,16 +34,9 @@ export default function Header() {
           )}
         </Link>
         <div className="flex items-center gap-4">
+         
           <Image
-            src="/cta_logo_300.png"
-            alt="Collaborative Technology Alliance"
-            width={isMobile ? 32 : 40}
-            height={isMobile ? 32 : 40}
-            className="transition-transform duration-300 hover:scale-110"
-            priority
-          />
-          <Image
-            src="https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop"
+            src="/seed_logo.png?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop"
             alt="Institute of Wise Innovation Logo"
             width={isMobile ? 28 : 36}
             height={isMobile ? 28 : 36}
