@@ -40,9 +40,11 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json({ sessionId: session.id });
+    // Ensure we return a proper response with the session ID
+    return NextResponse.json({ sessionId: session.id }, { status: 200 });
   } catch (error) {
     console.error('Checkout error:', error);
+    // Always return a proper response, even on error
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

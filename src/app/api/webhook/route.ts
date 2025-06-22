@@ -41,6 +41,8 @@ export async function POST(request: Request) {
 
           if (error) {
             console.error('Error updating user subscription:', error);
+            // Ensure we still return a response even on error
+            return NextResponse.json({ received: true, error: 'Database update failed' }, { status: 200 });
           }
         }
         break;
@@ -61,14 +63,18 @@ export async function POST(request: Request) {
 
         if (error) {
           console.error('Error updating subscription status:', error);
+          // Ensure we still return a response even on error
+          return NextResponse.json({ received: true, error: 'Database update failed' }, { status: 200 });
         }
         break;
       }
     }
 
-    return NextResponse.json({ received: true });
+    // Ensure we always return a proper response
+    return NextResponse.json({ received: true }, { status: 200 });
   } catch (error) {
     console.error('Webhook error:', error);
+    // Always return a proper response, even on error
     return NextResponse.json({ error: 'Webhook handler failed' }, { status: 400 });
   }
 }
