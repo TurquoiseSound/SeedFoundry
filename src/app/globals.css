@@ -31,12 +31,12 @@
   --accent-dark-rgb: 39, 174, 96;
   --accent-light-rgb: 46, 213, 115;
   
-  /* New sophisticated text colors */
+  /* Sophisticated text colors with green undertone */
   --text-primary: #ffffff;
-  --text-secondary: #e5e7eb;
-  --text-muted: #d1d5db;
-  --text-subtle: #9ca3af;
-  --text-accent: #f3f4f6;
+  --text-secondary: #e8f5e8;  /* Light green-tinted gray */
+  --text-muted: #d4e8d4;      /* Medium green-tinted gray */
+  --text-subtle: #a8c8a8;     /* Subtle green-tinted gray */
+  --text-accent: #f0f8f0;     /* Very light green-tinted gray */
   
   /* Glass effect variables */
   --glass-bg: rgba(255, 255, 255, 0.03);

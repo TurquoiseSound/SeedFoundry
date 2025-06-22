@@ -52,24 +52,43 @@ export default function Home() {
         >
           <Link href="/library/entity-types" className="card group">
             <h3 className="text-2xl font-bold mb-4">Legal Entity</h3>
-            <p className="text-sophisticated group-hover:text-sophisticated-accent transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Design the optimal legal framework to support your mission and growth trajectory.
             </p>
           </Link>
 
           <Link href="/library/funding-options" className="card group">
             <h3 className="text-2xl font-bold mb-4">Capital Strategy</h3>
-            <p className="text-sophisticated group-hover:text-sophisticated-accent transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Explore aligned funding pathways that preserve your autonomy and values.
             </p>
           </Link>
 
           <Link href="/library/business-models" className="card group">
             <h3 className="text-2xl font-bold mb-4">Revenue Design</h3>
-            <p className="text-sophisticated group-hover:text-sophisticated-accent transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Develop sustainable business models that generate both profit and impact.
             </p>
           </Link>
+        </motion.div>
+
+        {/* Spotify Embed - moved here after the revenue design button */}
+        <motion.div
+          className="mb-16 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <iframe 
+            style={{borderRadius: '12px'}} 
+            src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator&theme=0" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowFullScreen 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"
+          />
         </motion.div>
       </div>
     </main>

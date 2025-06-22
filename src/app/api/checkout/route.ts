@@ -44,6 +44,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ sessionId: session.id }, { status: 200 });
   } catch (error) {
     console.error('Checkout error:', error);
+    
+    // Handle specific Stripe errors
+    if (error && typeof error === 'object' && 'type' in error) {
+      const stripeError = error as any;
+      return NextResponse.json(
+        { 
+          error: 'Payment processing error',
+          details: stripeError.message || 'Unknown payment error'
+        }, 
+        { status: 400 }
+      );
+    }
+    
     // Always return a proper response, even on error
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
