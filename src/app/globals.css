@@ -157,7 +157,7 @@ p {
   -webkit-text-fill-color: transparent;
 }
 
-/* Goals Select Styles - Global overrides for React Select */
+/* Goals Select Styles - Maximum specificity overrides for React Select */
 .goals__control {
   @apply bg-black/30 border-white/10 text-white !important;
 }
@@ -171,35 +171,60 @@ p {
   z-index: 100 !important;
 }
 
-.goals__option {
-  @apply text-white !important;
-  background: transparent !important;
+/* Force all option states to have white text on appropriate backgrounds */
+.goals__option,
+.goals__option:hover,
+.goals__option:focus,
+.goals__option--is-focused,
+.goals__option--is-selected,
+.goals__option--is-selected:hover,
+.goals__option--is-selected:focus,
+.goals__option[aria-selected="true"],
+.goals__option[aria-selected="true"]:hover,
+.goals__option[aria-selected="true"]:focus {
+  color: white !important;
   padding: 8px 12px !important;
 }
 
-.goals__option:hover {
-  @apply bg-white/10 !important;
-  color: white !important;
+/* Default option state - transparent background */
+.goals__option {
+  background: transparent !important;
 }
 
+/* Hover state - light background */
+.goals__option:hover,
 .goals__option--is-focused {
-  @apply bg-white/10 !important;
-  color: white !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
-.goals__option--is-selected {
-  @apply bg-black text-white !important;
-}
-
-.goals__option--is-selected:hover {
-  @apply bg-black/80 !important;
-  color: white !important;
-}
-
-/* Force override any remaining React Select styles */
+/* Selected state - black background */
+.goals__option--is-selected,
 .goals__option[aria-selected="true"] {
   background: #000000 !important;
-  color: white !important;
+}
+
+/* Selected + hover state - slightly lighter black */
+.goals__option--is-selected:hover,
+.goals__option[aria-selected="true"]:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Multi-value (selected tags) styling */
+.goals__multi-value {
+  @apply bg-white/10 rounded-md m-1 !important;
+}
+
+.goals__multi-value__label {
+  @apply text-white px-2 py-1 !important;
+}
+
+.goals__multi-value__remove {
+  @apply text-white/70 hover:text-white hover:bg-transparent !important;
+}
+
+/* Additional overrides to ensure no light backgrounds slip through */
+.goals__menu-list {
+  background: transparent !important;
 }
 
 /* Entity Types and Library Styles */

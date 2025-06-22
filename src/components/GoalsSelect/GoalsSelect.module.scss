@@ -26,17 +26,19 @@
       z-index: 100;
     }
     
+    // Force all option states to have white text with maximum specificity
     .goals__option {
       @apply p-3 cursor-pointer transition-all duration-200;
       background: transparent !important;
       color: white !important;
       
+      // Hover state
       &:hover {
         background: rgba(255, 255, 255, 0.1) !important;
         color: white !important;
       }
       
-      // Override React Select's default focus styles with maximum specificity
+      // Focus state (when navigating with keyboard)
       &--is-focused {
         background: rgba(255, 255, 255, 0.1) !important;
         color: white !important;
@@ -47,7 +49,7 @@
         }
       }
       
-      // Selected options should be black background with white text
+      // Selected state (when option is chosen)
       &--is-selected {
         background: #000000 !important;
         color: white !important;
@@ -57,7 +59,7 @@
           color: white !important;
         }
         
-        // When a selected option is also focused (most specific rule)
+        // When selected option is also focused
         &.goals__option--is-focused {
           background: #000000 !important;
           color: white !important;
@@ -69,10 +71,15 @@
         }
       }
       
-      // Additional override for any remaining light backgrounds
+      // Additional override for aria-selected
       &[aria-selected="true"] {
         background: #000000 !important;
         color: white !important;
+        
+        &:hover {
+          background: rgba(0, 0, 0, 0.8) !important;
+          color: white !important;
+        }
       }
     }
     
@@ -88,12 +95,12 @@
       }
     }
     
-    // Additional global override for any React Select light backgrounds
+    // Ensure menu list has transparent background
     .goals__menu-list {
       background: transparent !important;
     }
     
-    // Force all option states to have proper contrast
+    // Force override any remaining React Select default styles
     .goals__option[class*="--is-"] {
       color: white !important;
     }
