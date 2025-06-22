@@ -71,11 +71,11 @@ const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ type, items }
               <div className="flex-1">
                 <Link
                   href={`/library/${type}/${item.id}`}
-                  className="text-2xl font-bold text-white hover:text-emerald-200 transition-colors duration-300"
+                  className="text-2xl font-bold text-white hover:text-sophisticated-accent transition-colors duration-300"
                 >
                   {item.name}
                 </Link>
-                {item.description && <p className="text-emerald-200 mt-4">{item.description}</p>}
+                {item.description && <p className="text-sophisticated mt-4">{item.description}</p>}
               </div>
 
               {isClient && selectedGoals.length > 0 && (

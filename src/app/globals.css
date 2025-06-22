@@ -31,6 +31,13 @@
   --accent-dark-rgb: 39, 174, 96;
   --accent-light-rgb: 46, 213, 115;
   
+  /* New sophisticated text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --text-muted: #d1d5db;
+  --text-subtle: #9ca3af;
+  --text-accent: #f3f4f6;
+  
   /* Glass effect variables */
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
@@ -69,7 +76,8 @@ h3 {
 }
 
 p {
-  @apply text-lg leading-relaxed mb-6 text-emerald-200;
+  @apply text-lg leading-relaxed mb-6;
+  color: var(--text-secondary);
 }
 
 /* Glass morphism */
@@ -130,6 +138,23 @@ p {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* New sophisticated text color classes */
+.text-sophisticated {
+  color: var(--text-secondary);
+}
+
+.text-sophisticated-muted {
+  color: var(--text-muted);
+}
+
+.text-sophisticated-subtle {
+  color: var(--text-subtle);
+}
+
+.text-sophisticated-accent {
+  color: var(--text-accent);
 }
 
 /* Goals Select Styles */

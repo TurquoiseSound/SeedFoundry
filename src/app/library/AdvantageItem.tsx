@@ -25,7 +25,7 @@ const AdvantageItem = ({ title, description }: { title: string; description?: st
       )}
       {description && description.length > 0 && (
         <p
-          className={`text-emerald-200 mt-2 transition-all duration-300 ${
+          className={`text-sophisticated mt-2 transition-all duration-300 ${
             showDescription ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
           }`}
         >

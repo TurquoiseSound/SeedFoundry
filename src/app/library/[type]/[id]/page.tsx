@@ -45,7 +45,7 @@ const ItemDetails: React.FC<{ id: string; type: string }> = async (props) => {
       <h1 className="text-4xl font-bold mb-8">
         {typeName.substring(0, typeName.length - 1)}: {item.name}
       </h1>
-      <p className="text-emerald-200 text-lg mb-10">{item.description}</p>
+      <p className="text-sophisticated text-lg mb-10">{item.description}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div className="glass p-8 rounded-2xl">
@@ -70,7 +70,7 @@ const ItemDetails: React.FC<{ id: string; type: string }> = async (props) => {
       <div className="glass p-8 rounded-2xl mb-8">
         <h2 className="text-2xl font-bold mb-4">👀 Examples</h2>
         <div
-          className="text-emerald-200"
+          className="text-sophisticated"
           dangerouslySetInnerHTML={{ __html: item.examples || '' }}
         />
       </div>
@@ -78,7 +78,7 @@ const ItemDetails: React.FC<{ id: string; type: string }> = async (props) => {
       <div className="glass p-8 rounded-2xl mb-8">
         <h2 className="text-2xl font-bold mb-4">🌐 Resources</h2>
         <div
-          className="text-emerald-200"
+          className="text-sophisticated"
           dangerouslySetInnerHTML={{ __html: item.resources || '' }}
         />
       </div>
