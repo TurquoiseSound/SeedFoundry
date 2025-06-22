@@ -2,7 +2,9 @@
 
 import React from 'react';
 
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
+
+
 import Link from 'next/link';
 
 import { GoalsContext } from '@/app/GoalsProvider';
