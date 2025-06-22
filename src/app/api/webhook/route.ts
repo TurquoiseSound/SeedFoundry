@@ -9,14 +9,14 @@ export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-  const body = await request.text();
-  const signature = headers().get('stripe-signature');
-
-  if (!process.env.STRIPE_WEBHOOK_SECRET) {
-    throw new Error('Missing env.STRIPE_WEBHOOK_SECRET');
-  }
-
   try {
+    const body = await request.text();
+    const signature = headers().get('stripe-signature');
+
+    if (!process.env.STRIPE_WEBHOOK_SECRET) {
+      throw new Error('Missing env.STRIPE_WEBHOOK_SECRET');
+    }
+
     const event = stripe.webhooks.constructEvent(
       body,
       signature!,
