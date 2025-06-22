@@ -27,7 +27,7 @@
     }
     
     .goals__option {
-      @apply p-3 cursor-pointer transition-all duration-200 text-white;
+      @apply p-3 cursor-pointer transition-all duration-200;
       background: transparent !important;
       color: white !important;
       
@@ -36,7 +36,7 @@
         color: white !important;
       }
       
-      // Override React Select's default focus styles completely
+      // Override React Select's default focus styles with maximum specificity
       &--is-focused {
         background: rgba(255, 255, 255, 0.1) !important;
         color: white !important;
@@ -47,7 +47,7 @@
         }
       }
       
-      // Selected options should be black background
+      // Selected options should be black background with white text
       &--is-selected {
         background: #000000 !important;
         color: white !important;
@@ -57,7 +57,7 @@
           color: white !important;
         }
         
-        // When a selected option is also focused
+        // When a selected option is also focused (most specific rule)
         &.goals__option--is-focused {
           background: #000000 !important;
           color: white !important;
@@ -67,6 +67,12 @@
             color: white !important;
           }
         }
+      }
+      
+      // Additional override for any remaining light backgrounds
+      &[aria-selected="true"] {
+        background: #000000 !important;
+        color: white !important;
       }
     }
     
@@ -80,6 +86,16 @@
       &__remove {
         @apply text-white/70 hover:text-white hover:bg-transparent;
       }
+    }
+    
+    // Additional global override for any React Select light backgrounds
+    .goals__menu-list {
+      background: transparent !important;
+    }
+    
+    // Force all option states to have proper contrast
+    .goals__option[class*="--is-"] {
+      color: white !important;
     }
   }
 }

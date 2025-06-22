@@ -80,6 +80,23 @@ p {
   color: var(--text-secondary);
 }
 
+/* New sophisticated text color classes */
+.text-sophisticated {
+  color: var(--text-secondary);
+}
+
+.text-sophisticated-muted {
+  color: var(--text-muted);
+}
+
+.text-sophisticated-subtle {
+  color: var(--text-subtle);
+}
+
+.text-sophisticated-accent {
+  color: var(--text-accent);
+}
+
 /* Glass morphism */
 .glass {
   @apply backdrop-blur-xl;
@@ -140,24 +157,7 @@ p {
   -webkit-text-fill-color: transparent;
 }
 
-/* New sophisticated text color classes */
-.text-sophisticated {
-  color: var(--text-secondary);
-}
-
-.text-sophisticated-muted {
-  color: var(--text-muted);
-}
-
-.text-sophisticated-subtle {
-  color: var(--text-subtle);
-}
-
-.text-sophisticated-accent {
-  color: var(--text-accent);
-}
-
-/* Goals Select Styles */
+/* Goals Select Styles - Global overrides for React Select */
 .goals__control {
   @apply bg-black/30 border-white/10 text-white !important;
 }
@@ -172,12 +172,34 @@ p {
 }
 
 .goals__option {
-  @apply text-white hover:bg-white/10 !important;
+  @apply text-white !important;
+  background: transparent !important;
   padding: 8px 12px !important;
+}
+
+.goals__option:hover {
+  @apply bg-white/10 !important;
+  color: white !important;
+}
+
+.goals__option--is-focused {
+  @apply bg-white/10 !important;
+  color: white !important;
 }
 
 .goals__option--is-selected {
   @apply bg-black text-white !important;
+}
+
+.goals__option--is-selected:hover {
+  @apply bg-black/80 !important;
+  color: white !important;
+}
+
+/* Force override any remaining React Select styles */
+.goals__option[aria-selected="true"] {
+  background: #000000 !important;
+  color: white !important;
 }
 
 /* Entity Types and Library Styles */
