@@ -58,8 +58,13 @@ export async function safeFetch(
       try {
         await response.arrayBuffer();
       } catch (consumeError) {
-        // If consuming fails, that's okay - we have the clone
-        console.warn('Failed to consume response body:', consumeError);
+        // If consuming fails, re-throw the error to trigger retry mechanism
+        // This prevents unhandled rejections and allows proper error handling
+        throw new FetchError(
+          `Failed to consume response body: ${consumeError instanceof Error ? consumeError.message : 'Unknown error'}`,
+          response.status,
+          response
+        );
       }
 
       // Return the cloned response for actual use
@@ -74,7 +79,8 @@ export async function safeFetch(
           (error.name === 'TypeError' && error.message.includes('terminated')) ||
           error.name === 'AbortError' ||
           error.message.includes('fetch failed') ||
-          error.message.includes('network error')
+          error.message.includes('network error') ||
+          error instanceof FetchError
         ) {
           if (attempt < retries) {
             console.warn(
