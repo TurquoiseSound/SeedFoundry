@@ -1,22 +1,28 @@
+import React from 'react';
+
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import {
+  faDiscord,
+  faGithub,
+  faLinkedin,
+  faXTwitter,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
+import { faPodcast, faRss } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { config } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faLinkedin, faXTwitter, faYoutube, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { faRss, faPodcast } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import type { Metadata } from 'next';
+import AboutModal from '@/components/AboutModal';
+import Header from '@/components/Header';
 
 import './globals.css';
-
-config.autoAddCss = false;
-
-import Header from '@/components/Header';
-import AboutModal from '@/components/AboutModal';
-
 import GoalsProvider from './GoalsProvider';
 import HeaderScroll from './HeaderScroll';
+
+config.autoAddCss = false;
 
 export const metadata: Metadata = {
   title: 'The Institute of Wise Innovation | SEED Foundry',
