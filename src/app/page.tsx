@@ -52,21 +52,21 @@ export default function Home() {
         >
           <Link href="/library/entity-types" className="card group">
             <h3 className="text-2xl font-bold mb-4">Legal Entity</h3>
-            <p className="text-sophisticated group-hover:text-sophisticated-accent transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Design the optimal legal framework to support your mission and growth trajectory.
             </p>
           </Link>
 
           <Link href="/library/funding-options" className="card group">
             <h3 className="text-2xl font-bold mb-4">Capital Strategy</h3>
-            <p className="text-sophisticated group-hover:text-sophisticated-accent transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Explore aligned funding pathways that preserve your autonomy and values.
             </p>
           </Link>
 
           <Link href="/library/business-models" className="card group">
             <h3 className="text-2xl font-bold mb-4">Revenue Design</h3>
-            <p className="text-sophisticated group-hover:text-sophisticated-accent transition-colors duration-300">
+            <p className="text-emerald-200 group-hover:text-emerald-100 transition-colors duration-300">
               Develop sustainable business models that generate both profit and impact.
             </p>
           </Link>
