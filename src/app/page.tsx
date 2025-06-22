@@ -22,7 +22,7 @@ export default function Home() {
             Startup Ethical
             <span className="text-gradient block mt-2">Economic Design</span>
           </h1>
-          <p className="text-xl md:text-2xl text-sophisticated max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed">
             Design your organization&#39;s architecture to maximize impact while preserving your
             core mission and values.
           </p>
