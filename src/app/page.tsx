@@ -71,25 +71,6 @@ export default function Home() {
             </p>
           </Link>
         </motion.div>
-
-        {/* Spotify Embed - moved here after the revenue design button */}
-        <motion.div
-          className="mb-16 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <iframe 
-            style={{borderRadius: '12px'}} 
-            src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator&theme=0" 
-            width="100%" 
-            height="352" 
-            frameBorder="0" 
-            allowFullScreen 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"
-          />
-        </motion.div>
       </div>
     </main>
   );
