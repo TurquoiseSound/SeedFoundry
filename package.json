@@ -54,9 +54,5 @@
   "engines": {
     "node": ">=18.17.0",
     "npm": ">=9.0.0"
-  },
-  "overrides": {
-    "@typescript-eslint/parser": "5.62.0",
-    "@typescript-eslint/eslint-plugin": "5.62.0"
   }
 }
