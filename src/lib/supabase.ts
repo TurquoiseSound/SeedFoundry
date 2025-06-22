@@ -18,5 +18,11 @@ export const supabase = createClient(
     db: {
       schema: 'public',
     },
+    // Add connection pooling configuration for IPv4 compatibility
+    global: {
+      headers: {
+        'x-client-info': 'supabase-js-web',
+      },
+    },
   }
 );

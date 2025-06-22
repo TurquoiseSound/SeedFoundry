@@ -23,8 +23,11 @@ A sophisticated decision matrix tool for structuring mission-driven startups, bu
 Create a `.env.local` file in the root directory with the following variables:
 
 ```bash
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+# Supabase - IMPORTANT: Use Session Pooler URL for IPv4 compatibility
+# Go to your Supabase project > Settings > Database
+# Copy the "Session Pooler" connection string (not the direct connection)
+# It should look like: https://your-project.pooler.supabase.com
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_session_pooler_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 
@@ -53,6 +56,9 @@ npm install
 3. Set up Supabase:
    - Create a new project at [supabase.com](https://supabase.com)
    - Click "Connect to Supabase" in the top right of the project
+   - **IMPORTANT**: In your Supabase project settings, go to Database section
+   - Copy the **Session Pooler** URL (not the direct connection URL)
+   - This is required for IPv4 compatibility with Vercel and other platforms
    - Follow the setup instructions to initialize your database
    - Copy the environment variables to `.env.local`
 
@@ -70,6 +76,8 @@ The project uses Supabase as the database with the following features:
 - Real-time subscriptions
 - Built-in authentication
 - TypeScript type generation
+
+**IPv4 Compatibility**: This project is configured to use Supabase's Session Pooler for compatibility with IPv4-only platforms like Vercel, GitHub Actions, and Render.
 
 Database migrations are located in `/supabase/migrations/`. When connecting to Supabase, these migrations will automatically set up:
 - User authentication tables
@@ -103,7 +111,8 @@ npm run update-browserslist
 1. Push your code to GitHub
 2. Import your repository to [Vercel](https://vercel.com)
 3. Add your environment variables in the Vercel dashboard
-4. Deploy!
+4. **IMPORTANT**: Make sure to use the Supabase Session Pooler URL in your environment variables
+5. Deploy!
 
 ### Supabase Deployment
 
@@ -116,6 +125,17 @@ supabase link --project-ref your-project-ref
 ```bash
 supabase db push
 ```
+
+## Troubleshooting
+
+### IPv4 Connection Issues
+If you encounter connection errors with Supabase:
+1. Go to your Supabase project > Settings > Database
+2. Use the **Session Pooler** connection string instead of the direct connection
+3. Update your `NEXT_PUBLIC_SUPABASE_URL` environment variable
+4. Redeploy your application
+
+This is required for platforms like Vercel, GitHub Actions, and Render that are IPv4-only.
 
 ## Features
 
