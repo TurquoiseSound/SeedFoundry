@@ -28,16 +28,43 @@
     
     .goals__option {
       @apply p-3 cursor-pointer transition-all duration-200 text-white;
+      background-color: transparent !important; // Override React Select defaults
       
       &:hover {
         @apply bg-white/10;
+        background-color: rgba(255, 255, 255, 0.1) !important;
       }
       
+      // This handles the focused state (when navigating with keyboard or when menu opens)
+      &--is-focused {
+        @apply bg-white/10;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        
+        &:hover {
+          @apply bg-white/10;
+          background-color: rgba(255, 255, 255, 0.1) !important;
+        }
+      }
+      
+      // This handles selected options
       &--is-selected {
         @apply bg-black text-white;
+        background-color: #000000 !important;
         
         &:hover {
           @apply bg-black/80;
+          background-color: rgba(0, 0, 0, 0.8) !important;
+        }
+        
+        // When a selected option is also focused
+        &.goals__option--is-focused {
+          @apply bg-black;
+          background-color: #000000 !important;
+          
+          &:hover {
+            @apply bg-black/80;
+            background-color: rgba(0, 0, 0, 0.8) !important;
+          }
         }
       }
     }
