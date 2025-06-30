@@ -47,7 +47,11 @@ export async function POST(request: Request) {
 
     // Handle specific Stripe errors
     if (error && typeof error === 'object' && 'type' in error) {
-      const stripeError = error as any;
+      interface StripeError {
+        message?: string;
+        type?: string;
+      }
+      const stripeError = error as StripeError;
       return NextResponse.json(
         {
           error: 'Payment processing error',

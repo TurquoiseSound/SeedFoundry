@@ -34,7 +34,7 @@ export default function CheckoutButton({
       setError(null);
 
       // Use safe fetch to handle connection issues
-      const data = await safeFetchJson('/api/checkout', {
+      const data = await safeFetchJson<{ sessionId?: string; error?: string }>('/api/checkout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

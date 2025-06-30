@@ -106,7 +106,7 @@ export async function safeFetch(
 /**
  * Safe fetch for JSON responses with automatic parsing
  */
-export async function safeFetchJson<T = any>(
+export async function safeFetchJson<T = unknown>(
   url: string | URL,
   options: SafeFetchOptions = {}
 ): Promise<T> {

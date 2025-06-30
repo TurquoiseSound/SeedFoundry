@@ -100,9 +100,12 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Webhook error:', error);
 
+    interface StripeWebhookError {
+      message?: string;
+    }
     // Handle specific Stripe webhook errors
     if (error && typeof error === 'object' && 'message' in error) {
-      const stripeError = error as any;
+      const stripeError = error as StripeWebhookError;
       if (stripeError.message?.includes('signature')) {
         return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
       }
