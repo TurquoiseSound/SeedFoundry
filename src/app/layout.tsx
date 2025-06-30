@@ -268,7 +268,15 @@ export default function RootLayout({
                   height={40}
                 />
                 <small className="text-white/40 text-sm">
-                  Incubated at{' '}
+                  <a
+                    href="https://seed-founding.vercel.app"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Incubated
+                  </a>{' '}
+                  at{' '}
                   <a
                     href="https://www.collaborative.tech/"
                     className="text-[#ff00ff] hover:text-[#ff40ff] transition-colors duration-300"
@@ -277,7 +285,7 @@ export default function RootLayout({
                   >
                     The Collaborative Technology Alliance
                   </a>{' '}
-                  | Team:{' '}
+                  in 2023 | Team:{' '}
                   <a
                     href="https://xplusx.co"
                     className="text-white/60 hover:text-white transition-colors"
@@ -351,7 +359,7 @@ export default function RootLayout({
                   </a>
                 </small>
               </div>
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-3">
                 <Image
                   src="/seed_logo.png"
                   alt="Institute of Wise Innovation"

@@ -1,8 +1,17 @@
-import { mockItems } from '../../lib/mockData';
+import { fetchEntityTypes, fetchBusinessModels, fetchFundingOptions } from '../../lib/supabaseData';
 import { Item } from '../../types';
 
 export const fetchItem = async (id: string): Promise<Item> => {
-  const item = mockItems.find((item) => item.id === id);
+  // Fetch all items from all categories
+  const [entityTypes, businessModels, fundingOptions] = await Promise.all([
+    fetchEntityTypes(),
+    fetchBusinessModels(),
+    fetchFundingOptions()
+  ]);
+
+  const allItems = [...entityTypes, ...businessModels, ...fundingOptions];
+  const item = allItems.find((item) => item.id === id);
+
   if (!item) {
     throw new Error('Item not found');
   }
@@ -10,5 +19,12 @@ export const fetchItem = async (id: string): Promise<Item> => {
 };
 
 export const fetchItems = async (): Promise<Item[]> => {
-  return mockItems;
+  // Fetch all items from Supabase
+  const [entityTypes, businessModels, fundingOptions] = await Promise.all([
+    fetchEntityTypes(),
+    fetchBusinessModels(),
+    fetchFundingOptions()
+  ]);
+
+  return [...entityTypes, ...businessModels, ...fundingOptions];
 };

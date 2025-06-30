@@ -1,6 +1,6 @@
-import { mockGoals } from '../../lib/mockData';
+import { fetchGoals as fetchGoalsFromSupabase } from '../../lib/supabaseData';
 import { Goal } from '../../types';
 
 export const fetchGoals = async (): Promise<Goal[]> => {
-  return mockGoals;
+  return await fetchGoalsFromSupabase();
 };

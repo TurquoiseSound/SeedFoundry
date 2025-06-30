@@ -66,10 +66,10 @@ const LibraryTable: React.FC<{ type: string; items: Item[] }> = ({ items }) => {
           >
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
+                <div className="flex items-baseline gap-3 mb-2">
                   <h3 className="text-xl font-bold text-white">{item.name}</h3>
                   {isClient && item.goalScore && (
-                    <span className={`inline-block w-3 h-3 rounded-full ${compatabilityColor}`} />
+                    <span className={`inline-block w-3 h-3 rounded-full ${compatabilityColor} translate-y-[-2px]`} />
                   )}
                 </div>
                 {item.description && (

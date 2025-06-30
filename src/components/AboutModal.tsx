@@ -16,7 +16,7 @@ export default function AboutModal() {
 
       {showAboutModal && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="glass rounded-2xl p-8 max-w-2xl max-h-[80vh] overflow-y-auto relative">
+          <div className="glass rounded-2xl p-8 max-w-3xl max-h-[85vh] overflow-y-auto relative">
             <button
               onClick={() => setShowAboutModal(false)}
               className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors text-2xl"
@@ -25,7 +25,7 @@ export default function AboutModal() {
             </button>
 
             <div className="text-white">
-              <h2 className="text-3xl font-bold mb-4">
+              <h2 className="text-3xl font-bold mb-6 text-center">
                 <a
                   href="https://open.spotify.com/episode/4bCYmenpPpubT5U1dVHFNY"
                   target="_blank"
@@ -36,13 +36,14 @@ export default function AboutModal() {
                 </a>
               </h2>
 
-              {/* Spotify Embed in About Modal */}
-              <div className="mb-6">
+              {/* Spotify Embed - Smaller and Centered */}
+              {/* Spotify Embed - Compact Player */}
+              <div className="mb-6 flex justify-center">
                 <iframe
                   style={{ borderRadius: '12px' }}
                   src="https://open.spotify.com/embed/episode/4bCYmenpPpubT5U1dVHFNY?utm_source=generator&theme=0"
                   width="100%"
-                  height="232"
+                  height="142"
                   frameBorder="0"
                   allowFullScreen
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -50,14 +51,14 @@ export default function AboutModal() {
                 />
               </div>
 
-              <h3 className="text-xl text-emerald-200 mb-6 italic">
+              <h3 className="text-lg text-white/80 mb-8 italic text-center leading-relaxed max-w-2xl mx-auto">
                 A prayer for the preservation of this invisible realm and those who tend to that
                 which only grows in darkness— quiet cultivators of radiant roots, keepers of the
                 hidden bloom.
               </h3>
 
-              <div className="text-white leading-relaxed space-y-4">
-                <p>
+              <div className="text-white/90 leading-relaxed space-y-6 max-w-2xl mx-auto">
+                <p className="text-center">
                   I build—
                   <br />
                   not to master,
@@ -77,7 +78,7 @@ export default function AboutModal() {
                   but to grow mindfully.
                 </p>
 
-                <p>
+                <p className="text-center">
                   Design as devotion.
                   <br />
                   Risk as care.
@@ -88,7 +89,7 @@ export default function AboutModal() {
                   of what longs to be.
                 </p>
 
-                <p>
+                <p className="text-center">
                   To know—
                   <br />
                   in the marrow—
@@ -100,7 +101,7 @@ export default function AboutModal() {
                   to the most fragile.
                 </p>
 
-                <p>
+                <p className="text-center">
                   To protect and shield.
                   <br />
                   Even when it slows us.
@@ -112,7 +113,7 @@ export default function AboutModal() {
                   why it matters.
                 </p>
 
-                <p>
+                <p className="text-center">
                   Design as devotion.
                   <br />
                   Risk as care.
@@ -123,7 +124,7 @@ export default function AboutModal() {
                   of what longs to last.
                 </p>
 
-                <p>
+                <p className="text-center">
                   The humility to walk in this beauty—
                   <br />
                   this Beauty Way, as the Diné say,
@@ -139,7 +140,7 @@ export default function AboutModal() {
                   with the mystery itself.
                 </p>
 
-                <p>
+                <p className="text-center">
                   To tend the golden flower
                   <br />
                   is to protect that which blooms
@@ -154,7 +155,7 @@ export default function AboutModal() {
                   to hear the deeper rhythms of our shared beating heart.
                 </p>
 
-                <p>
+                <p className="text-center">
                   We build with reverence
                   <br />
                   for the invisible, intimate architectures:
@@ -177,7 +178,7 @@ export default function AboutModal() {
                   in a place beyond time.
                 </p>
 
-                <p>
+                <p className="text-center">
                   This is the path of Wise Innovation:
                   <br />
                   the choice to build not what is easy,
@@ -193,7 +194,7 @@ export default function AboutModal() {
                   What is actually worthy of becoming an ancestor to.
                 </p>
 
-                <p>
+                <p className="text-center">
                   And if we can leave behind
                   <br />
                   even one lasting structure—
@@ -217,12 +218,12 @@ export default function AboutModal() {
                   of the life I was given.
                 </p>
 
-                <p className="mt-8">
+                <p className="mt-8 text-center">
                   <a
                     href="https://wiseinnovation.institute"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/60 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors text-sm"
                   >
                     © 2025 The Institute of Wise Innovation. All rights reserved.
                   </a>
