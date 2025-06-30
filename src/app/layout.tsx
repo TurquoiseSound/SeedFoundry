@@ -150,7 +150,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://instituteofwiseinnovation.substack.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors"
@@ -279,21 +279,21 @@ export default function RootLayout({
                   </a>{' '}
                   | Team:{' '}
                   <a
-                    href="https://linktr.ee/TaoTeTurquoise"
-                    className="text-white/60 hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Turquoise Sound
-                  </a>
-                  ,{' '}
-                  <a
                     href="https://xplusx.co"
                     className="text-white/60 hover:text-white transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     LX
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://linktr.ee/TaoTeTurquoise"
+                    className="text-white/60 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Turquoise Sound
                   </a>
                   ,{' '}
                   <a
@@ -353,7 +353,7 @@ export default function RootLayout({
               </div>
               <div className="flex items-center gap-6">
                 <Image
-                  src="https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop"
+                  src="/seed_logo.png"
                   alt="Institute of Wise Innovation"
                   width={24}
                   height={24}
