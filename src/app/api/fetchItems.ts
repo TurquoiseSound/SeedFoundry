@@ -6,7 +6,7 @@ export const fetchItem = async (id: string): Promise<Item> => {
   const [entityTypes, businessModels, fundingOptions] = await Promise.all([
     fetchEntityTypes(),
     fetchBusinessModels(),
-    fetchFundingOptions()
+    fetchFundingOptions(),
   ]);
 
   const allItems = [...entityTypes, ...businessModels, ...fundingOptions];
@@ -23,7 +23,7 @@ export const fetchItems = async (): Promise<Item[]> => {
   const [entityTypes, businessModels, fundingOptions] = await Promise.all([
     fetchEntityTypes(),
     fetchBusinessModels(),
-    fetchFundingOptions()
+    fetchFundingOptions(),
   ]);
 
   return [...entityTypes, ...businessModels, ...fundingOptions];

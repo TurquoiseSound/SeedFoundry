@@ -1,20 +1,18 @@
-import { supabase } from './supabase';
 import { Goal, Item } from '../types';
+
+import { supabase } from './supabase';
 
 // Fetch goals from Supabase
 export async function fetchGoals(): Promise<Goal[]> {
   try {
-    const { data, error } = await supabase
-      .from('goals')
-      .select('*')
-      .order('created_at');
+    const { data, error } = await supabase.from('goals').select('*').order('created_at');
 
     if (error) throw error;
 
-    return data.map(goal => ({
+    return data.map((goal) => ({
       id: goal.id,
       value: goal.id,
-      label: goal.name
+      label: goal.name,
     }));
   } catch (error) {
     console.error('Error fetching goals:', error);
@@ -27,15 +25,17 @@ export async function fetchEntityTypes(): Promise<Item[]> {
   try {
     const { data, error } = await supabase
       .from('entity_types')
-      .select(`
+      .select(
+        `
         *,
         goals_items(goal_id, rating)
-      `)
+      `
+      )
       .eq('status', 'Done');
 
     if (error) throw error;
 
-    return data.map(entity => ({
+    return data.map((entity) => ({
       id: entity.id,
       name: entity.name,
       description: entity.description,
@@ -46,10 +46,15 @@ export async function fetchEntityTypes(): Promise<Item[]> {
       entityTypes: [],
       businessModels: [],
       fundingOptions: [],
-      relatedGoals: entity.goals_items ? entity.goals_items.reduce((acc: any, item: any) => {
-        acc[item.goal_id] = item.rating;
-        return acc;
-      }, {}) : {}
+      relatedGoals: entity.goals_items
+        ? entity.goals_items.reduce(
+            (acc: Record<string, number>, item: { goal_id: string; rating: number }) => {
+              acc[item.goal_id] = item.rating;
+              return acc;
+            },
+            {}
+          )
+        : {},
     }));
   } catch (error) {
     console.error('Error fetching entity types:', error);
@@ -62,15 +67,17 @@ export async function fetchBusinessModels(): Promise<Item[]> {
   try {
     const { data, error } = await supabase
       .from('business_models')
-      .select(`
+      .select(
+        `
         *,
         goals_items(goal_id, rating)
-      `)
+      `
+      )
       .eq('status', 'Done');
 
     if (error) throw error;
 
-    return data.map(model => ({
+    return data.map((model) => ({
       id: model.id,
       name: model.name,
       description: model.description,
@@ -81,10 +88,15 @@ export async function fetchBusinessModels(): Promise<Item[]> {
       entityTypes: [],
       businessModels: [],
       fundingOptions: [],
-      relatedGoals: model.goals_items ? model.goals_items.reduce((acc: any, item: any) => {
-        acc[item.goal_id] = item.rating;
-        return acc;
-      }, {}) : {}
+      relatedGoals: model.goals_items
+        ? model.goals_items.reduce(
+            (acc: Record<string, number>, item: { goal_id: string; rating: number }) => {
+              acc[item.goal_id] = item.rating;
+              return acc;
+            },
+            {}
+          )
+        : {},
     }));
   } catch (error) {
     console.error('Error fetching business models:', error);
@@ -97,15 +109,17 @@ export async function fetchFundingOptions(): Promise<Item[]> {
   try {
     const { data, error } = await supabase
       .from('funding_options')
-      .select(`
+      .select(
+        `
         *,
         goals_items(goal_id, rating)
-      `)
+      `
+      )
       .eq('status', 'Done');
 
     if (error) throw error;
 
-    return data.map(funding => ({
+    return data.map((funding) => ({
       id: funding.id,
       name: funding.name,
       description: funding.description,
@@ -116,10 +130,15 @@ export async function fetchFundingOptions(): Promise<Item[]> {
       entityTypes: [],
       businessModels: [],
       fundingOptions: [],
-      relatedGoals: funding.goals_items ? funding.goals_items.reduce((acc: any, item: any) => {
-        acc[item.goal_id] = item.rating;
-        return acc;
-      }, {}) : {}
+      relatedGoals: funding.goals_items
+        ? funding.goals_items.reduce(
+            (acc: Record<string, number>, item: { goal_id: string; rating: number }) => {
+              acc[item.goal_id] = item.rating;
+              return acc;
+            },
+            {}
+          )
+        : {},
     }));
   } catch (error) {
     console.error('Error fetching funding options:', error);
