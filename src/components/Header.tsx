@@ -37,8 +37,8 @@ export default function Header() {
           <Image
             src="/seed_logo.png"
             alt="Institute of Wise Innovation Logo"
-            width={isMobile ? 28 : 36}
-            height={isMobile ? 28 : 36}
+            width={isMobile ? 48 : isTablet ? 56 : 64}
+            height={isMobile ? 48 : isTablet ? 56 : 64}
             className="transition-transform duration-300 hover:scale-110"
             priority
           />
