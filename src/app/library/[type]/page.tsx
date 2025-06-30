@@ -30,38 +30,39 @@ const EntityTypesPage = ({ params }: { params: { type: string } }) => {
         <div className="glass rounded-2xl p-2 inline-flex text-sm sm:text-base gap-2">
           <Link
             href="/library/entity-types"
-            className={`px-6 py-3 rounded-xl transition-all duration-300 ${
+            className={`px-4 py-2 rounded-xl transition-all duration-300 ${
               type === 'entity-types'
-                ? 'bg-white/10 text-white shadow-lg'
-                : 'text-white/70 hover:text-white hover:bg-white/5'
+                ? 'text-gradient font-medium'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
             }`}
           >
-            Legal Entity
-          </Link>
-          <Link
-            href="/library/funding-options"
-            className={`px-6 py-3 rounded-xl transition-all duration-300 ${
-              type === 'funding-options'
-                ? 'bg-white/10 text-white shadow-lg'
-                : 'text-white/70 hover:text-white hover:bg-white/5'
-            }`}
-          >
-            Funding Options
+            Legal Entities
           </Link>
           <Link
             href="/library/business-models"
-            className={`px-6 py-3 rounded-xl transition-all duration-300 ${
+            className={`px-4 py-2 rounded-xl transition-all duration-300 ${
               type === 'business-models'
-                ? 'bg-white/10 text-white shadow-lg'
-                : 'text-white/70 hover:text-white hover:bg-white/5'
+                ? 'text-gradient font-medium'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
             }`}
           >
             Business Models
           </Link>
+          <Link
+            href="/library/funding-options"
+            className={`px-4 py-2 rounded-xl transition-all duration-300 ${
+              type === 'funding-options'
+                ? 'text-gradient font-medium'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            Funding
+          </Link>
         </div>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <EntityList type={params.type} />
+
+      <Suspense fallback={<div className="h-96 skeleton rounded-lg"></div>}>
+        <EntityList type={type} />
       </Suspense>
     </div>
   );

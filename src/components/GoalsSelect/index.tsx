@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-import { fetchGoals } from '../../app/api/fetchGoals';
 import { Goal } from '../../types';
 
 import { default as GoalsSelectInternal } from './GoalsSelect';
@@ -14,7 +13,11 @@ export default function GoalsSelect() {
   React.useEffect(() => {
     const loadGoals = async () => {
       try {
-        const fetchedGoals = await fetchGoals();
+        const response = await fetch('/api/goals');
+        if (!response.ok) {
+          throw new Error('Failed to fetch goals');
+        }
+        const fetchedGoals = await response.json();
         setGoals(fetchedGoals);
       } catch (error) {
         console.error('Failed to fetch goals:', error);
