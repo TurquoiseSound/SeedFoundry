@@ -19,8 +19,8 @@
       }
     ],
     "paths": {
-      "@/components/*": ["components/*"], 
-      "@/*": ["./src/*"]Delete .next, node_modules, and package-lock.json.     
+      "@/components/*": ["components/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
