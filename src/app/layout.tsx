@@ -1,6 +1,9 @@
 import React from 'react';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import { config } from '@fortawesome/fontawesome-svg-core';
 import {
   faDiscord,
@@ -12,8 +15,6 @@ import {
 import { faPodcast, faRss } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import AboutModal from '@/components/AboutModal';
 import Header from '@/components/Header';

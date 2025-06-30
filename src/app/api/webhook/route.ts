@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   let body: string;
-  
+
   try {
     // Safely read the request body
     body = await request.text();
@@ -91,14 +91,15 @@ export async function POST(request: Request) {
       }
 
       default:
-        console.log(`Unhandled event type: ${event.type}`);
+        // Unhandled event type - can be safely ignored
+        break;
     }
 
     // Always return success to Stripe
     return NextResponse.json({ received: true }, { status: 200 });
   } catch (error) {
     console.error('Webhook error:', error);
-    
+
     // Handle specific Stripe webhook errors
     if (error && typeof error === 'object' && 'message' in error) {
       const stripeError = error as any;
@@ -106,7 +107,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
       }
     }
-    
+
     // Always return a proper response, even on error
     // Return 400 for client errors, but log the actual error
     return NextResponse.json({ error: 'Webhook handler failed' }, { status: 400 });

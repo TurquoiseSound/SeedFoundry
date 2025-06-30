@@ -34,7 +34,6 @@ export default function Header() {
           )}
         </Link>
         <div className="flex items-center gap-4">
-         
           <Image
             src="/seed_logo.png"
             alt="Institute of Wise Innovation Logo"

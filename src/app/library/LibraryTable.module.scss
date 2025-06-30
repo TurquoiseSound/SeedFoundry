@@ -3,38 +3,39 @@
   border-spacing: 0 1em;
   width: 100%;
 
-  th, td {
+  th,
+  td {
     @apply bg-white p-4 transition-all duration-200;
-    
+
     &:first-child {
       @apply rounded-l-lg;
     }
-    
+
     &:last-child {
       @apply rounded-r-lg;
     }
   }
-  
+
   th {
     @apply text-neutral-600 font-semibold text-left;
     padding: 1rem;
   }
-  
+
   tbody {
     tr {
       @apply hover:transform hover:-translate-y-1 transition-all duration-200;
-      
+
       td {
         @apply align-top;
       }
     }
   }
-  
+
   .itemName {
     @apply font-semibold text-lg mb-2;
     color: var(--seed-color);
   }
-  
+
   .tagContainer {
     @apply flex flex-wrap gap-2;
   }
@@ -44,39 +45,41 @@
 @media (max-width: 768px) {
   .libraryTable {
     @apply block;
-    
+
     thead {
       @apply hidden;
     }
-    
-    tbody, tr, td {
+
+    tbody,
+    tr,
+    td {
       @apply block w-full;
     }
-    
+
     tr {
       @apply mb-4 bg-white rounded-lg shadow-sm;
-      
+
       &:hover {
         @apply shadow-md;
       }
     }
-    
+
     td {
       @apply relative py-3 px-4;
-      
+
       &:not(:last-child) {
         @apply border-b border-neutral-100;
       }
-      
+
       &::before {
         content: attr(data-label);
         @apply text-neutral-500 text-sm mb-1 block;
       }
-      
+
       &:first-child {
         @apply rounded-t-lg;
       }
-      
+
       &:last-child {
         @apply rounded-b-lg;
       }
@@ -87,15 +90,15 @@
 /* Loading skeleton styles */
 .skeleton {
   @apply animate-pulse bg-neutral-200 rounded;
-  
+
   &.row {
     @apply h-24;
   }
-  
+
   &.text {
     @apply h-4 w-3/4;
   }
-  
+
   &.tag {
     @apply h-6 w-20 rounded-full inline-block mr-2;
   }

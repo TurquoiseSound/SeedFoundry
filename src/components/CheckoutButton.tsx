@@ -41,7 +41,7 @@ export default function CheckoutButton({
         },
         body: JSON.stringify({ priceId, userId }),
         timeout: 10000, // 10 second timeout
-        retries: 2,     // Retry twice on network errors
+        retries: 2, // Retry twice on network errors
       });
 
       if (data.error) {
@@ -67,15 +67,15 @@ export default function CheckoutButton({
       }
     } catch (error) {
       console.error('Checkout error:', error);
-      
+
       let errorMessage = 'Failed to initiate checkout. Please try again.';
-      
+
       if (isFetchError(error)) {
         if (error.status === 400) {
           errorMessage = 'Invalid checkout request. Please check your information.';
         } else if (error.status === 404) {
           errorMessage = 'User not found. Please log in again.';
-        } else if (error.status >= 500) {
+        } else if (error.status && error.status >= 500) {
           errorMessage = 'Server error. Please try again in a moment.';
         }
       } else if (isNetworkError(error)) {
@@ -83,7 +83,7 @@ export default function CheckoutButton({
       } else if (error instanceof Error) {
         errorMessage = error.message;
       }
-      
+
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -92,18 +92,14 @@ export default function CheckoutButton({
 
   return (
     <div>
-      <button 
-        onClick={handleCheckout} 
-        disabled={loading} 
+      <button
+        onClick={handleCheckout}
+        disabled={loading}
         className={`${className} ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         {loading ? 'Processing...' : children}
       </button>
-      {error && (
-        <div className="mt-2 text-red-400 text-sm">
-          {error}
-        </div>
-      )}
+      {error && <div className="mt-2 text-red-400 text-sm">{error}</div>}
     </div>
   );
 }

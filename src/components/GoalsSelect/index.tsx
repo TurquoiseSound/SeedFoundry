@@ -3,11 +3,12 @@
 import React from 'react';
 
 import { fetchGoals } from '../../app/api/fetchGoals';
+import { Goal } from '../../types';
 
 import { default as GoalsSelectInternal } from './GoalsSelect';
 
 export default function GoalsSelect() {
-  const [goals, setGoals] = React.useState([]);
+  const [goals, setGoals] = React.useState<Goal[]>([]);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {

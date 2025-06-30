@@ -27,12 +27,7 @@ export async function safeFetch(
   url: string | URL,
   options: SafeFetchOptions = {}
 ): Promise<Response> {
-  const {
-    timeout = 30000,
-    retries = 3,
-    retryDelay = 1000,
-    ...fetchOptions
-  } = options;
+  const { timeout = 30000, retries = 3, retryDelay = 1000, ...fetchOptions } = options;
 
   // Create abort controller for timeout
   const controller = new AbortController();
@@ -87,12 +82,10 @@ export async function safeFetch(
               `Fetch attempt ${attempt + 1} failed, retrying in ${retryDelay}ms:`,
               error.message
             );
-            
+
             // Exponential backoff
-            await new Promise(resolve => 
-              setTimeout(resolve, retryDelay * Math.pow(2, attempt))
-            );
-            
+            await new Promise((resolve) => setTimeout(resolve, retryDelay * Math.pow(2, attempt)));
+
             return fetchWithRetry(attempt + 1);
           }
         }

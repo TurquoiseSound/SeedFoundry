@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useContext, useEffect, useState } from 'react';
+
 import Select, {
   ActionMeta,
   components,
@@ -60,7 +61,7 @@ export default function GoalsSelect({ goals }: { goals: Goal[] }) {
     setPortalTarget(document.body);
   }, []);
 
-  const handleChangeSelect = (newValue: MultiValue<Goal>, action: ActionMeta<Goal>) => {
+  const handleChangeSelect = (_newValue: MultiValue<Goal>, action: ActionMeta<Goal>) => {
     const option = action.option;
     if (action.action === 'clear') {
       setSelectedGoals([]);

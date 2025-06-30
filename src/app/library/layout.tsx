@@ -1,4 +1,8 @@
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
 import type { Metadata } from 'next';
+
+config.autoAddCss = false;
 
 export const metadata: Metadata = {
   title: 'Library | SEED Founding',
@@ -16,11 +20,3 @@ export default function LibraryLayout({
     </div>
   );
 }
-
-// src/app/layout.tsx or pages/_app.tsx
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
-config.autoAddCss = false;
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
